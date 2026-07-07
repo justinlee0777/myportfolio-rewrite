@@ -1,0 +1,41 @@
+.stuff {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 2em;
+  width: 100%;
+}
+
+.projects {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, min(40%, 300px));
+  justify-content: center;
+}
+
+.project {
+  border: 1px solid var(--foreground);
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  transition: 0.3s box-shadow;
+
+  &:hover {
+    box-shadow: 1px 1px 4px var(--foreground);
+  }
+
+  & > img {
+    align-self: center;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    font-size: 0.8em;
+  }
+}

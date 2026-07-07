@@ -1,0 +1,15 @@
+.navbar {
+  align-items: center;
+  box-shadow: 1px 1px 4px var(--foreground);
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.portraitImage {
+  border-radius: 50%;
+  margin-left: auto;
+}
