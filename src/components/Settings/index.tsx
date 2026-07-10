@@ -7,7 +7,7 @@ import { MdSettings } from 'react-icons/md';
 import clsx from 'clsx';
 
 import { cookieName } from '@/consts/settings.const';
-import { StoredSettings } from '@/model/settings.model';
+import { StoredSettings } from '@/models/settings.model';
 
 import { CommonModal } from '../CommonModal';
 import { Radiogroup } from '../Radiogroup/Radiogroup';

@@ -1,0 +1,8 @@
+.prosperoBookPage {
+  box-sizing: border-box;
+  justify-content: center;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 800px;
+  padding: 1em;
+}

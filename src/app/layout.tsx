@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Settings } from '@/components/Settings';
 import { cookies } from 'next/headers';
 import { cookieName } from '@/consts/settings.const';
-import { StoredSettings } from '@/model/settings.model';
+import { StoredSettings } from '@/models/settings.model';
 
 export default async function RootLayout({
   children,
