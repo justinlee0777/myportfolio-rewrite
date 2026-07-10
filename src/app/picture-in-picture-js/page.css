@@ -1,0 +1,18 @@
+.pictureInPictureJSPage {
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 800px;
+  padding: 1em;
+}
+
+.triggerContainer {
+  text-align: center;
+}
+
+.towerOfBabelImg {
+  max-height: 75vh;
+  object-fit: contain;
+  overflow: auto;
+  max-width: 75vw;
+}

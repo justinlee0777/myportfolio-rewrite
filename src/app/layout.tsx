@@ -1,24 +1,37 @@
 import './globals.css';
 import './layout.css';
 
-import type { Metadata } from 'next';
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title: "Justin Lee's bag of stuff",
-  description: 'A bag of web dev stuff by Justin Lee.',
-};
+import { Settings } from '@/components/Settings';
+import { cookies } from 'next/headers';
+import { cookieName } from '@/consts/settings.const';
+import { StoredSettings } from '@/model/settings.model';
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+
+  const settingsString = cookieStore.get(cookieName)?.value;
+
+  let themeClass: string | undefined;
+
+  if (settingsString) {
+    const settings: StoredSettings = JSON.parse(settingsString);
+
+    if (settings.theme) {
+      themeClass = `theme-${settings.theme.toLowerCase().split(' ').join('-')}`;
+    }
+  }
+
   return (
     <html lang="en">
-      <body>
+      <body className={themeClass}>
         <div className="navbar">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
           <a href="/cv">CV</a>
           <Image
             className="portraitImage"
@@ -29,7 +42,10 @@ export default function RootLayout({
             alt="A portrait of me, Justin Lee."
           />
         </div>
-        {children}
+        <div className="content">
+          {children}
+          <Settings classes={{ button: 'settingsPrompt' }} />
+        </div>
       </body>
     </html>
   );

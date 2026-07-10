@@ -1,0 +1,20 @@
+.settingsButton {
+  --size: 2em;
+
+  border-radius: 50%;
+  height: var(--size);
+  width: var(--size);
+}
+
+.settingsContent {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 2em;
+}
+
+.settingsTheme {
+  align-items: center;
+  display: flex;
+  flex-wrap: row wrap;
+  gap: 0.5em;
+}

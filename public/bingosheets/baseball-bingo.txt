@@ -1,0 +1,16 @@
+1. Single
+2. Double
+3. Triple
+4. Home run!
+5. Grand slam!!
+6. Walk (Base on balls)
+7. Walk (Hit by pitch)
+8. Stolen base
+9. Caught stealing
+10. Strikeout
+11. Flyout
+12. Groundout
+13. Shutout
+14. Extra innings
+15. Double play
+16. Bunt

@@ -1,10 +1,47 @@
-:root {
+body {
   --background: #ffffff;
   --foreground: #171717;
+  --link: #1a73e8;
+
+  &.theme-monochrome {
+    --background: white;
+    --foreground: black;
+    --link: dimgray;
+  }
+
+  &.theme-night {
+    --background: black;
+    --foreground: white;
+    --link: gray;
+  }
+
+  &.theme-ulysses {
+    --background: #004c98;
+    --foreground: white;
+    --link: #61a0ff;
+  }
+
+  &.theme-sea {
+    --background: seashell;
+    --foreground: seagreen;
+    --link: black;
+  }
+
+  &.theme-starry-night {
+    --background: midnightblue;
+    --foreground: ivory;
+    --link: #919191;
+  }
+
+  &.theme-salmon-bisque {
+    --background: bisque;
+    --foreground: salmon;
+    --link: black;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  body {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
@@ -20,4 +57,24 @@ body {
   gap: 1em;
   margin: 0;
   overflow: hidden;
+}
+
+button {
+  align-items: center;
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
+  box-sizing: border-box;
+  color: var(--foreground);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: 0.3s box-shadow;
+
+  &:hover {
+    box-shadow: 1px 1px 4px var(--foreground);
+  }
+}
+
+a:link {
+  color: var(--link);
 }
