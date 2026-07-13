@@ -41,11 +41,9 @@ export default async function RootLayout({
             height={25}
             alt="A portrait of me, Justin Lee."
           />
-        </div>
-        <div className="content">
-          {children}
           <Settings classes={{ button: 'settingsPrompt' }} />
         </div>
+        <div className="content">{children}</div>
       </body>
     </html>
   );
