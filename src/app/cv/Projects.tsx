@@ -59,7 +59,7 @@ const projects: Array<ProjectEntry> = [
     responsibilities: [
       'Built the merchant dashboard where users configured the look-and-feel of their apps as well as their inventory and payment systems',
       'Built the Progressive Web App where customers browsed products and checked out carts',
-      'Ensured the PWA followed responsive design',
+      'Ensured the PWA followed responsive / mobile design.',
       'Ensured the PWA was SEO-friendly',
       'Debugged the PWA for performance issues and went on many a rabbit hole on this',
       'Planned features with product owners and UI designers',
@@ -143,6 +143,7 @@ const projects: Array<ProjectEntry> = [
     responsibilities: [
       'Developed prospero with performance in mind ex. designing it with generators, ensuring it works on Node',
       `Broke the package into modules so clients don't have to download every bit of code`,
+      'Developed picture-in-picture-js to solve the problem of prospero needing to show media across pages',
     ],
     tools: ['Node.js', 'Rollup'],
   },
