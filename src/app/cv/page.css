@@ -1,0 +1,71 @@
+.cvPage {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  height: 100%;
+  padding: 1em;
+  position: relative;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.timelineEntries {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 1em;
+}
+
+.timelineBullet {
+  background-color: var(--foreground);
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+}
+
+.timelineEntry {
+  align-items: center;
+  display: grid;
+  grid-template-columns: min-content min-content 1fr;
+  gap: 0.5em 1em;
+}
+
+.timelineBisector {
+  border-left: 1px solid var(--foreground);
+  grid-column: 2;
+  height: 100%;
+  justify-self: center;
+}
+
+.timelineYear {
+  margin: 0;
+  width: 100px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 100%;
+  line-height: 1.5;
+  overflow-y: auto;
+  padding: 0 1em;
+}
+
+.projectCollapsibleSectionHeader {
+  width: 100%;
+}
+
+.projectContent {
+  font-size: 0.8em;
+}
+
+.projectDescription {
+  text-indent: 1em;
+}
