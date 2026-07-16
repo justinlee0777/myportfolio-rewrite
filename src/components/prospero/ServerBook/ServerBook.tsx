@@ -31,7 +31,7 @@ export function ServerBook({
   bookSlug,
   bookTitle,
 }: Props): JSX.Element {
-  const endpointBase = '/api/prospero/';
+  const endpointBase = '/api/prospero';
 
   const mobilePages = useMemo(
     () => new ServerPages(`${endpointBase}/${bookSlug}/pages/mobile`),

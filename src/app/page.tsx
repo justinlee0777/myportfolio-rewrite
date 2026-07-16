@@ -54,22 +54,28 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="projects">
-      {projects.map(({ header, thumbnail, description, url, imageAlt }) => {
-        return (
-          <a key={header} className="project" href={url}>
-            <Image
-              width={200}
-              height={150}
-              src={thumbnail}
-              alt={imageAlt}
-              loading="eager"
-            />
-            <h4>{header}</h4>
-            <p>{description}</p>
-          </a>
-        );
-      })}
-    </div>
+    <>
+      <div className="projects">
+        <h1>
+          I'm Justin Lee. Deque University says I need an H1 here. This is that.
+        </h1>
+        {projects.map(({ header, thumbnail, description, url, imageAlt }) => {
+          return (
+            <a key={header} className="project" href={url}>
+              <Image
+                width={200}
+                height={150}
+                src={thumbnail}
+                alt={imageAlt}
+                loading="eager"
+                unoptimized
+              />
+              <h2>{header}</h2>
+              <p>{description}</p>
+            </a>
+          );
+        })}
+      </div>
+    </>
   );
 }

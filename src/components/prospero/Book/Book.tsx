@@ -1,8 +1,8 @@
+import '@/fonts/bookerly/Bookerly.css';
 import './Book.css';
 
 import { BooksElement } from 'prospero/types';
 import { useEffect, useRef, type JSX } from 'react';
-import { loadBookerly } from '@/utils/load-bookerly.function';
 
 interface Props {
   bookTitle: string;
@@ -16,11 +16,7 @@ export function Book({
   bookAuthor,
   bookTitle,
 }: Props): JSX.Element {
-  const containerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    loadBookerly();
-  }, []);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (createBooks) {
@@ -37,7 +33,7 @@ export function Book({
     <>
       <h1 className="bookTitle">{bookTitle}</h1>
       <h2 className="bookAuthor">{bookAuthor}</h2>
-      <main ref={containerRef}></main>
+      <div ref={containerRef}></div>
     </>
   );
 }

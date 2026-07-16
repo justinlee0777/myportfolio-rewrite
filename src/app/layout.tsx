@@ -30,7 +30,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={themeClass}>
-        <div className="navbar">
+        <nav className="navbar">
           <a href="/">Home</a>
           <a href="/cv">CV</a>
           <Image
@@ -42,8 +42,8 @@ export default async function RootLayout({
             alt="A portrait of me, Justin Lee."
           />
           <Settings classes={{ button: 'settingsPrompt' }} />
-        </div>
-        <div className="content">{children}</div>
+        </nav>
+        <main className="content">{children}</main>
       </body>
     </html>
   );

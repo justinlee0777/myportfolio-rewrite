@@ -69,6 +69,7 @@ export function Settings({ classes }: Props): JSX.Element {
       <button
         className={clsx('settingsButton', classes?.button)}
         onClick={() => setOpened(true)}
+        aria-label="Settings"
       >
         <MdSettings />
       </button>

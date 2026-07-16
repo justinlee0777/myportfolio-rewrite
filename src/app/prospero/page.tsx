@@ -21,10 +21,11 @@ export default async function ProsperoPage() {
 
   return (
     <div className="prosperoPage">
+      <h1>Prospero Library</h1>
       {books.map(({ name, authorFirstName, authorLastName, urlSlug }) => {
         return (
           <a key={name} className="book" href={`/prospero/${urlSlug}`}>
-            <h4>{name}</h4>
+            <h2>{name}</h2>
             <p>
               By {authorFirstName} {authorLastName}
             </p>

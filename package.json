@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf .next && next build",
     "start": "next start",
     "lint": "eslint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "scan": "./semgrep.sh",
+    "audit": "npm audit && npm run scan",
+    "test": "npm run test --prefix ./tests"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1084.0",
@@ -50,5 +53,11 @@
       "react": "^16.8.0 || 17.x || 18.x || 19.x",
       "react-dom": "^16.8.0 || 17.x || 18.x || 19.x"
     }
-  }
+  },
+  "browserslist": [
+    "Chrome 111",
+    "Firefox 111",
+    "Safari 16.4",
+    "Edge 111"
+  ]
 }

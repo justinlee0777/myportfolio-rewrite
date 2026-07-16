@@ -1,3 +1,5 @@
+import './page.css';
+
 import type { Metadata } from 'next';
 import { cache, JSX } from 'react';
 import { readFile, access, constants as fsConstants } from 'fs/promises';
@@ -111,9 +113,7 @@ export default async function ProsperoBookPage({ params }: PageProps) {
 
   return (
     <div className="prosperoBookPage">
-      <button>
-        <a href="/prospero">Back</a>
-      </button>
+      <a href="/prospero">Back</a>
       {pageContent}
     </div>
   );

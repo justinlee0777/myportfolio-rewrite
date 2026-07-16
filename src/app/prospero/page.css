@@ -1,3 +1,7 @@
+h1 {
+  grid-column: 1 / 4;
+}
+
 .prosperoPage {
   box-sizing: border-box;
   display: grid;
@@ -8,6 +12,32 @@
   margin: auto;
   max-width: 800px;
   padding: 1em;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+  .prosperoPage {
+    font-size: 0.8em;
+    grid-template-columns: repeat(2, min(45%, 250px));
+  }
+
+  h1 {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .prosperoPage {
+    font-size: 0.8em;
+    grid-template-columns: min(90%, 250px);
+  }
+
+  h1 {
+    grid-column: 1 / 2;
+  }
 }
 
 .book {

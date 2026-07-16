@@ -163,7 +163,7 @@ export function TimelineEntries({ classes }: Props): JSX.Element {
         {entries.map(({ year, events }) => {
           return (
             <div className={classes?.entry} key={year} data-year={year}>
-              <h4 className="timelineYear">{year}</h4>
+              <h2 className="timelineYear">{year}</h2>
               <div className="timelineBullet"></div>
               {events.map((event, i) => {
                 let detailsElement: ReactNode;
@@ -193,7 +193,7 @@ export function TimelineEntries({ classes }: Props): JSX.Element {
         className="videoPlayer"
         src={youtubeVideo}
         title="YouTube video player"
-        frameBorder="0"
+        aria-hidden
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen

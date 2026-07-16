@@ -1,5 +1,5 @@
 import { model, Model, models, Schema } from 'mongoose';
-import { TableOfContentsConfig } from 'prospero/models/table-of-contents.interface';
+import { TableOfContentsConfig } from 'prospero/models';
 
 export interface ProsperoTableOfContents extends TableOfContentsConfig {
   textDescription: string;

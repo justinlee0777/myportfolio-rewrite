@@ -130,9 +130,10 @@ const projects: Array<ProjectEntry> = [
     },
     responsibilities: [
       'Developed this site in 2023',
+      'Tinkered with AWS a lot to generate random facts daily',
       'Redesigned this site with more knowledge in React with the intent of making the architecture neater and planning for theming first',
     ],
-    tools: ['Next.js'],
+    tools: ['Next.js', 'AWS (Lambda, DynamoDB, EC2, blah)'],
   },
   {
     name: 'Prospero',

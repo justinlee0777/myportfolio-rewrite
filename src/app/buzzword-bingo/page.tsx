@@ -13,20 +13,18 @@ export default function BuzzwordBingoPage() {
   return (
     <div className="buzzwordBingoContent">
       <h1>Buzzword bingo</h1>
-      <main>
-        <BuzzwordBingo
-          defaultFiles={[
-            {
-              name: 'Baseball',
-              path: '/bingosheets/baseball-bingo.txt',
-            },
-            {
-              name: 'Key and Peele',
-              path: '/bingosheets/key-peele-bingo.txt',
-            },
-          ]}
-        />
-      </main>
+      <BuzzwordBingo
+        defaultFiles={[
+          {
+            name: 'Baseball',
+            path: '/bingosheets/baseball-bingo.txt',
+          },
+          {
+            name: 'Key and Peele',
+            path: '/bingosheets/key-peele-bingo.txt',
+          },
+        ]}
+      />
     </div>
   );
 }

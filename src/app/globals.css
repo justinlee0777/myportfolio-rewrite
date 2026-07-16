@@ -77,3 +77,13 @@ button {
 a:link {
   color: var(--link);
 }
+
+h1 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}

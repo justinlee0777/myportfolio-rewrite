@@ -28,6 +28,7 @@ export function TowerOfBabel(): JSX.Element {
     <img
       className="towerOfBabelImg"
       ref={towerOfBabelRef}
+      alt={`Pieter Bruegel the Elder's painting The Tower of Babel`}
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/960px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg"
     />
   );
