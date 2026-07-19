@@ -1,16 +1,23 @@
 import './homepage.css';
 
-import { useMemo } from 'react';
+import { type JSX, useMemo } from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 
-interface Project {
+interface BaseProject {
   description: string;
   header: string;
-  thumbnail: string;
   url: string;
+}
+
+interface ArticleProject extends BaseProject {}
+
+interface ProjectWithImage extends BaseProject {
+  thumbnail: string;
   imageAlt: string;
 }
+
+type Project = ArticleProject | ProjectWithImage;
 
 export const metadata: Metadata = {
   title: "Justin Lee's bag of stuff",
@@ -50,6 +57,26 @@ export default function Home() {
         url: '/buzzword-bingo',
         imageAlt: 'A static image of a Buzzword Bingo sheet.',
       },
+      {
+        header: 'Rewriting the Site',
+        description: `I discuss the process of rewriting the site, which, though not difficult, involved more thought than I realized.`,
+        url: '/rewriting-the-site',
+      },
+      {
+        header: `Thoughts on the Gang of Four's Design Patterns`,
+        description: `A reflection on the Gang of Four's Object-Oriented Design Patterns in the modern world.`,
+        url: '/gang-of-four-design-patterns',
+      },
+      {
+        header: `The Observer Pattern`,
+        description: `Taking a stab at writing about the Observer Pattern, from the Gang of Four's (in)famous Design Patterns.`,
+        url: '/observer-pattern',
+      },
+      {
+        header: 'Knuth on Trees',
+        description: `We have some fun with Donald Knuth's discussion on Trees in his famous Art of Computer Programming.`,
+        url: '/knuth-on-trees',
+      },
     ];
   }, []);
 
@@ -59,17 +86,27 @@ export default function Home() {
         <h1>
           I'm Justin Lee. Deque University says I need an H1 here. This is that.
         </h1>
-        {projects.map(({ header, thumbnail, description, url, imageAlt }) => {
-          return (
-            <a key={header} className="project" href={url}>
+        {projects.map((project) => {
+          const { header, description, url } = project;
+
+          let thumbnail: JSX.Element | undefined;
+
+          if ('thumbnail' in project) {
+            thumbnail = (
               <Image
                 width={200}
                 height={150}
-                src={thumbnail}
-                alt={imageAlt}
+                src={project.thumbnail}
+                alt={project.imageAlt}
                 loading="eager"
                 unoptimized
               />
+            );
+          }
+
+          return (
+            <a key={header} className="project" href={url}>
+              {thumbnail}
               <h2>{header}</h2>
               <p>{description}</p>
             </a>

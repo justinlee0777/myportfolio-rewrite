@@ -3,9 +3,8 @@
 import './index.css';
 
 import clsx from 'clsx';
-import { useEffect, type JSX, type ReactNode } from 'react';
+import { useEffect, useRef, type JSX, type ReactNode } from 'react';
 import { MdClear } from 'react-icons/md';
-import Modal from 'react-modal';
 
 interface Props {
   children: ReactNode;
@@ -21,16 +20,35 @@ export function CommonModal({
   opened,
   onClose,
 }: Props): JSX.Element {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
   useEffect(() => {
-    Modal.setAppElement('.content');
-  });
+    const dialog = dialogRef.current;
+    if (dialog) {
+      if (opened && !dialog.open) {
+        dialog.showModal();
+      } else if (!opened && dialog.open) {
+        dialog.close();
+      }
+    }
+  }, [opened, dialogRef]);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (dialog) {
+      const handleCancel = (event: Event) => {
+        event.preventDefault();
+        onClose?.();
+      };
+
+      dialog.addEventListener('cancel', handleCancel);
+
+      return () => dialog.removeEventListener('cancel', handleCancel);
+    }
+  }, [onClose]);
 
   return (
-    <Modal
-      className={clsx('modal', className)}
-      isOpen={opened}
-      onRequestClose={onClose}
-    >
+    <dialog className={clsx('modal', className)} ref={dialogRef}>
       <button
         className={clsx('button', 'closeModal')}
         type="button"
@@ -39,6 +57,6 @@ export function CommonModal({
         <MdClear />
       </button>
       {children}
-    </Modal>
+    </dialog>
   );
 }

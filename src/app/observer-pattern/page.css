@@ -1,0 +1,16 @@
+.articlePage {
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 800px;
+  padding: 1em;
+}
+
+table {
+  border-collapse: collapse;
+
+  & th,
+  td {
+    border: 1px solid var(--foreground);
+  }
+}

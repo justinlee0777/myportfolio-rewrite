@@ -33,7 +33,6 @@ const entries: Array<CVEntry> = [
   {
     year: 2023,
     events: [
-      'Affected by SAP layoff',
       'Fullstack Engineer at startup Distro',
       {
         text: `Debut release of Hotline TNT's "Cartwheel"`,

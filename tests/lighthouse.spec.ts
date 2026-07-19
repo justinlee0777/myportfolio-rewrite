@@ -8,7 +8,7 @@ import { getFinalUrls } from './get-urls.js';
 
 const urls = await getFinalUrls();
 
-test.describe.only('Lighthouse audits', () => {
+test.describe('Lighthouse audits', () => {
   for (const url of urls) {
     test(`for ${url}`, async ({ page }) => {
       const port = 9222;

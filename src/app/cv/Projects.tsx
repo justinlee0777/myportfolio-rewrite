@@ -1,8 +1,7 @@
 'use client';
 
-import { CollapsibleSection } from '@/components/CollapsibleSection';
 import clsx from 'clsx';
-import { useEffect, useMemo, useState, type JSX } from 'react';
+import { useEffect, useState, type JSX } from 'react';
 
 interface ProjectEntry {
   name: string;
@@ -231,12 +230,10 @@ export function Projects({ entrySelector, className }: Props): JSX.Element {
         {relevantProjects.map(
           ({ name, description, employer, responsibilities, tools }) => {
             return (
-              <CollapsibleSection
-                key={name}
-                classes={{ header: 'projectCollapsibleSectionHeader' }}
-                header={name}
-                initialOpened={false}
-              >
+              <details key={name}>
+                <summary className="projectCollapsibleSectionHeader">
+                  {name}
+                </summary>
                 <div className="projectContent">
                   <p>{employer ?? 'Personal'}</p>
                   <p className="projectDescription ">{description}</p>
@@ -248,7 +245,7 @@ export function Projects({ entrySelector, className }: Props): JSX.Element {
                   </ul>
                   <p>Tools: {tools.join(', ')}</p>
                 </div>
-              </CollapsibleSection>
+              </details>
             );
           },
         )}
