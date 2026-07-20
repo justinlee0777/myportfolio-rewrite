@@ -228,11 +228,18 @@ export function Projects({ entrySelector, className }: Props): JSX.Element {
           Within {startingYear} - {endingYear}:
         </p>
         {relevantProjects.map(
-          ({ name, description, employer, responsibilities, tools }) => {
+          ({
+            name,
+            description,
+            employer,
+            responsibilities,
+            tools,
+            period,
+          }) => {
             return (
               <details key={name}>
                 <summary className="projectCollapsibleSectionHeader">
-                  {name}
+                  {name} ({`${period.start}-${period.end ?? ''}`})
                 </summary>
                 <div className="projectContent">
                   <p>{employer ?? 'Personal'}</p>
