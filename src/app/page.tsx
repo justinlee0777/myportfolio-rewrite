@@ -3,6 +3,7 @@ import './homepage.css';
 import { type JSX, useMemo } from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 interface BaseProject {
   description: string;
@@ -105,11 +106,11 @@ export default function Home() {
           }
 
           return (
-            <a key={header} className="project" href={url}>
+            <Link key={header} className="project" href={url}>
               {thumbnail}
               <h2>{header}</h2>
               <p>{description}</p>
-            </a>
+            </Link>
           );
         })}
       </div>

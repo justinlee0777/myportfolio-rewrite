@@ -13,7 +13,7 @@ import {
 
 export function ObserverPatternPage() {
   return (
-    <div className="articlePage">
+    <div className="observerPatternPage">
       <h1>The Observer Pattern</h1>
       <p>
         I wrote this as a thought experiment on how to rewrite the Gang of

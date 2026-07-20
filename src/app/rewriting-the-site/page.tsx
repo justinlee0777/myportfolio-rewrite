@@ -1,6 +1,7 @@
 import './page.css';
 
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: `Rewriting the Site`,
@@ -14,9 +15,9 @@ export default async function RewritingTheSitePage() {
       <p>
         This more-or-less started when I discovered that most browsers accepted
         the{' '}
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Nesting_selector">
+        <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Nesting_selector">
           CSS nesting selector
-        </a>
+        </Link>
         , which allowed for SASS-like stylesheets natively.
       </p>
       <p>
@@ -53,9 +54,9 @@ export default async function RewritingTheSitePage() {
       </p>
       <p>
         The other big feature of CSS that helped me change my mind was{' '}
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer">
+        <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer">
           CSS layers
-        </a>
+        </Link>
         . With full control over the importation of stylesheets, you can, in
         theory, prevent styling collisions.
       </p>
@@ -126,10 +127,11 @@ export default async function RewritingTheSitePage() {
           the fact that I ... just didn't write long-form essays on this site.
           I'm boring and don't have much to say about tech. But the other reason
           is that most of my article ideas require widgets - for example,{' '}
-          <a href="/observer-pattern">The Observer Pattern piece</a> really
-          needed interactive code snippets. I know there's{' '}
-          <a href="https://nextjs.org/docs/pages/guides/mdx">MDX</a> but it gave
-          off "one-er" smells; I didn't think I could rely on it long term.
+          <Link href="/observer-pattern">The Observer Pattern piece</Link>{' '}
+          really needed interactive code snippets. I know there's{' '}
+          <Link href="https://nextjs.org/docs/pages/guides/mdx">MDX</Link> but
+          it gave off "one-er" smells; I didn't think I could rely on it long
+          term.
         </li>
         <li>
           I miss the autocomplete of CSS modules. I mean, I never had the issue

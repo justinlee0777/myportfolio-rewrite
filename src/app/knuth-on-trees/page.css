@@ -1,9 +1,13 @@
-.articlePage {
+.knuthOnTreesPage {
   box-sizing: border-box;
   line-height: 1.5;
   margin: auto;
   max-width: 800px;
   padding: 1em;
+
+  & textarea {
+    width: 100%;
+  }
 }
 
 .tree {
@@ -19,10 +23,6 @@
 .exampleJSON {
   max-height: 50vh;
   overflow-y: auto;
-}
-
-textarea {
-  width: 100%;
 }
 
 .trees {

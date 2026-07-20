@@ -1,6 +1,7 @@
 import './page.css';
 
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import { ProsperoLibraryTitleModel } from '@/orm/prospero/library-title.model';
 import connectToMongoDB from '@/utils/connect-to-mongodb.function';
@@ -24,12 +25,12 @@ export default async function ProsperoPage() {
       <h1>Prospero Library</h1>
       {books.map(({ name, authorFirstName, authorLastName, urlSlug }) => {
         return (
-          <a key={name} className="book" href={`/prospero/${urlSlug}`}>
+          <Link key={name} className="book" href={`/prospero/${urlSlug}`}>
             <h2>{name}</h2>
             <p>
               By {authorFirstName} {authorLastName}
             </p>
-          </a>
+          </Link>
         );
       })}
     </div>

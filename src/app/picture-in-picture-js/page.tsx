@@ -16,20 +16,20 @@ export default function PictureInPictureJSPage() {
     <div className="pictureInPictureJSPage">
       <h1>Picture-in-Picture JS</h1>
       <p>
-        <a href="https://github.com/justinlee0777/picture-in-picture-js">
+        <Link href="https://github.com/justinlee0777/picture-in-picture-js">
           Picture-in-Picture JS
-        </a>{' '}
+        </Link>{' '}
         is a library that can take any arbitrary element on the page and puts it
         in an overlay.
       </p>
       <p>
         There{' '}
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API">
+        <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API">
           are
-        </a>{' '}
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API">
+        </Link>{' '}
+        <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API">
           two
-        </a>{' '}
+        </Link>{' '}
         browser-native alternatives you can use, but the usage is either limited
         or poorly supported across browsers.
       </p>

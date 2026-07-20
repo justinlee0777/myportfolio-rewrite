@@ -129,7 +129,7 @@ export function KnuthOnTreesPage({
   }, []);
 
   return (
-    <div className="articlePage">
+    <div className="knuthOnTreesPage">
       <h1>Knuth on Trees</h1>
       <p>
         Knuth has a charming chapter on Trees in the first book of his famous

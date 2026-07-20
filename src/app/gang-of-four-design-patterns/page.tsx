@@ -1,6 +1,7 @@
 import './page.css';
 
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: `Thoughts on the Gang of Four's Design Patterns`,
@@ -67,14 +68,14 @@ export default function DesignPatternsPage() {
         only grown in complexity. Fine, fine, perhaps Google's Developer
         Platform or Amazon Web Services' dashboard are not fair examples, but
         take one look at, say, the{' '}
-        <a href="https://www.nytimes.com/">New York Times' site</a>, Facebook,
-        or the website of your bank of choice. Web devs will beat the drum that
-        the best user experience is a simple one, but, for whatever reason,
-        we're building complex web applications. And we're writing applications
-        with complicated I/O mechanisms. So even if a book is meant for C++ or
-        Java, I do think it is fair for developer of all spades to evaluate it,
-        unless the content, up-front, is about the language or compiler in
-        particular.
+        <Link href="https://www.nytimes.com/">New York Times' site</Link>,
+        Facebook, or the website of your bank of choice. Web devs will beat the
+        drum that the best user experience is a simple one, but, for whatever
+        reason, we're building complex web applications. And we're writing
+        applications with complicated I/O mechanisms. So even if a book is meant
+        for C++ or Java, I do think it is fair for developer of all spades to
+        evaluate it, unless the content, up-front, is about the language or
+        compiler in particular.
       </p>
       <p>
         In the prologue to Knuth's work, he states: "It should be mentioned
@@ -120,16 +121,18 @@ export default function DesignPatternsPage() {
         way, code should really be described in the language of logic, thus
         cementing the idea that code is an expression of human thinking. So said
         Diogenes:{' '}
-        <a href="https://en.wikipedia.org/wiki/Zeno's_paradoxes#Proposed_solutions">
+        <Link href="https://en.wikipedia.org/wiki/Zeno's_paradoxes#Proposed_solutions">
           <em>solvitur ambulando</em>
-        </a>
+        </Link>
         , or, "[good software] is solved by walking."
       </p>
       <p>
         So saying, the issue with "Design Patterns" is in how it arrives at its
         conclusions - in that it rambles and never gets there - and not in the
         concept of patterns themselves.{' '}
-        <a href="https://www.martinfowler.com/eaaCatalog/">Martin Fowler</a>{' '}
+        <Link href="https://www.martinfowler.com/eaaCatalog/">
+          Martin Fowler
+        </Link>{' '}
         deals with them in "Catalog of Patterns of Enterprise Application
         Architecture". Immediately he's got it right because he makes the
         "Enterprise" part explicit, understanding the solution is tightly
@@ -139,10 +142,10 @@ export default function DesignPatternsPage() {
         reading their descriptions is more valuable than knowing their names.
         The irony of object-oriented programming is that Alan Kay, one of the
         designers of Smalltack, an early OOP,{' '}
-        <a href="http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en">
+        <Link href="http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en">
           thought it was an efficient way of grouping various calculations
           together
-        </a>
+        </Link>
         . Nothing more than that.
       </p>
       <p>
@@ -172,17 +175,20 @@ export default function DesignPatternsPage() {
       </p>
       <p>
         On a final note for this topic, it's neat that{' '}
-        <a href="https://refactoring.guru/design-patterns">Refactoring Guru</a>{' '}
+        <Link href="https://refactoring.guru/design-patterns">
+          Refactoring Guru
+        </Link>{' '}
         has a page for design patterns, but there is still the issue that the
         explanation is not in code. At least it has images, which are slightly
         better than text.
       </p>
       <p>
         I think others have noted how dangerous these patterns are. As Paul
-        Graham has <a href="http://www.paulgraham.com/icad.html">mentioned</a>,
-        "The shape of a program should reflect only the problem it needs to
-        solve. Any other regularity in the code is a sign, to me at least, that
-        I'm using abstractions that aren't powerful enough - often that I'm
+        Graham has{' '}
+        <Link href="http://www.paulgraham.com/icad.html">mentioned</Link>, "The
+        shape of a program should reflect only the problem it needs to solve.
+        Any other regularity in the code is a sign, to me at least, that I'm
+        using abstractions that aren't powerful enough - often that I'm
         generating by hand the expansions of some macro that I need to write."
         Keep in mind the authors of "Design Patterns" exhort their reader to
         "use [patterns] and look for other patterns that fit the way you

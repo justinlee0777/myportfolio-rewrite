@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { cache, JSX } from 'react';
 import { readFile, access, constants as fsConstants } from 'fs/promises';
 import capitalize from 'lodash-es/capitalize';
+import Link from 'next/link';
 
 import { checkTextExists } from '@/utils/prospero/check-text-exists.function';
 import { FlexibleBook } from '@/components/prospero/FlexibleBook/FlexibleBook';
@@ -113,7 +114,7 @@ export default async function ProsperoBookPage({ params }: PageProps) {
 
   return (
     <div className="prosperoBookPage">
-      <a href="/prospero">Back</a>
+      <Link href="/prospero">Back</Link>
       {pageContent}
     </div>
   );

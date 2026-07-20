@@ -2,9 +2,10 @@ import './globals.css';
 import './layout.css';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { cookies } from 'next/headers';
 
 import { Settings } from '@/components/Settings';
-import { cookies } from 'next/headers';
 import { cookieName } from '@/consts/settings.const';
 import { StoredSettings } from '@/models/settings.model';
 
@@ -31,8 +32,8 @@ export default async function RootLayout({
     <html lang="en">
       <body className={themeClass}>
         <nav className="navbar">
-          <a href="/">Home</a>
-          <a href="/cv">CV</a>
+          <Link href="/">Home</Link>
+          <Link href="/cv">CV</Link>
           <Image
             className="portraitImage"
             src="/favicon.ico"
