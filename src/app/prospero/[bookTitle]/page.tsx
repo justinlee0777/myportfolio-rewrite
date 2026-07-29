@@ -6,11 +6,16 @@ import { readFile, access, constants as fsConstants } from 'fs/promises';
 import capitalize from 'lodash-es/capitalize';
 import Link from 'next/link';
 
-import { checkTextExists } from '@/utils/prospero/check-text-exists.function';
+import {
+  checkGutenbergTextExists,
+  checkProsperoTextExists,
+} from '@/utils/prospero/check-text-exists.function';
 import { FlexibleBook } from '@/components/prospero/FlexibleBook/FlexibleBook';
 import { ProsperoLibraryTitleModel } from '@/orm/prospero/library-title.model';
 import connectToMongoDB from '@/utils/connect-to-mongodb.function';
 import { ServerBook } from '@/components/prospero/ServerBook/ServerBook';
+import { getGutenbergText } from '@/utils/prospero/get-gutenberg-text.function';
+import { ProsperoLibraryTitle } from '@/models/prospero-library-title.model';
 
 interface PageProps {
   params: Promise<{ bookTitle: string }>;
@@ -21,20 +26,22 @@ interface FSBookResult {
   type: 'fs';
 }
 
-interface AWSResult {
-  type: 'aws';
+interface ProsperoTextsResult {
+  type: 'prospero-texts';
 }
 
-type BookResult = FSBookResult | AWSResult;
-
-function slugToBookName(bookTitle: string): string {
-  return bookTitle.split('-').map(capitalize).join(' ');
+interface GutenbergTextsResult {
+  type: 'gutenberg-texts';
 }
 
-const getBook = cache(async (bookTitle: string): Promise<BookResult> => {
+type BookResult = FSBookResult | ProsperoTextsResult | GutenbergTextsResult;
+
+const getBook = cache(async (slug: string): Promise<BookResult> => {
+  const { name } = await getBookDocument(slug);
+
   const results = await Promise.allSettled([
     new Promise<FSBookResult>(async (resolve, reject) => {
-      const fileName = `data/prospero/${bookTitle.toLowerCase().split(' ').join('-')}.txt`;
+      const fileName = `data/prospero/${slug.toLowerCase().split(' ').join('-')}.txt`;
 
       try {
         await access(fileName, fsConstants.F_OK);
@@ -46,13 +53,22 @@ const getBook = cache(async (bookTitle: string): Promise<BookResult> => {
         reject('Not in filesystem.');
       }
     }),
-    new Promise<AWSResult>(async (resolve, reject) => {
-      const exists = await checkTextExists(bookTitle, 'desktop');
+    new Promise<ProsperoTextsResult>(async (resolve, reject) => {
+      const exists = await checkProsperoTextExists(slug, 'desktop');
 
       if (exists) {
-        resolve({ type: 'aws' });
+        resolve({ type: 'prospero-texts' });
       } else {
         reject('Not on AWS.');
+      }
+    }),
+    new Promise<GutenbergTextsResult>(async (resolve, reject) => {
+      const exists = await checkGutenbergTextExists(name);
+
+      if (exists) {
+        resolve({ type: 'gutenberg-texts' });
+      } else {
+        reject('Not downloaded from Gutenberg.');
       }
     }),
   ]);
@@ -64,17 +80,27 @@ const getBook = cache(async (bookTitle: string): Promise<BookResult> => {
   if (fulfilledRequest) {
     return fulfilledRequest.value;
   } else {
-    throw new Error(`Book does not exist: ${bookTitle}`);
+    throw new Error(`Book does not exist: ${slug}`);
   }
 });
+
+const getBookDocument = cache(
+  async (urlSlug: string): Promise<ProsperoLibraryTitle> => {
+    await connectToMongoDB();
+
+    return ProsperoLibraryTitleModel.findOne({ urlSlug }).orFail();
+  },
+);
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { bookTitle } = await params;
 
+  const { name } = await getBookDocument(bookTitle);
+
   return {
-    title: slugToBookName(bookTitle),
+    title: name,
   };
 }
 
@@ -83,13 +109,7 @@ export default async function ProsperoBookPage({ params }: PageProps) {
 
   const result = await getBook(bookTitle);
 
-  await connectToMongoDB();
-
-  const { authorFirstName, authorLastName, name } =
-    await ProsperoLibraryTitleModel.findOne({
-      name: slugToBookName(bookTitle),
-    }).orFail();
-
+  const { authorDisplayName, name } = await getBookDocument(bookTitle);
   let pageContent: JSX.Element;
 
   switch (result.type) {
@@ -97,19 +117,32 @@ export default async function ProsperoBookPage({ params }: PageProps) {
       pageContent = (
         <FlexibleBook
           bookTitle={name}
-          bookAuthor={`${authorFirstName} ${authorLastName}`}
+          bookAuthor={authorDisplayName}
           text={result.content}
         />
       );
       break;
-    case 'aws':
+    case 'prospero-texts':
       pageContent = (
         <ServerBook
           bookTitle={name}
-          bookAuthor={`${authorFirstName} ${authorLastName}`}
+          bookAuthor={authorDisplayName}
           bookSlug={bookTitle}
         />
       );
+      break;
+    case 'gutenberg-texts':
+      const gutenbergText = await getGutenbergText(name);
+
+      pageContent = (
+        <FlexibleBook
+          bookTitle={name}
+          bookAuthor={authorDisplayName}
+          text={gutenbergText}
+        />
+      );
+
+      break;
   }
 
   return (

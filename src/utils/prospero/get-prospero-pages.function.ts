@@ -3,6 +3,7 @@ import { GetObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { ProsperoPageStyleDataModel } from '@/orm/prospero/page-style-data.model';
 
 import connectToMongoDB from '../connect-to-mongodb.function';
+import { prosperoTextsBucket } from './consts';
 
 export async function getProsperoPages(
   textTitle: string,
@@ -13,7 +14,7 @@ export async function getProsperoPages(
   const s3Client = new S3Client();
 
   const command = new GetObjectCommand({
-    Bucket: 'prospero-texts',
+    Bucket: prosperoTextsBucket,
     Key: `${textTitle}-${textDescription}`,
   });
 
