@@ -3,10 +3,20 @@
   box-shadow: 1px 1px 4px var(--foreground);
   box-sizing: border-box;
   display: flex;
-  flex: none;
   flex-direction: row;
   gap: 1em;
   padding: 0.5em;
+}
+
+.navbar,
+footer {
+  flex: none;
+}
+
+footer {
+  box-shadow: 1px 1px 4px var(--foreground);
+  padding: 0.5em;
+  text-align: right;
 }
 
 .portraitImage {

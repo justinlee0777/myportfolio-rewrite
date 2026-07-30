@@ -45,6 +45,13 @@ export default async function RootLayout({
           <Settings classes={{ button: 'settingsPrompt' }} />
         </nav>
         <main className="content">{children}</main>
+        <footer>
+          <small>
+            <a href="mailto:leej40@outlook.com">Email.</a> Or{' '}
+            <a href="mailto:justinlee0777@gmail.com">personal email</a>, I don't
+            care.
+          </small>
+        </footer>
       </body>
     </html>
   );

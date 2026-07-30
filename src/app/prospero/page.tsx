@@ -24,10 +24,16 @@ export default async function ProsperoPage() {
   return (
     <div className="prosperoPage">
       <h1>Prospero Library</h1>
-      <p className="credit">
-        Many books are sourced, with many thanks, from{' '}
-        <a href="https://www.gutenberg.org/">Project Gutenberg</a>.
-      </p>
+      <div className="credit">
+        <p>
+          Many books are sourced, with many thanks, from{' '}
+          <a href="https://www.gutenberg.org/">Project Gutenberg</a>.
+        </p>
+        <p>
+          That being said, this by no means will be a perfect mirror of
+          Gutenberg; this is a limited subset of literature.
+        </p>
+      </div>
       <ProsperoLibrary books={books} />
     </div>
   );

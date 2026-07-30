@@ -83,7 +83,6 @@ export function FlexibleBook({
           { transformers: [new IndentTransformer(4)] },
           {
             styles: {
-              width: '80vw',
               height: '80vh',
               maxWidth: '1200px',
               margin: 'auto',

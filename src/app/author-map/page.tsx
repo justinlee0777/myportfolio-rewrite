@@ -62,6 +62,12 @@ export default async function AuthorMapPage() {
         stateCensus={stateCensus}
         entriesIntoUnion={entriesIntoUnion}
       />
+      <p className="openStreetMapCredit">
+        <small>
+          Coordinate data from{' '}
+          <a href="https://www.openstreetmap.org/">OpenStreetMap</a>
+        </small>
+      </p>
     </div>
   );
 }
