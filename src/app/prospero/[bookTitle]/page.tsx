@@ -3,7 +3,6 @@ import './page.css';
 import type { Metadata } from 'next';
 import { cache, JSX } from 'react';
 import { readFile, access, constants as fsConstants } from 'fs/promises';
-import capitalize from 'lodash-es/capitalize';
 import Link from 'next/link';
 
 import {
@@ -16,6 +15,7 @@ import connectToMongoDB from '@/utils/connect-to-mongodb.function';
 import { ServerBook } from '@/components/prospero/ServerBook/ServerBook';
 import { getGutenbergText } from '@/utils/prospero/get-gutenberg-text.function';
 import { ProsperoLibraryTitle } from '@/models/prospero-library-title.model';
+import { getMarkdown } from '@/utils/get-markdown';
 
 interface PageProps {
   params: Promise<{ bookTitle: string }>;
@@ -132,7 +132,11 @@ export default async function ProsperoBookPage({ params }: PageProps) {
       );
       break;
     case 'gutenberg-texts':
-      const gutenbergText = await getGutenbergText(name);
+      let gutenbergText = await getGutenbergText(name);
+
+      gutenbergText = gutenbergText.replaceAll(/^\n/gm, '');
+
+      gutenbergText = await getMarkdown(gutenbergText);
 
       pageContent = (
         <FlexibleBook

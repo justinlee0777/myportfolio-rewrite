@@ -5,7 +5,6 @@ import {
   DefaultBookTheme,
   DoublePageBookAnimation,
   FlexibleBookComponent,
-  IndentTransformer,
   listenToClickEvents,
   listenToKeyboardEvents,
   SinglePageBookAnimation,
@@ -80,7 +79,7 @@ export function FlexibleBook({
               },
             ],
           },
-          { transformers: [new IndentTransformer(4)] },
+          undefined,
           {
             styles: {
               height: '80vh',
