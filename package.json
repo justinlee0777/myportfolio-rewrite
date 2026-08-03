@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -rf .next && next dev -p 8080",
     "build": "rm -rf .next && next build",
     "start": "next start",
     "lint": "eslint",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1084.0",
+    "@prospero-library/web": "^1.0.0",
     "author-map-ui": "^0.0.0-beta.25",
     "buzzword-bingo-generator": "^0.0.23",
     "clsx": "^2.1.1",
@@ -26,7 +27,6 @@
     "mongoose": "^9.7.4",
     "next": "16.2.10",
     "picture-in-picture-js": "^0.2.1",
-    "prospero": "^1.6.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.7.0"

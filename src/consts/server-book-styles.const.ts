@@ -1,24 +1,27 @@
-import { PageStyles } from 'prospero/types';
+import type { BookStyles } from '@prospero-library/web/utils.js';
 
-const containerStyles: PageStyles = {
-  width: 375,
-  height: 667,
-  computedFontFamily: 'Bookerly',
-  computedFontSize: '16px',
-  lineHeight: 24,
-  padding: {
-    top: 24,
-    right: 24,
-    bottom: 24,
-    left: 24,
+export const mobileStyles: BookStyles = {
+  containerStyles: {
+    width: '375px',
+    height: '667px',
+  },
+  pageStyles: {
+    'font-family': 'Bookerly',
+    'font-size': '12px',
+    'line-height': '24px',
+    padding: '24px',
   },
 };
 
-export const mobileStyles: PageStyles = {
-  ...containerStyles,
-  computedFontSize: '12px',
-};
-
-export const desktopStyles: PageStyles = {
-  ...containerStyles,
+export const desktopStyles: BookStyles = {
+  containerStyles: {
+    width: '750px',
+    height: '667px',
+  },
+  pageStyles: {
+    'font-family': 'Bookerly',
+    'font-size': '16px',
+    'line-height': '24px',
+    padding: '24px',
+  },
 };

@@ -1,14 +1,13 @@
 import '@/fonts/bookerly/Bookerly.css';
 import './Book.css';
 
-import { BooksElement } from 'prospero/types';
 import { useEffect, useRef, type JSX } from 'react';
 
 interface Props {
   bookTitle: string;
   bookAuthor: string;
 
-  createBooks?: () => BooksElement;
+  createBooks?: () => HTMLElement | undefined;
 }
 
 export function Book({
@@ -23,8 +22,11 @@ export function Book({
       const books = createBooks();
 
       if (containerRef.current && books) {
+        books.classList.add('prosperoBook');
+
         containerRef.current.appendChild(books);
-        return () => books.prospero.destroy();
+
+        return () => books.remove();
       }
     }
   }, [containerRef, createBooks]);

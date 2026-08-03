@@ -1,3 +1,6 @@
+@import '@prospero-library/web/styles/themes/BookTheme.css';
+@import '@prospero-library/web/styles/prospero.css';
+
 .prosperoHeader {
   text-align: center;
 }
@@ -6,3 +9,21 @@
 .bookAuthor {
   text-align: center;
 }
+
+@layer prospero-override {
+  .prosperoBook {
+    .book {
+      color: var(--foreground);
+    }
+
+    .page {
+      background-color: var(--background);
+    }
+
+    .book, .page {
+      border-color: var(--foreground);
+    }
+  }
+}
+
+@layer prospero-theme, prospero-override;
