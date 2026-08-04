@@ -20,7 +20,8 @@
       background-color: var(--background);
     }
 
-    .book, .page {
+    .book,
+    .page {
       border-color: var(--foreground);
     }
   }

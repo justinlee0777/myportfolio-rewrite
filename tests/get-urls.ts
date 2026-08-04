@@ -2,7 +2,7 @@ import path from 'path';
 import { readdir } from 'fs/promises';
 import { fileURLToPath } from 'url';
 
-const rootPath = path.join(process.cwd(), '../src/app');
+const rootPath = path.join(import.meta.dirname, '../src/app');
 
 const baseUrl = 'http://localhost:3000';
 
@@ -50,8 +50,6 @@ async function getPaths(filePath = ''): Promise<Array<string>> {
 
   return pages.concat(...pageResults);
 }
-
-console.log(import.meta.url);
 
 const isMain = process.argv[1] === fileURLToPath(import.meta.url);
 

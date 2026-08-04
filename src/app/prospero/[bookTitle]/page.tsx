@@ -16,6 +16,7 @@ import { ServerBook } from '@/components/prospero/ServerBook/ServerBook';
 import { getGutenbergText } from '@/utils/prospero/get-gutenberg-text.function';
 import { ProsperoLibraryTitle } from '@/models/prospero-library-title.model';
 import { getMarkdown } from '@/utils/get-markdown';
+import { ProsperoTableOfContentsModel } from '@/orm/prospero/table-of-contents.model';
 
 interface PageProps {
   params: Promise<{ bookTitle: string }>;
@@ -123,11 +124,30 @@ export default async function ProsperoBookPage({ params }: PageProps) {
       );
       break;
     case 'prospero-texts':
+      const desktopTableOfContents =
+          (await ProsperoTableOfContentsModel.findOne({
+            textTitle: bookTitle,
+            textDescription: 'desktop',
+          })
+            .select('-_id -sections._id')
+            .lean()) ?? undefined,
+        mobileTableOfContents =
+          (await ProsperoTableOfContentsModel.findOne({
+            textTitle: bookTitle,
+            textDescription: 'mobile',
+          })
+            .select('-_id -sections._id')
+            .lean()) ?? undefined;
+
       pageContent = (
         <ServerBook
           bookTitle={name}
           bookAuthor={authorDisplayName}
           bookSlug={bookTitle}
+          tableOfContents={{
+            desktop: desktopTableOfContents,
+            mobile: mobileTableOfContents,
+          }}
         />
       );
       break;

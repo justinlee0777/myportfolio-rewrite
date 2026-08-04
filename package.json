@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "rm -rf .next && next dev -p 8080",
+    "dev": "rm -rf .next && next dev",
     "build": "rm -rf .next && next build",
     "start": "next start",
     "lint": "eslint",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1084.0",
-    "@prospero-library/web": "^1.0.0",
+    "@prospero-library/web": "^1.0.1",
     "author-map-ui": "^0.0.0-beta.25",
     "buzzword-bingo-generator": "^0.0.23",
     "clsx": "^2.1.1",

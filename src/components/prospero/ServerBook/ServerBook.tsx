@@ -2,10 +2,20 @@
 
 import './ServerBook.css';
 
-import { BookProps, ProsperoBooksElement, registerBooksComponent } from '@prospero-library/web/components.js';
-import { ServerPages } from '@prospero-library/web/utils.js'
-import { changeOnArrowKeys, turnPageOnClick } from '@prospero-library/web/add-ons/event-listeners';
-import { DoublePageBookAnimation, SinglePageBookAnimation } from '@prospero-library/web/add-ons/animations';
+import {
+  BookProps,
+  ProsperoBooksElement,
+  registerBooksComponent,
+} from '@prospero-library/web/components.js';
+import { ServerPages } from '@prospero-library/web/utils.js';
+import {
+  changeOnArrowKeys,
+  turnPageOnClick,
+} from '@prospero-library/web/add-ons/event-listeners';
+import {
+  DoublePageBookAnimation,
+  SinglePageBookAnimation,
+} from '@prospero-library/web/add-ons/animations';
 
 import { useCallback, useEffect, useMemo, type JSX } from 'react';
 
@@ -17,18 +27,24 @@ interface Props {
   bookTitle: string;
   bookAuthor: string;
   bookSlug: string;
+
+  tableOfContents?: {
+    mobile?: BookProps['showTableOfContents'];
+    desktop?: BookProps['showTableOfContents'];
+  };
 }
 
 export function ServerBook({
   bookAuthor,
   bookSlug,
   bookTitle,
+  tableOfContents,
 }: Props): JSX.Element {
   const endpointBase = '/api/prospero';
 
   useEffect(() => {
     registerBooksComponent();
-  })
+  });
 
   const mobilePages = useMemo(
     () => new ServerPages(`${endpointBase}/${bookSlug}/pages/mobile`),
@@ -40,65 +56,67 @@ export function ServerBook({
     [],
   );
 
-  const createBooks = useCallback(
-    () => {
-      function getBookConfig(bookmarkKey: string): Pick<BookProps, 'showBookmark' | 'showPagePicker'> {
-        return {
-          showBookmark: {
-            storage: {
-              get: () => JSON.parse(localStorage.getItem(bookmarkKey)!),
-              save: (bookmarkData) =>
-                localStorage.setItem(bookmarkKey, JSON.stringify(bookmarkData)),
-            },
+  const createBooks = useCallback(() => {
+    function getBookConfig(
+      bookmarkKey: string,
+    ): Pick<BookProps, 'showBookmark' | 'showPagePicker'> {
+      return {
+        showBookmark: {
+          storage: {
+            get: () => JSON.parse(localStorage.getItem(bookmarkKey)!),
+            save: (bookmarkData) =>
+              localStorage.setItem(bookmarkKey, JSON.stringify(bookmarkData)),
           },
-          showPagePicker: true,
-        };
-      }
+        },
+        showPagePicker: true,
+      };
+    }
 
-      registerBooksComponent();
+    registerBooksComponent();
 
-      const booksElement = document.createElement('prospero-books') as ProsperoBooksElement;
+    const booksElement = document.createElement(
+      'prospero-books',
+    ) as ProsperoBooksElement;
 
-      booksElement.books = [
-          {
-            getPage: (pageNumber) => mobilePages.get(pageNumber),
-            ...mobileStyles,
-                      animation: () => new SinglePageBookAnimation(),
-          events: {
-            onClick: turnPageOnClick,
-          },
-          pagesShown: 1,
-                 ...getBookConfig(`mobile-${bookSlug}-bookmark`),
-          },
-          {
-            config: {
-                        getPage: (pageNumber) => desktopPages.get(pageNumber),
-                        ...desktopStyles,
+    booksElement.books = [
+      {
+        getPage: (pageNumber) => mobilePages.get(pageNumber),
+        ...mobileStyles,
+        animation: () => new SinglePageBookAnimation(),
+        events: {
+          onClick: turnPageOnClick,
+        },
+        pagesShown: 1,
+        showTableOfContents: tableOfContents?.mobile,
+        ...getBookConfig(`mobile-${bookSlug}-bookmark`),
+      },
+      {
+        config: {
+          getPage: (pageNumber) => desktopPages.get(pageNumber),
+          ...desktopStyles,
           animation: () => new DoublePageBookAnimation(),
           events: {
             onClick: turnPageOnClick,
-            onKeyDown: changeOnArrowKeys
+            onKeyDown: changeOnArrowKeys,
           },
           pagesShown: 2,
-           ...getBookConfig(`desktop-${bookSlug}-bookmark`),
-            },
-            media: {
-                  minWidth: 750,
-            }
-          }
-        ];
+          showTableOfContents: tableOfContents?.desktop,
+          ...getBookConfig(`desktop-${bookSlug}-bookmark`),
+        },
+        media: {
+          minWidth: 750,
+        },
+      },
+    ];
 
-      return booksElement;
-    },
-    [mobileStyles, desktopStyles],
-  );
+    return booksElement;
+  }, [mobileStyles, desktopStyles]);
 
   return (
     <Book
       bookTitle={bookTitle}
       bookAuthor={bookAuthor}
       createBooks={createBooks}
-    >
-    </Book>
+    ></Book>
   );
 }

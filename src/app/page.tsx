@@ -59,6 +59,16 @@ export default function Home() {
         imageAlt: 'A static image of a Buzzword Bingo sheet.',
       },
       {
+        header: 'Rewriting Prospero',
+        description: `I discuss the process of rewriting Prospero, a little bit of software I wrote for rendering text on the web as a book.`,
+        url: '/rewriting-prospero',
+      },
+      {
+        header: 'Knuth on Trees',
+        description: `We have some fun with Donald Knuth's discussion on Trees in his famous Art of Computer Programming.`,
+        url: '/knuth-on-trees',
+      },
+      {
         header: 'Rewriting the Site',
         description: `I discuss the process of rewriting the site, which, though not difficult, involved more thought than I realized.`,
         url: '/rewriting-the-site',
@@ -72,11 +82,6 @@ export default function Home() {
         header: `The Observer Pattern`,
         description: `Taking a stab at writing about the Observer Pattern, from the Gang of Four's (in)famous Design Patterns.`,
         url: '/observer-pattern',
-      },
-      {
-        header: 'Knuth on Trees',
-        description: `We have some fun with Donald Knuth's discussion on Trees in his famous Art of Computer Programming.`,
-        url: '/knuth-on-trees',
       },
     ];
   }, []);

@@ -1,10 +1,10 @@
 import { model, Model, models, Schema } from 'mongoose';
-import { TableOfContentsConfig } from 'prospero/models';
+import { BookProps } from '@prospero-library/web/components.js';
 
-export interface ProsperoTableOfContents extends TableOfContentsConfig {
+export type ProsperoTableOfContents = {
   textDescription: string;
   textTitle: string;
-}
+} & BookProps['showTableOfContents'];
 
 const ProsperoTableOfContentsSchema = new Schema<ProsperoTableOfContents>({
   textDescription: { type: String, required: true },
