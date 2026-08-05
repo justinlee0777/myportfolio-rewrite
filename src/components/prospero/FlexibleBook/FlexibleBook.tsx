@@ -67,7 +67,7 @@ export function FlexibleBook({
             padding: '2em 1em',
           },
           containerStyles: {
-            height: '80vh',
+            height: '80dvh',
             'max-width': '1200px',
             margin: 'auto',
           },
@@ -87,7 +87,7 @@ export function FlexibleBook({
               padding: '2em 1em',
             },
             containerStyles: {
-              height: '80vh',
+              height: '80dvh',
               'max-width': '1200px',
               margin: 'auto',
             },

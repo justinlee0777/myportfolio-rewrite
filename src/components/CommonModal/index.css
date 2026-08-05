@@ -6,7 +6,7 @@
   transition:
     0.3s background-color,
     0.3s color;
-  width: min(90vw, 800px);
+  width: min(90dvw, 800px);
 }
 
 .closeModal {

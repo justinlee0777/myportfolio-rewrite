@@ -11,8 +11,8 @@
 }
 
 .towerOfBabelImg {
-  max-height: 75vh;
+  max-height: 75dvh;
   object-fit: contain;
   overflow: auto;
-  max-width: 75vw;
+  max-width: 75dvw;
 }
