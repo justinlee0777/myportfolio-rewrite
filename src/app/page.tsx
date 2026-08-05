@@ -1,6 +1,6 @@
 import './homepage.css';
 
-import { type JSX, useMemo } from 'react';
+import { type JSX, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const projects: Array<Project> = useMemo(() => {
+  const widgets: Array<Project> = useMemo(() => {
     return [
       {
         header: 'Author Map',
@@ -58,6 +58,11 @@ export default function Home() {
         url: '/buzzword-bingo',
         imageAlt: 'A static image of a Buzzword Bingo sheet.',
       },
+    ];
+  }, []);
+
+  const discussion: Array<Project> = useMemo(
+    () => [
       {
         header: 'Rewriting Prospero',
         description: `I discuss the process of rewriting Prospero, a little bit of software I wrote for rendering text on the web as a book.`,
@@ -83,7 +88,35 @@ export default function Home() {
         description: `Taking a stab at writing about the Observer Pattern, from the Gang of Four's (in)famous Design Patterns.`,
         url: '/observer-pattern',
       },
-    ];
+    ],
+    [],
+  );
+
+  const renderProject = useCallback((project: Project) => {
+    const { header, description, url } = project;
+
+    let thumbnail: JSX.Element | undefined;
+
+    if ('thumbnail' in project) {
+      thumbnail = (
+        <Image
+          width={200}
+          height={150}
+          src={project.thumbnail}
+          alt={project.imageAlt}
+          loading="eager"
+          unoptimized
+        />
+      );
+    }
+
+    return (
+      <Link key={header} className="project" href={url}>
+        {thumbnail}
+        <h3>{header}</h3>
+        <p>{description}</p>
+      </Link>
+    );
   }, []);
 
   return (
@@ -92,32 +125,15 @@ export default function Home() {
         <h1>
           I'm Justin Lee. Deque University says I need an H1 here. This is that.
         </h1>
-        {projects.map((project) => {
-          const { header, description, url } = project;
+        <div className="column discussion">
+          <h2>Discussion</h2>
+          {discussion.map(renderProject)}
+        </div>
 
-          let thumbnail: JSX.Element | undefined;
-
-          if ('thumbnail' in project) {
-            thumbnail = (
-              <Image
-                width={200}
-                height={150}
-                src={project.thumbnail}
-                alt={project.imageAlt}
-                loading="eager"
-                unoptimized
-              />
-            );
-          }
-
-          return (
-            <Link key={header} className="project" href={url}>
-              {thumbnail}
-              <h2>{header}</h2>
-              <p>{description}</p>
-            </Link>
-          );
-        })}
+        <div className="column widgets">
+          <h2>Widgets</h2>
+          {widgets.map(renderProject)}
+        </div>
       </div>
     </>
   );
