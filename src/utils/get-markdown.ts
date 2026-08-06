@@ -1,9 +1,22 @@
 import { marked } from 'marked';
-import DOMPurify from 'isomorphic-dompurify';
+import DOMPurify, { type Config } from 'isomorphic-dompurify';
 
-export async function getMarkdown(content: string): Promise<string> {
+export async function getMarkdown(
+  content: string,
+  allowStyles = false,
+): Promise<string> {
   const rawHtml = await marked.parse(content, {});
 
-  // 2. Sanitize the HTML string to stay safe from XSS attacks
-  return DOMPurify.sanitize(rawHtml);
+  let allowStylesConfig: Config | undefined;
+
+  if (allowStyles) {
+    allowStylesConfig = {
+      ADD_TAGS: ['style'],
+      FORCE_BODY: true,
+    };
+  }
+
+  const sanitizedHtml = DOMPurify.sanitize(rawHtml, allowStylesConfig);
+
+  return sanitizedHtml;
 }

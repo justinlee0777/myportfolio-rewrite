@@ -12,6 +12,7 @@ export default async function RewritingTheSitePage() {
   return (
     <div className="articlePage">
       <h1>Rewriting the Site</h1>
+      <time dateTime="2026-07-19">Jul 19, 2026</time>
       <p>
         This more-or-less started when I discovered that most browsers accepted
         the{' '}

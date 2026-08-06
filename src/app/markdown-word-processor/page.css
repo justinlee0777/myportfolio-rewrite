@@ -1,0 +1,31 @@
+.articlePage {
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 800px;
+  padding: 1em;
+
+  .tabList {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+
+    & > * {
+      cursor: pointer;
+      flex: 1;
+      border: 1px solid var(--foreground);
+      padding: 0.5em 1em;
+
+      &.react-tabs__tab--selected {
+        filter: invert(0.3);
+      }
+    }
+  }
+
+  .markdownEditor {
+    field-sizing: content;
+    padding: 1em;
+    width: 100%;
+  }
+}

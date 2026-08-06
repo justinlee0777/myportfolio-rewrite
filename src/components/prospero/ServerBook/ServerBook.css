@@ -1,3 +1,5 @@
-.book {
-  margin: 2em auto;
+.prosperoBook {
+  .book {
+    margin: 2em auto;
+  }
 }

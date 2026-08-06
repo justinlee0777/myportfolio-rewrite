@@ -131,6 +131,7 @@ export function KnuthOnTreesPage({
   return (
     <div className="knuthOnTreesPage">
       <h1>Knuth on Trees</h1>
+      <time dateTime="2026-07-19">Jul 19, 2026</time>
       <p>
         Knuth has a charming chapter on Trees in the first book of his famous
         "The Art of Computer Programming".

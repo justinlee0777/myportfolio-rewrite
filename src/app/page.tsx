@@ -64,6 +64,11 @@ export default function Home() {
   const discussion: Array<Project> = useMemo(
     () => [
       {
+        header: 'Mucking around with a Markdown-based Word Processor',
+        description: `We have some fun speculating about a Markdown-based Word Processor that doesn't have a million buttons and features.`,
+        url: '/markdown-word-processor',
+      },
+      {
         header: 'Rewriting Prospero',
         description: `I discuss the process of rewriting Prospero, a little bit of software I wrote for rendering text on the web as a book.`,
         url: '/rewriting-prospero',

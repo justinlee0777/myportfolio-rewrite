@@ -1,0 +1,17 @@
+@import '@prospero-library/web/styles/prospero.css';
+
+@layer prospero-document {
+  .prosperoDocument {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1em;
+    min-height: 0;
+    position: relative;
+  }
+
+  .page {
+    position: relative;
+  }
+}

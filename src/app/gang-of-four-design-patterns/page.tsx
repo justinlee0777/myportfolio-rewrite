@@ -12,6 +12,7 @@ export default function DesignPatternsPage() {
   return (
     <div className="articlePage">
       <h1>The Gang of Four's Design Patterns</h1>
+      <time dateTime="2023-09-25">September 25, 2023</time>
       <p>
         I have four classics on writing programs: Andrew Hunt and David Thomas's
         "The Pragmatic Programmer", Eric Gamma, Richard Helm, Ralph Johnson and

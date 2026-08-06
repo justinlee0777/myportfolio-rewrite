@@ -15,6 +15,7 @@ export function ObserverPatternPage() {
   return (
     <div className="observerPatternPage">
       <h1>The Observer Pattern</h1>
+      <time dateTime="2024-08-23">August 23, 2024</time>
       <p>
         I wrote this as a thought experiment on how to rewrite the Gang of
         Four's articles. Observer is one of my favorites and is a favorite of

@@ -12,6 +12,7 @@ export default async function RewritingProsperoPage() {
   return (
     <div className="articlePage">
       <h1>Rewriting Prospero</h1>
+      <time dateTime="2026-08-05">August 5, 2026</time>
       <p>
         I was messing around with{' '}
         <a href="https://www.gutenberg.org/">Project Gutenberg</a> for the

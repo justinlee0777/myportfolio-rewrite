@@ -18,6 +18,12 @@
 
     .page {
       background-color: var(--background);
+
+      .pageContent {
+        p {
+          white-space: pre;
+        }
+      }
     }
 
     .book,
