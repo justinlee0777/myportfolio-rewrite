@@ -1,0 +1,31 @@
+.articlePage {
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 800px;
+  padding: 1em;
+
+  .gridContainer {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    .cell {
+      align-items: center;
+      border: 1px solid var(--foreground);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100px;
+      position: relative;
+    }
+
+    .marker {
+      position: absolute;
+      right: 1em;
+      top: 1em;
+    }
+  }
+}

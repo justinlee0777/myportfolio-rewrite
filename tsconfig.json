@@ -31,7 +31,8 @@
     "**/*.mts",
     "globals.d.ts",
     "src/app/observer-pattern/observer-examples.js",
-    "src/app/knuth-on-trees/binary-traversal.js"
+    "src/app/knuth-on-trees/binary-traversal.js",
+    "src/app/basic-reinforcement-learning/run-algorithm.js"
   ],
   "exclude": ["node_modules"]
 }

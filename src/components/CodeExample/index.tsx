@@ -48,7 +48,17 @@ export function CodeExample({
 
   const codeContentRegex = /(?:(?:\(\)\W*=>\W*)|(?:function.+)){([\s\S]+)}/;
 
-  const [, codeContent] = code.toString().match(codeContentRegex)!;
+  let codeContent: string;
+
+  const codeString = code.toString();
+
+  const result = codeString.match(codeContentRegex)!;
+
+  if (result) {
+    [, codeContent] = result;
+  } else {
+    codeContent = codeString;
+  }
 
   return (
     <>

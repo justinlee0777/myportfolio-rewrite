@@ -64,6 +64,11 @@ export default function Home() {
   const discussion: Array<Project> = useMemo(
     () => [
       {
+        header: 'Basic Reinforcement Learning',
+        description: `We have some fun with touching on some simple reinforcement learning algorithms.`,
+        url: '/basic-reinforcement-learning',
+      },
+      {
         header: 'Mucking around with a Markdown-based Word Processor',
         description: `We have some fun speculating about a Markdown-based Word Processor that doesn't have a million buttons and features.`,
         url: '/markdown-word-processor',

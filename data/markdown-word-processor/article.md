@@ -37,7 +37,7 @@ The closest these two things have brushed together is when I was going through t
 
 Microsoft Word, for whatever reason, is a terrible asset manager. When it came to the book covers, I furthermore didn't want to shell money out for Photoshop or other PDF software, as they can be quite expensive. I remember being befuddled by the experience: assets are just data. Why is this so hard?
 
-That's when I realized that, as a frontend enginner, I was equipped with every skill to handle assets, easily and for free. I had the cheapest renderer possible, which also handled PDFs out-of-the-box: the web browser.
+That's when I realized that, as a frontend engineer, I was equipped with every skill to handle assets, easily and for free. I had the cheapest renderer possible, which also handled PDFs out-of-the-box: the web browser.
 
 Since then, I have fostered other contentions with word processing programs. Their startup time is slow, the underlying data structures are confusing, and they actually don't facilitate writing time / drafting. For example, to italicize something in Word or Google Docs, you have to stop and click on an italics button, type, then click on the button again to reset the text styles. I have used Markdown for my blog since 2021, and italics is _this easy_, it's learning the Markdown specification and knowing ahead-of-time when you want to transform your text, which is almost certainly all of the time. It takes me two characters to italicize a word without removing my hands from the keyboard, thereby facilitating thinking speed.
 
