@@ -4,6 +4,17 @@
   position: relative;
   width: 100%;
 
+  .authorMapViewSwitch,
+  .stateDrawerUSState {
+    button {
+      background-color: var(--background);
+    }
+  }
+
+  .sideDrawer {
+    width: max(50%, 300px);
+  }
+
   .openStreetMapCredit {
     bottom: 1em;
     left: 1em;
