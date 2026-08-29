@@ -21,9 +21,7 @@
       "id": "b2bf6181-7a16-4ee9-abbb-8c5d0998c300",
       "authorDisplayName": "Henry Wadsworth Longfellow",
       "link": "https://en.wikipedia.org/wiki/Henry_Wadsworth_Longfellow",
-      "groups": [
-        "976024e4-f406-4b27-a05e-6286b888a98c"
-      ],
+      "groups": ["976024e4-f406-4b27-a05e-6286b888a98c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -55,9 +53,7 @@
       "id": "ea29e7ad-a27e-49d3-a87a-06e71fd0585b",
       "authorDisplayName": "William Cullen Bryant",
       "link": "https://en.wikipedia.org/wiki/William_Cullen_Bryant",
-      "groups": [
-        "976024e4-f406-4b27-a05e-6286b888a98c"
-      ],
+      "groups": ["976024e4-f406-4b27-a05e-6286b888a98c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -76,9 +72,7 @@
       "id": "68d6a6ec-a704-4259-90a2-e3891717302f",
       "authorDisplayName": "John Greenleaf Whittier",
       "link": "https://en.wikipedia.org/wiki/John_Greenleaf_Whittier",
-      "groups": [
-        "976024e4-f406-4b27-a05e-6286b888a98c"
-      ],
+      "groups": ["976024e4-f406-4b27-a05e-6286b888a98c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -97,9 +91,7 @@
       "id": "fdff01c9-0ae8-44ea-9d21-2f80f94c1ab2",
       "authorDisplayName": "James Russell Lowell",
       "link": "https://en.wikipedia.org/wiki/James_Russell_Lowell",
-      "groups": [
-        "976024e4-f406-4b27-a05e-6286b888a98c"
-      ],
+      "groups": ["976024e4-f406-4b27-a05e-6286b888a98c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -118,9 +110,7 @@
       "id": "4ade7651-f046-4c54-89ad-f12a629363ee",
       "authorDisplayName": "Oliver Wendell Holmes Sr.",
       "link": "https://en.wikipedia.org/wiki/Oliver_Wendell_Holmes_Sr.",
-      "groups": [
-        "976024e4-f406-4b27-a05e-6286b888a98c"
-      ],
+      "groups": ["976024e4-f406-4b27-a05e-6286b888a98c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -139,9 +129,7 @@
       "id": "159de887-9f38-4da4-aae7-0847024f19d1",
       "authorDisplayName": "Ralph Waldo Emerson",
       "link": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson",
-      "groups": [
-        "2e9e4c74-3f33-446c-b3fb-9108555a387e"
-      ],
+      "groups": ["2e9e4c74-3f33-446c-b3fb-9108555a387e"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -193,9 +181,7 @@
       "id": "b4f60a6f-e7c7-43cd-be5c-b13d4e70ee6f",
       "authorDisplayName": "Henry David Thoreau",
       "link": "https://en.wikipedia.org/wiki/Henry_David_Thoreau",
-      "groups": [
-        "2e9e4c74-3f33-446c-b3fb-9108555a387e"
-      ],
+      "groups": ["2e9e4c74-3f33-446c-b3fb-9108555a387e"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -252,9 +238,7 @@
       "id": "f1b0a305-7fdd-46b0-a2ce-987fdecdc334",
       "authorDisplayName": "Margaret Fuller",
       "link": "https://en.wikipedia.org/wiki/Margaret_Fuller",
-      "groups": [
-        "2e9e4c74-3f33-446c-b3fb-9108555a387e"
-      ],
+      "groups": ["2e9e4c74-3f33-446c-b3fb-9108555a387e"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -287,9 +271,7 @@
       "id": "64a2b438-139a-4630-bd9c-e6890e3305eb",
       "authorDisplayName": "Horatio Alger Jr.",
       "link": "https://en.wikipedia.org/wiki/Horatio_Alger",
-      "groups": [
-        "2efb7e4a-2bfd-499b-b56c-2a3914479af9"
-      ],
+      "groups": ["2efb7e4a-2bfd-499b-b56c-2a3914479af9"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -308,9 +290,7 @@
       "id": "539142a0-a3cc-4ef7-a579-7648cba5f9bb",
       "authorDisplayName": "Stephen Crane",
       "link": "https://en.wikipedia.org/wiki/Stephen_Crane",
-      "groups": [
-        "2efb7e4a-2bfd-499b-b56c-2a3914479af9"
-      ],
+      "groups": ["2efb7e4a-2bfd-499b-b56c-2a3914479af9"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -354,9 +334,7 @@
       "id": "197ab4e2-7954-4f3c-9ad8-0e4a60602682",
       "authorDisplayName": "William Dean Howells",
       "link": "https://en.wikipedia.org/wiki/William_Dean_Howells",
-      "groups": [
-        "2efb7e4a-2bfd-499b-b56c-2a3914479af9"
-      ],
+      "groups": ["2efb7e4a-2bfd-499b-b56c-2a3914479af9"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -392,9 +370,7 @@
       "id": "94979fd5-4bc5-4391-b455-1edeca88701b",
       "authorDisplayName": "Mark Twain",
       "link": "https://en.wikipedia.org/wiki/Samuel_Clemens",
-      "groups": [
-        "2efb7e4a-2bfd-499b-b56c-2a3914479af9"
-      ],
+      "groups": ["2efb7e4a-2bfd-499b-b56c-2a3914479af9"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -475,9 +451,7 @@
       "id": "d77f4841-46e9-45d4-8bef-56c850b46168",
       "authorDisplayName": "Sam. R. Watkins",
       "link": "https://en.wikipedia.org/wiki/Sam_Watkins",
-      "groups": [
-        "2efb7e4a-2bfd-499b-b56c-2a3914479af9"
-      ],
+      "groups": ["2efb7e4a-2bfd-499b-b56c-2a3914479af9"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -496,9 +470,7 @@
       "id": "dcf6a33a-2b94-4e5a-835c-846fe656b9d9",
       "authorDisplayName": "Langston Hughes",
       "link": "https://en.wikipedia.org/wiki/Langston_Hughes",
-      "groups": [
-        "3e9e3c3a-05ed-4da9-a91c-45244ced13d2"
-      ],
+      "groups": ["3e9e3c3a-05ed-4da9-a91c-45244ced13d2"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -517,9 +489,7 @@
       "id": "025ad38c-adbf-4435-85e8-5e4d304be30d",
       "authorDisplayName": "Zora Neale Hurston",
       "link": "https://en.wikipedia.org/wiki/Zora_Neale_Hurston",
-      "groups": [
-        "3e9e3c3a-05ed-4da9-a91c-45244ced13d2"
-      ],
+      "groups": ["3e9e3c3a-05ed-4da9-a91c-45244ced13d2"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -555,9 +525,7 @@
       "id": "5e7967a1-0bda-4a7d-b5d1-a4e2395a1a5a",
       "authorDisplayName": "Robert Penn Warren",
       "link": "https://en.wikipedia.org/wiki/Robert_Penn_Warren",
-      "groups": [
-        "271acaef-d2ef-4268-b974-5c280928c094"
-      ],
+      "groups": ["271acaef-d2ef-4268-b974-5c280928c094"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -618,9 +586,7 @@
       "id": "1593d7e9-6165-49c6-aa9d-e11f88f942a4",
       "authorDisplayName": "John Crowe Ransom",
       "link": "https://en.wikipedia.org/wiki/John_Crowe_Ransom",
-      "groups": [
-        "271acaef-d2ef-4268-b974-5c280928c094"
-      ],
+      "groups": ["271acaef-d2ef-4268-b974-5c280928c094"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -646,9 +612,7 @@
       "id": "789a2abc-b967-4df1-9205-81af199dd339",
       "authorDisplayName": "Allen Tate",
       "link": "https://en.wikipedia.org/wiki/Allen_Tate",
-      "groups": [
-        "271acaef-d2ef-4268-b974-5c280928c094"
-      ],
+      "groups": ["271acaef-d2ef-4268-b974-5c280928c094"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -674,9 +638,7 @@
       "id": "6ad4723b-0800-42ee-9ad5-e3eb1bd26586",
       "authorDisplayName": "John Gould Fletcher",
       "link": "https://en.wikipedia.org/wiki/John_Gould_Fletcher",
-      "groups": [
-        "271acaef-d2ef-4268-b974-5c280928c094"
-      ],
+      "groups": ["271acaef-d2ef-4268-b974-5c280928c094"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -702,9 +664,7 @@
       "id": "b8b909af-b624-4cb3-afd3-96d0456e0bbd",
       "authorDisplayName": "F. Scott Fitzgerald",
       "link": "https://en.wikipedia.org/wiki/F._Scott_Fitzgerald",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -740,9 +700,7 @@
       "id": "77a04cf9-556d-4206-9a01-17880d6987cf",
       "authorDisplayName": "Ernest Hemingway",
       "link": "https://en.wikipedia.org/wiki/Ernest_Hemingway",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -791,9 +749,7 @@
       "id": "6906a78f-9f9f-4ed4-8a69-d0b6e794dfc6",
       "authorDisplayName": "Gertrude Stein",
       "link": "https://en.wikipedia.org/wiki/Gertrude_Stein",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -829,9 +785,7 @@
       "id": "d3f395be-52ab-4689-b745-326ad4185c96",
       "authorDisplayName": "John Dos Passos",
       "link": "https://en.wikipedia.org/wiki/John_Dos_Passos",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -872,9 +826,7 @@
       "id": "8d153a24-c0e5-4c2d-87f6-67f7d41e50de",
       "authorDisplayName": "T. S. Eliot",
       "link": "https://en.wikipedia.org/wiki/T._S._Eliot",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -900,9 +852,7 @@
       "id": "9e1acac3-c70b-40da-820d-0211f8a80553",
       "authorDisplayName": "Sherwood Anderson",
       "link": "https://en.wikipedia.org/wiki/Sherwood_Anderson",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -934,9 +884,7 @@
       "id": "b1820b4c-ac65-4771-9164-ceea5fbd8e50",
       "authorDisplayName": "Ezra Pound",
       "link": "https://en.wikipedia.org/wiki/Ezra_Pound",
-      "groups": [
-        "3ff9045b-6680-4360-a81d-750fab009b55"
-      ],
+      "groups": ["3ff9045b-6680-4360-a81d-750fab009b55"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -968,9 +916,7 @@
       "id": "ca42df6f-1274-4d86-be60-926c61ea9e1b",
       "authorDisplayName": "Jack Kerouac",
       "link": "https://en.wikipedia.org/wiki/Jack_Kerouac",
-      "groups": [
-        "d650b727-6fda-49e6-b1c2-4d2cb118c766"
-      ],
+      "groups": ["d650b727-6fda-49e6-b1c2-4d2cb118c766"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1011,9 +957,7 @@
       "id": "109f6462-a885-4c75-b421-6c3feda22e79",
       "authorDisplayName": "Allen Ginsberg",
       "link": "https://en.wikipedia.org/wiki/Allen_Ginsberg",
-      "groups": [
-        "d650b727-6fda-49e6-b1c2-4d2cb118c766"
-      ],
+      "groups": ["d650b727-6fda-49e6-b1c2-4d2cb118c766"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1040,9 +984,7 @@
       "id": "0c78896d-abc2-41d1-a3fc-d9a2b6a3b4c4",
       "authorDisplayName": "William S. Burroughs",
       "link": "https://en.wikipedia.org/wiki/William_S._Burroughs",
-      "groups": [
-        "d650b727-6fda-49e6-b1c2-4d2cb118c766"
-      ],
+      "groups": ["d650b727-6fda-49e6-b1c2-4d2cb118c766"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1061,9 +1003,7 @@
       "id": "17253833-b38c-492c-b87d-3ee929de1f5d",
       "authorDisplayName": "Amiri Baraka",
       "link": "https://en.wikipedia.org/wiki/Amiri_Baraka",
-      "groups": [
-        "cb7f688c-a641-4f79-826e-4a297eebb24c"
-      ],
+      "groups": ["cb7f688c-a641-4f79-826e-4a297eebb24c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1083,9 +1023,7 @@
       "id": "db16af40-20a2-4862-99b4-8b861c3c963b",
       "authorDisplayName": "Audre Lorde",
       "link": "https://en.wikipedia.org/wiki/Audre_Lorde",
-      "groups": [
-        "cb7f688c-a641-4f79-826e-4a297eebb24c"
-      ],
+      "groups": ["cb7f688c-a641-4f79-826e-4a297eebb24c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1105,9 +1043,7 @@
       "id": "dc8ba7c0-e2c0-4d04-af04-85460bb21713",
       "authorDisplayName": "Gwendolyn Brooks",
       "link": "https://en.wikipedia.org/wiki/Gwendolyn_Brooks",
-      "groups": [
-        "cb7f688c-a641-4f79-826e-4a297eebb24c"
-      ],
+      "groups": ["cb7f688c-a641-4f79-826e-4a297eebb24c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1143,9 +1079,7 @@
       "id": "08fb9aee-cdf2-48bc-a030-fc71ccb67629",
       "authorDisplayName": "Nikki Giovannai",
       "link": "https://en.wikipedia.org/wiki/Nikki_Giovanni",
-      "groups": [
-        "cb7f688c-a641-4f79-826e-4a297eebb24c"
-      ],
+      "groups": ["cb7f688c-a641-4f79-826e-4a297eebb24c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1165,9 +1099,7 @@
       "id": "cb9d2bfe-d727-45d4-bb87-af6d3f4301e4",
       "authorDisplayName": "Ishmael Reed",
       "link": "https://en.wikipedia.org/wiki/Ishmael_Reed",
-      "groups": [
-        "cb7f688c-a641-4f79-826e-4a297eebb24c"
-      ],
+      "groups": ["cb7f688c-a641-4f79-826e-4a297eebb24c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1199,9 +1131,7 @@
       "id": "0ff9e25d-9682-4be7-88d0-ddafdbfa22b5",
       "authorDisplayName": "Maya Angelou",
       "link": "https://en.wikipedia.org/wiki/Maya_Angelou",
-      "groups": [
-        "cb7f688c-a641-4f79-826e-4a297eebb24c"
-      ],
+      "groups": ["cb7f688c-a641-4f79-826e-4a297eebb24c"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1221,9 +1151,7 @@
       "id": "7cfe19d8-0b5b-4b04-8b22-049a8f83190d",
       "authorDisplayName": "Frank O'Hara",
       "link": "https://en.wikipedia.org/wiki/Frank_O%27Hara",
-      "groups": [
-        "86cc04f9-7bcc-4d0b-b941-60dfd9536e7a"
-      ],
+      "groups": ["86cc04f9-7bcc-4d0b-b941-60dfd9536e7a"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -1249,9 +1177,7 @@
       "id": "57e26744-75c7-405b-a14e-e2cd7d1a20b3",
       "authorDisplayName": "John Ashbery",
       "link": "https://en.wikipedia.org/wiki/John_Ashbery",
-      "groups": [
-        "86cc04f9-7bcc-4d0b-b941-60dfd9536e7a"
-      ],
+      "groups": ["86cc04f9-7bcc-4d0b-b941-60dfd9536e7a"],
       "inclusionReasons": [
         {
           "type": "Belongs to a renowned group",
@@ -56677,3900 +56603,2730 @@
   ],
   "cityCoordinates": [
     {
-      "coordinates": [
-        -122.438329,
-        47.2455013
-      ],
+      "coordinates": [-122.438329, 47.2455013],
       "location": {
         "state": "Washington",
         "address": "Tacoma"
       }
     },
     {
-      "coordinates": [
-        -122.7107841,
-        37.9202725
-      ],
+      "coordinates": [-122.7107841, 37.9202725],
       "location": {
         "state": "California",
         "address": "Bolinas"
       }
     },
     {
-      "coordinates": [
-        -70.2586618,
-        43.6573605
-      ],
+      "coordinates": [-70.2586618, 43.6573605],
       "location": {
         "address": "Portland",
         "state": "Maine"
       }
     },
     {
-      "coordinates": [
-        -71.1040018,
-        42.3656347
-      ],
+      "coordinates": [-71.1040018, 42.3656347],
       "location": {
         "address": "Cambridge",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -72.8937762,
-        42.4607504
-      ],
+      "coordinates": [-72.8937762, 42.4607504],
       "location": {
         "address": "Cummington",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -74.0060152,
-        40.7127281
-      ],
+      "coordinates": [-74.0060152, 40.7127281],
       "location": {
         "address": "New York City",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -71.0767724,
-        42.7777829
-      ],
+      "coordinates": [-71.0767724, 42.7777829],
       "location": {
         "address": "Haverhill",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -70.8646837,
-        42.9164147
-      ],
+      "coordinates": [-70.8646837, 42.9164147],
       "location": {
         "address": "Hampton Falls",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -71.0578303,
-        42.3588336
-      ],
+      "coordinates": [-71.0578303, 42.3588336],
       "location": {
         "address": "Boston",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -71.3488963,
-        42.4605189
-      ],
+      "coordinates": [-71.3488963, 42.4605189],
       "location": {
         "address": "Concord",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -72.9657407,
-        40.6956735
-      ],
+      "coordinates": [-72.9657407, 40.6956735],
       "location": {
         "address": "Fire Island",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -71.0369301,
-        42.3912241
-      ],
+      "coordinates": [-71.0369301, 42.3912241],
       "location": {
         "address": "Chelsea",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -71.346996,
-        42.2836393
-      ],
+      "coordinates": [-71.346996, 42.2836393],
       "location": {
         "address": "Natick",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -74.1723667,
-        40.735657
-      ],
+      "coordinates": [-74.1723667, 40.735657],
       "location": {
         "address": "Newark",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -80.724526,
-        40.0959055
-      ],
+      "coordinates": [-80.724526, 40.0959055],
       "location": {
         "address": "Martins Ferry",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -73.9855319,
-        40.7579554
-      ],
+      "coordinates": [-73.9855319, 40.7579554],
       "location": {
         "address": "Manhattan",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -91.7871068,
-        39.4930958
-      ],
+      "coordinates": [-91.7871068, 39.4930958],
       "location": {
         "address": "Florida",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -73.3833661,
-        41.3029342
-      ],
+      "coordinates": [-73.3833661, 41.3029342],
       "location": {
         "address": "Redding",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -87.0338464,
-        35.6148165
-      ],
+      "coordinates": [-87.0338464, 35.6148165],
       "location": {
         "address": "Columbia",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -87.0736684,
-        35.6285992
-      ],
+      "coordinates": [-87.0736684, 35.6285992],
       "location": {
         "address": "Maury County",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -94.5133385,
-        37.0841838
-      ],
+      "coordinates": [-94.5133385, 37.0841838],
       "location": {
         "address": "Joplin",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -85.6724538,
-        32.5606908
-      ],
+      "coordinates": [-85.6724538, 32.5606908],
       "location": {
         "address": "Notasulga",
         "state": "Alabama"
       }
     },
     {
-      "coordinates": [
-        -80.3256056,
-        27.4467056
-      ],
+      "coordinates": [-80.3256056, 27.4467056],
       "location": {
         "address": "Fort Pierce",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -87.1661261,
-        36.6485623
-      ],
+      "coordinates": [-87.1661261, 36.6485623],
       "location": {
         "address": "Guthrie",
         "state": "Kentucky"
       }
     },
     {
-      "coordinates": [
-        -72.9109334,
-        43.0428562
-      ],
+      "coordinates": [-72.9109334, 43.0428562],
       "location": {
         "address": "Stratton",
         "state": "Vermont"
       }
     },
     {
-      "coordinates": [
-        -87.0308412,
-        35.1998023
-      ],
+      "coordinates": [-87.0308412, 35.1998023],
       "location": {
         "address": "Pulaski",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -82.3970994,
-        40.375643
-      ],
+      "coordinates": [-82.3970994, 40.375643],
       "location": {
         "address": "Gambier",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -84.1796503,
-        37.990079
-      ],
+      "coordinates": [-84.1796503, 37.990079],
       "location": {
         "address": "Winchester",
         "state": "Kentucky"
       }
     },
     {
-      "coordinates": [
-        -86.7742984,
-        36.1622767
-      ],
+      "coordinates": [-86.7742984, 36.1622767],
       "location": {
         "address": "Nashville",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -92.2896267,
-        34.7465071
-      ],
+      "coordinates": [-92.2896267, 34.7465071],
       "location": {
         "address": "Little Rock",
         "state": "Arkansas"
       }
     },
     {
-      "coordinates": [
-        -93.0931028,
-        44.9497487
-      ],
+      "coordinates": [-93.0931028, 44.9497487],
       "location": {
         "address": "Saint Paul",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -87.7887615,
-        41.8878145
-      ],
+      "coordinates": [-87.7887615, 41.8878145],
       "location": {
         "address": "Oak Park",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -114.363662,
-        43.680741
-      ],
+      "coordinates": [-114.363662, 43.680741],
       "location": {
         "address": "Ketchum",
         "state": "Idaho"
       }
     },
     {
-      "coordinates": [
-        -79.9760405,
-        40.4597204
-      ],
+      "coordinates": [-79.9760405, 40.4597204],
       "location": {
         "address": "Allegheny",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -87.6244212,
-        41.8755616
-      ],
+      "coordinates": [-87.6244212, 41.8755616],
       "location": {
         "address": "Chicago",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -76.610759,
-        39.2908816
-      ],
+      "coordinates": [-76.610759, 39.2908816],
       "location": {
         "address": "Baltimore",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -90.190009,
-        38.6254063
-      ],
+      "coordinates": [-90.190009, 38.6254063],
       "location": {
         "address": "St. Louis",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -84.6485632,
-        39.6289418
-      ],
+      "coordinates": [-84.6485632, 39.6289418],
       "location": {
         "address": "Camden",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -114.315325,
-        43.519629
-      ],
+      "coordinates": [-114.315325, 43.519629],
       "location": {
         "address": "Hailey",
         "state": "Idaho"
       }
     },
     {
-      "coordinates": [
-        -71.3085329,
-        42.6414437
-      ],
+      "coordinates": [-71.3085329, 42.6414437],
       "location": {
         "address": "Lowell",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -82.6340259,
-        27.7712264
-      ],
+      "coordinates": [-82.6340259, 27.7712264],
       "location": {
         "address": "St. Petersburg",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -95.2359403,
-        38.9719137
-      ],
+      "coordinates": [-95.2359403, 38.9719137],
       "location": {
         "address": "Lawrence",
         "state": "Kansas"
       }
     },
     {
-      "coordinates": [
-        -95.677556,
-        39.049011
-      ],
+      "coordinates": [-95.677556, 39.049011],
       "location": {
         "address": "Topeka",
         "state": "Kansas"
       }
     },
     {
-      "coordinates": [
-        -83.9210261,
-        35.9603948
-      ],
+      "coordinates": [-83.9210261, 35.9603948],
       "location": {
         "address": "Knoxville",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -80.4136767,
-        37.2296566
-      ],
+      "coordinates": [-80.4136767, 37.2296566],
       "location": {
         "address": "Blacksburg",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -85.3094883,
-        35.0457219
-      ],
+      "coordinates": [-85.3094883, 35.0457219],
       "location": {
         "address": "Chattanooga",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -80.2440518,
-        36.0998131
-      ],
+      "coordinates": [-80.2440518, 36.0998131],
       "location": {
         "address": "Winston-Salem",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -72.8355343,
-        40.7642315
-      ],
+      "coordinates": [-72.8355343, 40.7642315],
       "location": {
         "address": "Mastic Beach",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -77.615214,
-        43.157285
-      ],
+      "coordinates": [-77.615214, 43.157285],
       "location": {
         "address": "Rochester",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -73.790959,
-        42.2528649
-      ],
+      "coordinates": [-73.790959, 42.2528649],
       "location": {
         "address": "Hudson",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -94.9523889,
-        45.7377454
-      ],
+      "coordinates": [-94.9523889, 45.7377454],
       "location": {
         "address": "Sauk Centre",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -80.2131296,
-        38.1354376
-      ],
+      "coordinates": [-80.2131296, 38.1354376],
       "location": {
         "address": "Hillsboro",
         "state": "West Virginia"
       }
     },
     {
-      "coordinates": [
-        -73.0581645,
-        43.3555344
-      ],
+      "coordinates": [-73.0581645, 43.3555344],
       "location": {
         "address": "Danby",
         "state": "Vermont"
       }
     },
     {
-      "coordinates": [
-        -89.0078418,
-        34.4942683
-      ],
+      "coordinates": [-89.0078418, 34.4942683],
       "location": {
         "address": "New Albany",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -89.6906396,
-        34.8723179
-      ],
+      "coordinates": [-89.6906396, 34.8723179],
       "location": {
         "address": "Byhalia",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -121.655037,
-        36.6744117
-      ],
+      "coordinates": [-121.655037, 36.6744117],
       "location": {
         "address": "Salinas",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -71.1187829,
-        42.332918
-      ],
+      "coordinates": [-71.1187829, 42.332918],
       "location": {
         "address": "Brookline",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -80.1256007,
-        25.8784285
-      ],
+      "coordinates": [-80.1256007, 25.8784285],
       "location": {
         "address": "Surfside",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -73.9497211,
-        40.6526006
-      ],
+      "coordinates": [-73.9497211, 40.6526006],
       "location": {
         "address": "Brooklyn",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -82.1734746,
-        41.2633554
-      ],
+      "coordinates": [-82.1734746, 41.2633554],
       "location": {
         "address": "Lorain",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -92.1052679,
-        46.7838287
-      ],
+      "coordinates": [-92.1052679, 46.7838287],
       "location": {
         "address": "Duluth",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -75.1635262,
-        39.9527237
-      ],
+      "coordinates": [-75.1635262, 39.9527237],
       "location": {
         "address": "Philadelphia",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -80.2585107,
-        25.7331105
-      ],
+      "coordinates": [-80.2585107, 25.7331105],
       "location": {
         "address": "Coral Gables",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -70.1895554,
-        44.4724293
-      ],
+      "coordinates": [-70.1895554, 44.4724293],
       "location": {
         "address": "Livermore Falls",
         "state": "Maine"
       }
     },
     {
-      "coordinates": [
-        -73.4105803,
-        41.5770993
-      ],
+      "coordinates": [-73.4105803, 41.5770993],
       "location": {
         "address": "New Milford",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -71.8018877,
-        42.2625621
-      ],
+      "coordinates": [-71.8018877, 42.2625621],
       "location": {
         "address": "Worcester",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -81.0921335,
-        32.0790074
-      ],
+      "coordinates": [-81.0921335, 32.0790074],
       "location": {
         "address": "Savannah",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -74.1068091,
-        40.826489
-      ],
+      "coordinates": [-74.1068091, 40.826489],
       "location": {
         "address": "Rutherford",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -79.05578,
-        35.9131542
-      ],
+      "coordinates": [-79.05578, 35.9131542],
       "location": {
         "address": "Chapel Hill",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -122.4075201,
-        37.7879363
-      ],
+      "coordinates": [-122.4075201, 37.7879363],
       "location": {
         "address": "San Francisco",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -92.9746498,
-        43.6679992
-      ],
+      "coordinates": [-92.9746498, 43.6679992],
       "location": {
         "address": "Austin",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -72.2717537,
-        43.7185741
-      ],
+      "coordinates": [-72.2717537, 43.7185741],
       "location": {
         "address": "Hanover (NH)",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -73.3086445,
-        41.4134764
-      ],
+      "coordinates": [-73.3086445, 41.4134764],
       "location": {
         "address": "Newtown",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -72.9250518,
-        41.3082138
-      ],
+      "coordinates": [-72.9250518, 41.3082138],
       "location": {
         "address": "New Haven",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -77.0750246,
-        39.0258405
-      ],
+      "coordinates": [-77.0750246, 39.0258405],
       "location": {
         "address": "Kensington",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -84.3898151,
-        33.7544657
-      ],
+      "coordinates": [-84.3898151, 33.7544657],
       "location": {
         "address": "Atlanta",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -81.0352313,
-        34.000754
-      ],
+      "coordinates": [-81.0352313, 34.000754],
       "location": {
         "address": "Columbia",
         "state": "South Carolina"
       }
     },
     {
-      "coordinates": [
-        -92.63994,
-        31.925228
-      ],
+      "coordinates": [-92.63994, 31.925228],
       "location": {
         "address": "Winnfield",
         "state": "Louisiana"
       }
     },
     {
-      "coordinates": [
-        -73.2850851,
-        42.3568223
-      ],
+      "coordinates": [-73.2850851, 42.3568223],
       "location": {
         "address": "Lenox",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -97.9297743,
-        38.0608444
-      ],
+      "coordinates": [-97.9297743, 38.0608444],
       "location": {
         "address": "Hutchinson",
         "state": "Kansas"
       }
     },
     {
-      "coordinates": [
-        -122.670649,
-        45.4206749
-      ],
+      "coordinates": [-122.670649, 45.4206749],
       "location": {
         "address": "Lake Oswego",
         "state": "Oregon"
       }
     },
     {
-      "coordinates": [
-        -76.6235105,
-        39.4837588
-      ],
+      "coordinates": [-76.6235105, 39.4837588],
       "location": {
         "address": "Cockeysville",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -75.2966948,
-        40.0129191
-      ],
+      "coordinates": [-75.2966948, 40.0129191],
       "location": {
         "address": "Haverford",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -83.0466403,
-        42.3315509
-      ],
+      "coordinates": [-83.0466403, 42.3315509],
       "location": {
         "address": "Detroit",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -83.7484616,
-        42.2813722
-      ],
+      "coordinates": [-83.7484616, 42.2813722],
       "location": {
         "address": "Ann Arbor",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -72.0997804,
-        41.3556187
-      ],
+      "coordinates": [-72.0997804, 41.3556187],
       "location": {
         "address": "New London",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -71.8164258,
-        43.2809477
-      ],
+      "coordinates": [-71.8164258, 43.2809477],
       "location": {
         "address": "Warner",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -76.9786122,
-        42.8690271
-      ],
+      "coordinates": [-76.9786122, 42.8690271],
       "location": {
         "address": "Geneva",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -72.9020069,
-        41.3836233
-      ],
+      "coordinates": [-72.9020069, 41.3836233],
       "location": {
         "address": "Hamden",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -71.1786655,
-        42.3959296
-      ],
+      "coordinates": [-71.1786655, 42.3959296],
       "location": {
         "address": "Belmont",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -92.3328743,
-        42.498275
-      ],
+      "coordinates": [-92.3328743, 42.498275],
       "location": {
         "address": "Waterloo",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -90.3103443,
-        38.6569083
-      ],
+      "coordinates": [-90.3103443, 38.6569083],
       "location": {
         "address": "University City",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -81.518485,
-        41.083064
-      ],
+      "coordinates": [-81.518485, 41.083064],
       "location": {
         "address": "Akron",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -73.9923596,
-        40.3042778
-      ],
+      "coordinates": [-73.9923596, 40.3042778],
       "location": {
         "address": "Long Branch",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -93.6170448,
-        42.0267567
-      ],
+      "coordinates": [-93.6170448, 42.0267567],
       "location": {
         "address": "Ames",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -71.913757,
-        43.451922
-      ],
+      "coordinates": [-71.913757, 43.451922],
       "location": {
         "address": "Wilmot",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -70.8739761,
-        43.1981117
-      ],
+      "coordinates": [-70.8739761, 43.1981117],
       "location": {
         "address": "Dover",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -121.890591,
-        37.3361663
-      ],
+      "coordinates": [-121.890591, 37.3361663],
       "location": {
         "address": "San Jose",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -156.32296,
-        20.9143904
-      ],
+      "coordinates": [-156.32296, 20.9143904],
       "location": {
         "address": "Haiku",
         "state": "Hawaii"
       }
     },
     {
-      "coordinates": [
-        -119.78483,
-        36.7394421
-      ],
+      "coordinates": [-119.78483, 36.7394421],
       "location": {
         "address": "Fresno",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -89.0928155,
-        30.3674198
-      ],
+      "coordinates": [-89.0928155, 30.3674198],
       "location": {
         "address": "Gulfport",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -88.2454642,
-        35.0605966
-      ],
+      "coordinates": [-88.2454642, 35.0605966],
       "location": {
         "address": "Pickwick Dam",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -119.678469,
-        36.6305058
-      ],
+      "coordinates": [-119.678469, 36.6305058],
       "location": {
         "address": "Fowler",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -95.9927516,
-        36.1563122
-      ],
+      "coordinates": [-95.9927516, 36.1563122],
       "location": {
         "address": "Tulsa",
         "state": "Oklahoma"
       }
     },
     {
-      "coordinates": [
-        -122.8473388,
-        38.5110803
-      ],
+      "coordinates": [-122.8473388, 38.5110803],
       "location": {
         "address": "Sonoma",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -87.7391936,
-        39.0053201
-      ],
+      "coordinates": [-87.7391936, 39.0053201],
       "location": {
         "address": "Robinson",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -97.5170536,
-        35.4729886
-      ],
+      "coordinates": [-97.5170536, 35.4729886],
       "location": {
         "address": "Oklahoma City",
         "state": "Oklahoma"
       }
     },
     {
-      "coordinates": [
-        -76.1953701,
-        40.6851324
-      ],
+      "coordinates": [-76.1953701, 40.6851324],
       "location": {
         "address": "Pottsville",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -74.6597376,
-        40.3496953
-      ],
+      "coordinates": [-74.6597376, 40.3496953],
       "location": {
         "address": "Princeton",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -98.0017249,
-        41.1158475
-      ],
+      "coordinates": [-98.0017249, 41.1158475],
       "location": {
         "address": "Central City",
         "state": "Nebraska"
       }
     },
     {
-      "coordinates": [
-        -122.5449763,
-        37.9060368
-      ],
+      "coordinates": [-122.5449763, 37.9060368],
       "location": {
         "address": "Mill Valley",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -71.0037374,
-        42.2509914
-      ],
+      "coordinates": [-71.0037374, 42.2509914],
       "location": {
         "address": "Quincy",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -73.8620367,
-        41.1613168
-      ],
+      "coordinates": [-73.8620367, 41.1613168],
       "location": {
         "address": "Ossining",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -76.3846781,
-        40.5484233
-      ],
+      "coordinates": [-76.3846781, 40.5484233],
       "location": {
         "address": "Pine Grove",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -86.8024326,
-        33.5206824
-      ],
+      "coordinates": [-86.8024326, 33.5206824],
       "location": {
         "address": "Birmingham",
         "state": "Alabama"
       }
     },
     {
-      "coordinates": [
-        -90.1010474,
-        30.4753525
-      ],
+      "coordinates": [-90.1010474, 30.4753525],
       "location": {
         "address": "Covington",
         "state": "Louisiana"
       }
     },
     {
-      "coordinates": [
-        -90.228782,
-        39.7343697
-      ],
+      "coordinates": [-90.228782, 39.7343697],
       "location": {
         "address": "Jacksonville",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -94.4448686,
-        45.5432268
-      ],
+      "coordinates": [-94.4448686, 45.5432268],
       "location": {
         "address": "Collegeville Township",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -75.9279495,
-        40.335345
-      ],
+      "coordinates": [-75.9279495, 40.335345],
       "location": {
         "address": "Reading",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -70.9362957,
-        42.5664984
-      ],
+      "coordinates": [-70.9362957, 42.5664984],
       "location": {
         "address": "Danvers",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -98.5985564,
-        29.3277661
-      ],
+      "coordinates": [-98.5985564, 29.3277661],
       "location": {
         "address": "Indian Creek",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -77.0240371,
-        38.9997621
-      ],
+      "coordinates": [-77.0240371, 38.9997621],
       "location": {
         "address": "Silver Spring",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -89.3841663,
-        43.07469
-      ],
+      "coordinates": [-89.3841663, 43.07469],
       "location": {
         "address": "Madison",
         "state": "Wisconsin"
       }
     },
     {
-      "coordinates": [
-        -78.696567,
-        43.1687104
-      ],
+      "coordinates": [-78.696567, 43.1687104],
       "location": {
         "address": "Lockport",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -83.2320991,
-        33.0801429
-      ],
+      "coordinates": [-83.2320991, 33.0801429],
       "location": {
         "address": "Milledgeville",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -76.077268,
-        38.5700533
-      ],
+      "coordinates": [-76.077268, 38.5700533],
       "location": {
         "address": "Cambridge",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -81.7786972,
-        26.339806
-      ],
+      "coordinates": [-81.7786972, 26.339806],
       "location": {
         "address": "Bonita Springs",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -95.0529374,
-        33.6105525
-      ],
+      "coordinates": [-95.0529374, 33.6105525],
       "location": {
         "address": "Clarksville",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -94.1574328,
-        36.0625843
-      ],
+      "coordinates": [-94.1574328, 36.0625843],
       "location": {
         "address": "Fayetteville",
         "state": "Arkansas"
       }
     },
     {
-      "coordinates": [
-        -73.6317807,
-        40.8642028
-      ],
+      "coordinates": [-73.6317807, 40.8642028],
       "location": {
         "address": "Glen Cove",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -81.8020722,
-        24.5548262
-      ],
+      "coordinates": [-81.8020722, 24.5548262],
       "location": {
         "address": "Key West",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -72.1847598,
-        40.9633868
-      ],
+      "coordinates": [-72.1847598, 40.9633868],
       "location": {
         "address": "East Hampton",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -93.5336177,
-        43.4193665
-      ],
+      "coordinates": [-93.5336177, 43.4193665],
       "location": {
         "address": "Lake Mills",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -105.938456,
-        35.6876096
-      ],
+      "coordinates": [-105.938456, 35.6876096],
       "location": {
         "address": "Santa Fe",
         "state": "New Mexico"
       }
     },
     {
-      "coordinates": [
-        -81.6332812,
-        38.3505995
-      ],
+      "coordinates": [-81.6332812, 38.3505995],
       "location": {
         "address": "Charleston",
         "state": "West Virginia"
       }
     },
     {
-      "coordinates": [
-        -78.5993728,
-        38.061519
-      ],
+      "coordinates": [-78.5993728, 38.061519],
       "location": {
         "address": "Ivy",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -76.42977,
-        36.9775016
-      ],
+      "coordinates": [-76.42977, 36.9775016],
       "location": {
         "address": "Newport News",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -70.6208138,
-        41.3920455
-      ],
+      "coordinates": [-70.6208138, 41.3920455],
       "location": {
         "address": "Martha's Vineyard",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -83.388485,
-        33.3267128
-      ],
+      "coordinates": [-83.388485, 33.3267128],
       "location": {
         "address": "Eatonton",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -90.8777342,
-        32.3528055
-      ],
+      "coordinates": [-90.8777342, 32.3528055],
       "location": {
         "address": "Vicksburg",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -88.8279165,
-        30.4112904
-      ],
+      "coordinates": [-88.8279165, 30.4112904],
       "location": {
         "address": "Ocean Springs",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -73.8785937,
-        40.8466508
-      ],
+      "coordinates": [-73.8785937, 40.8466508],
       "location": {
         "address": "The Bronx",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -96.3699632,
-        30.6743643
-      ],
+      "coordinates": [-96.3699632, 30.6743643],
       "location": {
         "address": "Bryan",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -83.2910468,
-        42.6389216
-      ],
+      "coordinates": [-83.2910468, 42.6389216],
       "location": {
         "address": "Pontiac",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -78.4766781,
-        38.029306
-      ],
+      "coordinates": [-78.4766781, 38.029306],
       "location": {
         "address": "Charlottesville",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -87.6846053,
-        42.0470043
-      ],
+      "coordinates": [-87.6846053, 42.0470043],
       "location": {
         "address": "Evanston",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -71.4128343,
-        41.8239891
-      ],
+      "coordinates": [-71.4128343, 41.8239891],
       "location": {
         "address": "Providence",
         "state": "Rhode Island"
       }
     },
     {
-      "coordinates": [
-        -72.0759134,
-        41.5243631
-      ],
+      "coordinates": [-72.0759134, 41.5243631],
       "location": {
         "address": "Norwich",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -82.5508407,
-        35.595363
-      ],
+      "coordinates": [-82.5508407, 35.595363],
       "location": {
         "address": "Asheville",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -87.900671,
-        41.8096132
-      ],
+      "coordinates": [-87.900671, 41.8096132],
       "location": {
         "address": "Western Springs",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -118.242766,
-        34.0536909
-      ],
+      "coordinates": [-118.242766, 34.0536909],
       "location": {
         "address": "Los Angeles",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -123.529828,
-        38.7674439
-      ],
+      "coordinates": [-123.529828, 38.7674439],
       "location": {
         "address": "Gualala",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -122.272863,
-        37.8708393
-      ],
+      "coordinates": [-122.272863, 37.8708393],
       "location": {
         "address": "Berkeley",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -94.3625024,
-        45.9763545
-      ],
+      "coordinates": [-94.3625024, 45.9763545],
       "location": {
         "address": "Little Falls",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -73.7629097,
-        41.0339862
-      ],
+      "coordinates": [-73.7629097, 41.0339862],
       "location": {
         "address": "White Plains",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -86.2500066,
-        41.6833813
-      ],
+      "coordinates": [-86.2500066, 41.6833813],
       "location": {
         "address": "South Bend",
         "state": "Indiana"
       }
     },
     {
-      "coordinates": [
-        -82.2402132,
-        33.3578877
-      ],
+      "coordinates": [-82.2402132, 33.3578877],
       "location": {
         "address": "Fort Gordon",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -72.6908547,
-        41.764582
-      ],
+      "coordinates": [-72.6908547, 41.764582],
       "location": {
         "address": "Hartford",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -90.4069177,
-        38.5800713
-      ],
+      "coordinates": [-90.4069177, 38.5800713],
       "location": {
         "address": "Kirkwood",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -87.7581188,
-        42.1350268
-      ],
+      "coordinates": [-87.7581188, 42.1350268],
       "location": {
         "address": "Glencoe",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -83.9490365,
-        43.4200387
-      ],
+      "coordinates": [-83.9490365, 43.4200387],
       "location": {
         "address": "Saginaw",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -122.5246791,
-        47.6515096
-      ],
+      "coordinates": [-122.5246791, 47.6515096],
       "location": {
         "address": "Bainbridge Island",
         "state": "Washington"
       }
     },
     {
-      "coordinates": [
-        -70.2823287,
-        41.6535345
-      ],
+      "coordinates": [-70.2823287, 41.6535345],
       "location": {
         "address": "Hyannis",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -110.974847,
-        32.2228765
-      ],
+      "coordinates": [-110.974847, 32.2228765],
       "location": {
         "address": "Tucson",
         "state": "Arizona"
       }
     },
     {
-      "coordinates": [
-        -96.2024907,
-        44.986426
-      ],
+      "coordinates": [-96.2024907, 44.986426],
       "location": {
         "address": "Lac qui Parle County",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -93.2654692,
-        44.9772995
-      ],
+      "coordinates": [-93.2654692, 44.9772995],
       "location": {
         "address": "Minneapolis",
         "state": "Minnesota"
       }
     },
     {
-      "coordinates": [
-        -95.7697934,
-        34.9334981
-      ],
+      "coordinates": [-95.7697934, 34.9334981],
       "location": {
         "address": "McAlester",
         "state": "Oklahoma"
       }
     },
     {
-      "coordinates": [
-        -78.703148,
-        34.3217345
-      ],
+      "coordinates": [-78.703148, 34.3217345],
       "location": {
         "address": "Whiteville",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -76.5483724,
-        42.4374175
-      ],
+      "coordinates": [-76.5483724, 42.4374175],
       "location": {
         "address": "Ithaca",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -121.99059,
-        37.050096
-      ],
+      "coordinates": [-121.99059, 37.050096],
       "location": {
         "address": "Santa Cruz",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -73.584709,
-        43.267206
-      ],
+      "coordinates": [-73.584709, 43.267206],
       "location": {
         "address": "Fort Edward",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -73.586082,
-        43.300697
-      ],
+      "coordinates": [-73.586082, 43.300697],
       "location": {
         "address": "Hudson Falls",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -72.1142013,
-        44.6020032
-      ],
+      "coordinates": [-72.1142013, 44.6020032],
       "location": {
         "address": "Sheffield",
         "state": "Vermont"
       }
     },
     {
-      "coordinates": [
-        -81.5655597,
-        41.4154413
-      ],
+      "coordinates": [-81.5655597, 41.4154413],
       "location": {
         "address": "Maple Heights",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -80.139918,
-        27.080492
-      ],
+      "coordinates": [-80.139918, 27.080492],
       "location": {
         "address": "Hobe Sound",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -94.5781416,
-        39.100105
-      ],
+      "coordinates": [-94.5781416, 39.100105],
       "location": {
         "address": "Kansas City",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -72.5886727,
-        42.1018764
-      ],
+      "coordinates": [-72.5886727, 42.1018764],
       "location": {
         "address": "Springfield",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -73.0435615,
-        41.5541144
-      ],
+      "coordinates": [-73.0435615, 41.5541144],
       "location": {
         "address": "Waterbury",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -75.586846,
-        42.977013
-      ],
+      "coordinates": [-75.586846, 42.977013],
       "location": {
         "address": "Munnsville",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -80.0025666,
-        40.4406968
-      ],
+      "coordinates": [-80.0025666, 40.4406968],
       "location": {
         "address": "Pittsburgh",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -99.2946024,
-        32.728072
-      ],
+      "coordinates": [-99.2946024, 32.728072],
       "location": {
         "address": "Albany",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -97.0585717,
-        36.1156306
-      ],
+      "coordinates": [-97.0585717, 36.1156306],
       "location": {
         "address": "Stillwater",
         "state": "Oklahoma"
       }
     },
     {
-      "coordinates": [
-        -78.6956723,
-        42.9022047
-      ],
+      "coordinates": [-78.6956723, 42.9022047],
       "location": {
         "address": "Depew",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -79.9414313,
-        37.270973
-      ],
+      "coordinates": [-79.9414313, 37.270973],
       "location": {
         "address": "Roanoke",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -73.0337694,
-        43.9738222
-      ],
+      "coordinates": [-73.0337694, 43.9738222],
       "location": {
         "address": "Ripton",
         "state": "Vermont"
       }
     },
     {
-      "coordinates": [
-        -74.7618285,
-        40.3892726
-      ],
+      "coordinates": [-74.7618285, 40.3892726],
       "location": {
         "address": "Hopewell",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -80.1935973,
-        25.7741566
-      ],
+      "coordinates": [-80.1935973, 25.7741566],
       "location": {
         "address": "Miami",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -83.9704593,
-        35.7564719
-      ],
+      "coordinates": [-83.9704593, 35.7564719],
       "location": {
         "address": "Maryville",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -96.181623,
-        38.4040054
-      ],
+      "coordinates": [-96.181623, 38.4040054],
       "location": {
         "address": "Emporia",
         "state": "Kansas"
       }
     },
     {
-      "coordinates": [
-        -79.0478143,
-        33.8360035
-      ],
+      "coordinates": [-79.0478143, 33.8360035],
       "location": {
         "address": "Conway",
         "state": "South Carolina"
       }
     },
     {
-      "coordinates": [
-        -74.2264601,
-        40.7709499
-      ],
+      "coordinates": [-74.2264601, 40.7709499],
       "location": {
         "address": "Orange",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -71.2245003,
-        42.4473175
-      ],
+      "coordinates": [-71.2245003, 42.4473175],
       "location": {
         "address": "Lexington",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -77.0011096,
-        41.2411556
-      ],
+      "coordinates": [-77.0011096, 41.2411556],
       "location": {
         "address": "Williamsport",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -118.226624,
-        33.894927
-      ],
+      "coordinates": [-118.226624, 33.894927],
       "location": {
         "address": "Compton",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -86.1583502,
-        39.7683331
-      ],
+      "coordinates": [-86.1583502, 39.7683331],
       "location": {
         "address": "Indianapolis",
         "state": "Indiana"
       }
     },
     {
-      "coordinates": [
-        -78.3307039,
-        39.261934
-      ],
+      "coordinates": [-78.3307039, 39.261934],
       "location": {
         "address": "Gore",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -92.4653087,
-        42.193293
-      ],
+      "coordinates": [-92.4653087, 42.193293],
       "location": {
         "address": "Traer",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -85.5872286,
-        42.291707
-      ],
+      "coordinates": [-85.5872286, 42.291707],
       "location": {
         "address": "Kalamazoo",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -82.5154471,
-        40.75839
-      ],
+      "coordinates": [-82.5154471, 40.75839],
       "location": {
         "address": "Mansfield",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -83.0007065,
-        39.9622601
-      ],
+      "coordinates": [-83.0007065, 39.9622601],
       "location": {
         "address": "Columbus",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -81.9944042,
-        34.4646451
-      ],
+      "coordinates": [-81.9944042, 34.4646451],
       "location": {
         "address": "Laurens County",
         "state": "South Carolina"
       }
     },
     {
-      "coordinates": [
-        -80.6925887,
-        33.7390444
-      ],
+      "coordinates": [-80.6925887, 33.7390444],
       "location": {
         "address": "Fort Motte",
         "state": "South Carolina"
       }
     },
     {
-      "coordinates": [
-        -87.9953571,
-        35.3870124
-      ],
+      "coordinates": [-87.9953571, 35.3870124],
       "location": {
         "address": "Clifton",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -87.677251,
-        34.79981
-      ],
+      "coordinates": [-87.677251, 34.79981],
       "location": {
         "address": "Florence",
         "state": "Alabama"
       }
     },
     {
-      "coordinates": [
-        -82.3540178,
-        31.2135511
-      ],
+      "coordinates": [-82.3540178, 31.2135511],
       "location": {
         "address": "Waycross",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -82.9888725,
-        35.4887476
-      ],
+      "coordinates": [-82.9888725, 35.4887476],
       "location": {
         "address": "Waynesville",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -123.2046526,
-        43.40998
-      ],
+      "coordinates": [-123.2046526, 43.40998],
       "location": {
         "address": "Nonpareil",
         "state": "Oregon"
       }
     },
     {
-      "coordinates": [
-        -98.4951405,
-        29.4246002
-      ],
+      "coordinates": [-98.4951405, 29.4246002],
       "location": {
         "address": "San Antonio",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -75.546589,
-        39.7459468
-      ],
+      "coordinates": [-75.546589, 39.7459468],
       "location": {
         "address": "Wilmington",
         "state": "Delaware"
       }
     },
     {
-      "coordinates": [
-        -70.8719271,
-        42.8116592
-      ],
+      "coordinates": [-70.8719271, 42.8116592],
       "location": {
         "address": "Newburyport",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -77.43428,
-        37.5385087
-      ],
+      "coordinates": [-77.43428, 37.5385087],
       "location": {
         "address": "Richmond",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -74.5384889,
-        40.5684363
-      ],
+      "coordinates": [-74.5384889, 40.5684363],
       "location": {
         "address": "Bound Brook",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -121.923278,
-        36.5552656
-      ],
+      "coordinates": [-121.923278, 36.5552656],
       "location": {
         "address": "Carmel-by-the-Sea",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -75.1304588,
-        40.3100446
-      ],
+      "coordinates": [-75.1304588, 40.3100446],
       "location": {
         "address": "Doylestown",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -97.7436995,
-        30.2711286
-      ],
+      "coordinates": [-97.7436995, 30.2711286],
       "location": {
         "address": "Austin",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -80.2519175,
-        27.197983
-      ],
+      "coordinates": [-80.2519175, 27.197983],
       "location": {
         "address": "Stuart",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -86.4872149,
-        38.8611619
-      ],
+      "coordinates": [-86.4872149, 38.8611619],
       "location": {
         "address": "Bedford",
         "state": "Indiana"
       }
     },
     {
-      "coordinates": [
-        -112.183375,
-        47.812243
-      ],
+      "coordinates": [-112.183375, 47.812243],
       "location": {
         "address": "Choteau",
         "state": "Montana"
       }
     },
     {
-      "coordinates": [
-        -116.540303,
-        33.8246269
-      ],
+      "coordinates": [-116.540303, 33.8246269],
       "location": {
         "address": "Palm Springs",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -82.5308545,
-        27.3365805
-      ],
+      "coordinates": [-82.5308545, 27.3365805],
       "location": {
         "address": "Sarasota",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -89.216655,
-        37.7274692
-      ],
+      "coordinates": [-89.216655, 37.7274692],
       "location": {
         "address": "Carbondale",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -73.2131693,
-        41.4814848
-      ],
+      "coordinates": [-73.2131693, 41.4814848],
       "location": {
         "address": "Southbury",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -95.3676974,
-        29.7589382
-      ],
+      "coordinates": [-95.3676974, 29.7589382],
       "location": {
         "address": "Houston",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -122.460808,
-        37.8775332
-      ],
+      "coordinates": [-122.460808, 37.8775332],
       "location": {
         "address": "Tiburon",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -87.3246325,
-        31.5278224
-      ],
+      "coordinates": [-87.3246325, 31.5278224],
       "location": {
         "address": "Monroeville",
         "state": "Alabama"
       }
     },
     {
-      "coordinates": [
-        -90.0733934,
-        29.9561422
-      ],
+      "coordinates": [-90.0733934, 29.9561422],
       "location": {
         "address": "New Orleans",
         "state": "Louisiana"
       }
     },
     {
-      "coordinates": [
-        -90.2417806,
-        29.9942265
-      ],
+      "coordinates": [-90.2417806, 29.9942265],
       "location": {
         "address": "Kenner",
         "state": "Louisiana"
       }
     },
     {
-      "coordinates": [
-        -98.3952279,
-        34.6051975
-      ],
+      "coordinates": [-98.3952279, 34.6051975],
       "location": {
         "address": "Lawton",
         "state": "Oklahoma"
       }
     },
     {
-      "coordinates": [
-        -117.8891164,
-        34.0877926
-      ],
+      "coordinates": [-117.8891164, 34.0877926],
       "location": {
         "address": "Covina",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -90.1830408,
-        32.2998686
-      ],
+      "coordinates": [-90.1830408, 32.2998686],
       "location": {
         "address": "Jackson",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -74.047455,
-        40.7215682
-      ],
+      "coordinates": [-74.047455, 40.7215682],
       "location": {
         "address": "Jersey City",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -84.2809332,
-        30.4380832
-      ],
+      "coordinates": [-84.2809332, 30.4380832],
       "location": {
         "address": "Tallahassee",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -91.5299106,
-        41.6612561
-      ],
+      "coordinates": [-91.5299106, 41.6612561],
       "location": {
         "address": "Iowa City",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -88.8893818,
-        30.4007626
-      ],
+      "coordinates": [-88.8893818, 30.4007626],
       "location": {
         "address": "Biloxi",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -73.754968,
-        42.6511674
-      ],
+      "coordinates": [-73.754968, 42.6511674],
       "location": {
         "address": "Albany",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -98.6256128,
-        33.5956593
-      ],
+      "coordinates": [-98.6256128, 33.5956593],
       "location": {
         "address": "Archer City",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -88.9416829,
-        35.9808073
-      ],
+      "coordinates": [-88.9416829, 35.9808073],
       "location": {
         "address": "Trenton",
         "state": "Tennessee"
       }
     },
     {
-      "coordinates": [
-        -90.1487199,
-        38.7014389
-      ],
+      "coordinates": [-90.1487199, 38.7014389],
       "location": {
         "address": "Granite City",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -84.5127405,
-        39.1012809
-      ],
+      "coordinates": [-84.5127405, 39.1012809],
       "location": {
         "address": "Cincinnati",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -74.3720027,
-        43.006075
-      ],
+      "coordinates": [-74.3720027, 43.006075],
       "location": {
         "address": "Johnstown",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -116.5487835,
-        48.2761306
-      ],
+      "coordinates": [-116.5487835, 48.2761306],
       "location": {
         "address": "Sandpoint",
         "state": "Idaho"
       }
     },
     {
-      "coordinates": [
-        -90.1795281,
-        33.5162315
-      ],
+      "coordinates": [-90.1795281, 33.5162315],
       "location": {
         "address": "Greenwood",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -81.6936772,
-        41.4996574
-      ],
+      "coordinates": [-81.6936772, 41.4996574],
       "location": {
         "address": "Cleveland",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -74.594601,
-        39.3176158
-      ],
+      "coordinates": [-74.594601, 39.3176158],
       "location": {
         "address": "Somers Point",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -76.492786,
-        38.9786401
-      ],
+      "coordinates": [-76.492786, 38.9786401],
       "location": {
         "address": "Annapolis",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -80.2322698,
-        38.9939426
-      ],
+      "coordinates": [-80.2322698, 38.9939426],
       "location": {
         "address": "Buckhannon",
         "state": "West Virginia"
       }
     },
     {
-      "coordinates": [
-        -84.2472117,
-        43.6155825
-      ],
+      "coordinates": [-84.2472117, 43.6155825],
       "location": {
         "address": "Midland",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -90.3712169,
-        40.9475652
-      ],
+      "coordinates": [-90.3712169, 40.9475652],
       "location": {
         "address": "Galesburg",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -82.441508,
-        35.271228
-      ],
+      "coordinates": [-82.441508, 35.271228],
       "location": {
         "address": "Flat Rock",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -69.1091823,
-        44.1048327
-      ],
+      "coordinates": [-69.1091823, 44.1048327],
       "location": {
         "address": "Rockland",
         "state": "Maine"
       }
     },
     {
-      "coordinates": [
-        -73.4733837,
-        42.3126595
-      ],
+      "coordinates": [-73.4733837, 42.3126595],
       "location": {
         "address": "Austerlitz",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -75.3954399,
-        40.6015195
-      ],
+      "coordinates": [-75.3954399, 40.6015195],
       "location": {
         "address": "Fountain Hill",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -81.6579179,
-        30.3262247
-      ],
+      "coordinates": [-81.6579179, 30.3262247],
       "location": {
         "address": "Jacksonville",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -74.215011,
-        40.7642404
-      ],
+      "coordinates": [-74.215011, 40.7642404],
       "location": {
         "address": "East Orange",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -122.330062,
-        47.6038321
-      ],
+      "coordinates": [-122.330062, 47.6038321],
       "location": {
         "address": "Seattle",
         "state": "Washington"
       }
     },
     {
-      "coordinates": [
-        -69.9659438,
-        43.9166529
-      ],
+      "coordinates": [-69.9659438, 43.9166529],
       "location": {
         "address": "Brunswick",
         "state": "Maine"
       }
     },
     {
-      "coordinates": [
-        -72.7394623,
-        42.6035589
-      ],
+      "coordinates": [-72.7394623, 42.6035589],
       "location": {
         "address": "Shelburne Falls",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -87.7323857,
-        40.1749809
-      ],
+      "coordinates": [-87.7323857, 40.1749809],
       "location": {
         "address": "Vermilion County",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -73.1212214,
-        41.8006523
-      ],
+      "coordinates": [-73.1212214, 41.8006523],
       "location": {
         "address": "Torrington",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -76.2074263,
-        43.0581222
-      ],
+      "coordinates": [-76.2074263, 43.0581222],
       "location": {
         "address": "Solvay",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -71.5394738,
-        41.454944
-      ],
+      "coordinates": [-71.5394738, 41.454944],
       "location": {
         "address": "South Kingstown",
         "state": "Rhode Island"
       }
     },
     {
-      "coordinates": [
-        -72.5751341,
-        42.2591392
-      ],
+      "coordinates": [-72.5751341, 42.2591392],
       "location": {
         "address": "South Hadley",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -80.3192295,
-        40.7520097
-      ],
+      "coordinates": [-80.3192295, 40.7520097],
       "location": {
         "address": "Beaver Falls",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -75.6802581,
-        42.875882
-      ],
+      "coordinates": [-75.6802581, 42.875882],
       "location": {
         "address": "Madison County",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -116.9629378,
-        44.0265525
-      ],
+      "coordinates": [-116.9629378, 44.0265525],
       "location": {
         "address": "Ontario",
         "state": "Oregon"
       }
     },
     {
-      "coordinates": [
-        -71.194862,
-        42.3300435
-      ],
+      "coordinates": [-71.194862, 42.3300435],
       "location": {
         "address": "Newton",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -71.3031132,
-        42.3667625
-      ],
+      "coordinates": [-71.3031132, 42.3667625],
       "location": {
         "address": "Weston",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -73.7826363,
-        40.9115386
-      ],
+      "coordinates": [-73.7826363, 40.9115386],
       "location": {
         "address": "New Rochelle",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -121.6846349,
-        37.2333253
-      ],
+      "coordinates": [-121.6846349, 37.2333253],
       "location": {
         "address": "Santa Clara County",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -117.42351,
-        47.6571934
-      ],
+      "coordinates": [-117.42351, 47.6571934],
       "location": {
         "address": "Spokane",
         "state": "Washington"
       }
     },
     {
-      "coordinates": [
-        -77.6705008,
-        39.0984586
-      ],
+      "coordinates": [-77.6705008, 39.0984586],
       "location": {
         "address": "Loudoun County",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -92.6794258,
-        43.0662177
-      ],
+      "coordinates": [-92.6794258, 43.0662177],
       "location": {
         "address": "Charles City",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -84.4970393,
-        38.0464066
-      ],
+      "coordinates": [-84.4970393, 38.0464066],
       "location": {
         "address": "Lexington",
         "state": "Kentucky"
       }
     },
     {
-      "coordinates": [
-        -78.8781493,
-        42.8864163
-      ],
+      "coordinates": [-78.8781493, 42.8864163],
       "location": {
         "address": "Buffalo",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -106.650985,
-        35.0841034
-      ],
+      "coordinates": [-106.650985, 35.0841034],
       "location": {
         "address": "Albuquerque",
         "state": "New Mexico"
       }
     },
     {
-      "coordinates": [
-        -72.9971373,
-        44.1058196
-      ],
+      "coordinates": [-72.9971373, 44.1058196],
       "location": {
         "address": "Lincoln",
         "state": "Vermont"
       }
     },
     {
-      "coordinates": [
-        -80.1805269,
-        40.5403417
-      ],
+      "coordinates": [-80.1805269, 40.5403417],
       "location": {
         "address": "Sewickley",
         "state": "Pennsylvania"
       }
     },
     {
-      "coordinates": [
-        -96.7968559,
-        32.7762719
-      ],
+      "coordinates": [-96.7968559, 32.7762719],
       "location": {
         "address": "Dallas",
         "state": "Texas"
       }
     },
     {
-      "coordinates": [
-        -122.7153995,
-        42.1972487
-      ],
+      "coordinates": [-122.7153995, 42.1972487],
       "location": {
         "address": "Ashland",
         "state": "Oregon"
       }
     },
     {
-      "coordinates": [
-        -92.4197754,
-        30.6337077
-      ],
+      "coordinates": [-92.4197754, 30.6337077],
       "location": {
         "address": "Mamou",
         "state": "Louisiana"
       }
     },
     {
-      "coordinates": [
-        -89.2903392,
-        31.3271189
-      ],
+      "coordinates": [-89.2903392, 31.3271189],
       "location": {
         "address": "Hattiesburg",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -121.290779,
-        37.9577016
-      ],
+      "coordinates": [-121.290779, 37.9577016],
       "location": {
         "address": "Stockton",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -117.162772,
-        32.7174202
-      ],
+      "coordinates": [-117.162772, 32.7174202],
       "location": {
         "address": "San Diego",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -121.0187304,
-        39.2625993
-      ],
+      "coordinates": [-121.0187304, 39.2625993],
       "location": {
         "address": "Nevada City",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -73.2637258,
-        41.1412078
-      ],
+      "coordinates": [-73.2637258, 41.1412078],
       "location": {
         "address": "Fairfield",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -70.8967226,
-        42.5195292
-      ],
+      "coordinates": [-70.8967226, 42.5195292],
       "location": {
         "address": "Salem",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -71.7238393,
-        43.7440651
-      ],
+      "coordinates": [-71.7238393, 43.7440651],
       "location": {
         "address": "Plymouth",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -77.1516844,
-        39.0817985
-      ],
+      "coordinates": [-77.1516844, 39.0817985],
       "location": {
         "address": "Rockville",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -73.2973394,
-        41.2528738
-      ],
+      "coordinates": [-73.2973394, 41.2528738],
       "location": {
         "address": "Easton",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -88.2278645,
-        43.5213798
-      ],
+      "coordinates": [-88.2278645, 43.5213798],
       "location": {
         "address": "Kewaskum",
         "state": "Wisconsin"
       }
     },
     {
-      "coordinates": [
-        -73.8283132,
-        40.7135078
-      ],
+      "coordinates": [-73.8283132, 40.7135078],
       "location": {
         "address": "Queens",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -71.1408776,
-        42.65717
-      ],
+      "coordinates": [-71.1408776, 42.65717],
       "location": {
         "address": "Andover",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -74.2734808,
-        40.7312123
-      ],
+      "coordinates": [-74.2734808, 40.7312123],
       "location": {
         "address": "Maplewood",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -73.9283672,
-        41.7065539
-      ],
+      "coordinates": [-73.9283672, 41.7065539],
       "location": {
         "address": "Poughkeepsie",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -72.4313151,
-        42.1223378
-      ],
+      "coordinates": [-72.4313151, 42.1223378],
       "location": {
         "address": "Wilbraham",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -74.0098299,
-        41.5000767
-      ],
+      "coordinates": [-74.0098299, 41.5000767],
       "location": {
         "address": "Newburgh",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -96.789821,
-        46.877229
-      ],
+      "coordinates": [-96.789821, 46.877229],
       "location": {
         "address": "Fargo",
         "state": "North Dakota"
       }
     },
     {
-      "coordinates": [
-        -74.0643065,
-        40.3470543
-      ],
+      "coordinates": [-74.0643065, 40.3470543],
       "location": {
         "address": "Red Bank",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -75.3651742,
-        43.5334024
-      ],
+      "coordinates": [-75.3651742, 43.5334024],
       "location": {
         "address": "Talcottville",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -71.6285687,
-        44.7517618
-      ],
+      "coordinates": [-71.6285687, 44.7517618],
       "location": {
         "address": "North Stratford",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -81.9397733,
-        40.7980976
-      ],
+      "coordinates": [-81.9397733, 40.7980976],
       "location": {
         "address": "Wooster",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -71.2360624,
-        42.2802645
-      ],
+      "coordinates": [-71.2360624, 42.2802645],
       "location": {
         "address": "Needham",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -113.995267,
-        46.8701049
-      ],
+      "coordinates": [-113.995267, 46.8701049],
       "location": {
         "address": "Missoula",
         "state": "Montana"
       }
     },
     {
-      "coordinates": [
-        -119.0358469,
-        35.9606215
-      ],
+      "coordinates": [-119.0358469, 35.9606215],
       "location": {
         "address": "Terra Bella",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -91.0635857,
-        33.4111051
-      ],
+      "coordinates": [-91.0635857, 33.4111051],
       "location": {
         "address": "Greenville",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -85.6678639,
-        42.9632425
-      ],
+      "coordinates": [-85.6678639, 42.9632425],
       "location": {
         "address": "Grand Rapids",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -78.2994468,
-        37.7051441
-      ],
+      "coordinates": [-78.2994468, 37.7051441],
       "location": {
         "address": "New Canton",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -78.6390989,
-        35.7803977
-      ],
+      "coordinates": [-78.6390989, 35.7803977],
       "location": {
         "address": "Raleigh",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -80.5904623,
-        28.1760051
-      ],
+      "coordinates": [-80.5904623, 28.1760051],
       "location": {
         "address": "Satellite Beach",
         "state": "Florida"
       }
     },
     {
-      "coordinates": [
-        -111.886797,
-        40.7596198
-      ],
+      "coordinates": [-111.886797, 40.7596198],
       "location": {
         "address": "Salt Lake City",
         "state": "Utah"
       }
     },
     {
-      "coordinates": [
-        -74.1291407,
-        41.0413199
-      ],
+      "coordinates": [-74.1291407, 41.0413199],
       "location": {
         "address": "Allendale",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -76.1919824,
-        38.7542065
-      ],
+      "coordinates": [-76.1919824, 38.7542065],
       "location": {
         "address": "Talbot County",
         "state": "Maryland"
       }
     },
     {
-      "coordinates": [
-        -89.4478784,
-        34.76801
-      ],
+      "coordinates": [-89.4478784, 34.76801],
       "location": {
         "address": "Holly Springs",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -73.8587461,
-        41.0762077
-      ],
+      "coordinates": [-73.8587461, 41.0762077],
       "location": {
         "address": "Tarrytown",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -118.802188,
-        37.5999224
-      ],
+      "coordinates": [-118.802188, 37.5999224],
       "location": {
         "address": "Long Valley",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -121.917794,
-        36.6211149
-      ],
+      "coordinates": [-121.917794, 36.6211149],
       "location": {
         "address": "Pacific Grove",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -92.7140694,
-        41.9815932
-      ],
+      "coordinates": [-92.7140694, 41.9815932],
       "location": {
         "address": "Montour",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -73.4451587,
-        41.405218
-      ],
+      "coordinates": [-73.4451587, 41.405218],
       "location": {
         "address": "Danbury Hospital",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -73.984337,
-        43.791667
-      ],
+      "coordinates": [-73.984337, 43.791667],
       "location": {
         "address": "Minerva",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -118.144155,
-        34.1476507
-      ],
+      "coordinates": [-118.144155, 34.1476507],
       "location": {
         "address": "Pasadena",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -76.6077213,
-        36.057938
-      ],
+      "coordinates": [-76.6077213, 36.057938],
       "location": {
         "address": "Edenton",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -73.0994297,
-        40.8514971
-      ],
+      "coordinates": [-73.0994297, 40.8514971],
       "location": {
         "address": "Long Island",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -75.1191932,
-        39.9440874
-      ],
+      "coordinates": [-75.1191932, 39.9440874],
       "location": {
         "address": "Camden",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -71.263504,
-        43.860277
-      ],
+      "coordinates": [-71.263504, 43.860277],
       "location": {
         "address": "Tamworth",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -73.7443092,
-        43.1800049
-      ],
+      "coordinates": [-73.7443092, 43.1800049],
       "location": {
         "address": "Wilton",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -70.7485677,
-        43.2409695
-      ],
+      "coordinates": [-70.7485677, 43.2409695],
       "location": {
         "address": "South Berwick",
         "state": "Maine"
       }
     },
     {
-      "coordinates": [
-        -87.4139119,
-        39.4667025
-      ],
+      "coordinates": [-87.4139119, 39.4667025],
       "location": {
         "address": "Terre Haute",
         "state": "Indiana"
       }
     },
     {
-      "coordinates": [
-        -122.5390729,
-        38.355533
-      ],
+      "coordinates": [-122.5390729, 38.355533],
       "location": {
         "address": "Glen Ellen",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -79.7919754,
-        36.0726355
-      ],
+      "coordinates": [-79.7919754, 36.0726355],
       "location": {
         "address": "Greensboro",
         "state": "North Carolina"
       }
     },
     {
-      "coordinates": [
-        -74.8514487,
-        40.0705534
-      ],
+      "coordinates": [-74.8514487, 40.0705534],
       "location": {
         "address": "Burlington City",
         "state": "New Jersey"
       }
     },
     {
-      "coordinates": [
-        -74.924321,
-        42.7006303
-      ],
+      "coordinates": [-74.924321, 42.7006303],
       "location": {
         "address": "Cooperstown",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -73.1887243,
-        41.747319
-      ],
+      "coordinates": [-73.1887243, 41.747319],
       "location": {
         "address": "Litchfield",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -75.1690942,
-        44.5956163
-      ],
+      "coordinates": [-75.1690942, 44.5956163],
       "location": {
         "address": "Canton",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -105.888322,
-        36.1988113
-      ],
+      "coordinates": [-105.888322, 36.1988113],
       "location": {
         "address": "Dixon",
         "state": "New Mexico"
       }
     },
     {
-      "coordinates": [
-        -122.271356,
-        37.8044557
-      ],
+      "coordinates": [-122.271356, 37.8044557],
       "location": {
         "address": "Oakland",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -78.3955647,
-        38.0129175
-      ],
+      "coordinates": [-78.3955647, 38.0129175],
       "location": {
         "address": "Shadwell",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -78.452333,
-        38.0103192
-      ],
+      "coordinates": [-78.452333, 38.0103192],
       "location": {
         "address": "Monticello",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -73.362773,
-        42.1939364
-      ],
+      "coordinates": [-73.362773, 42.1939364],
       "location": {
         "address": "Great Barrington",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -91.403171,
-        31.5604076
-      ],
+      "coordinates": [-91.403171, 31.5604076],
       "location": {
         "address": "Natchez",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -76.7567355,
-        38.1153203
-      ],
+      "coordinates": [-76.7567355, 38.1153203],
       "location": {
         "address": "Westmoreland County",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -77.0888199,
-        38.710179
-      ],
+      "coordinates": [-77.0888199, 38.710179],
       "location": {
         "address": "Mount Vernon",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -115.563051,
-        32.792
-      ],
+      "coordinates": [-115.563051, 32.792],
       "location": {
         "address": "El Centro",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -77.1860884,
-        38.1773528
-      ],
+      "coordinates": [-77.1860884, 38.1773528],
       "location": {
         "address": "Port Conway",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -78.1748556,
-        38.2176658
-      ],
+      "coordinates": [-78.1748556, 38.2176658],
       "location": {
         "address": "Montpelier",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -88.4272627,
-        33.4956744
-      ],
+      "coordinates": [-88.4272627, 33.4956744],
       "location": {
         "address": "Columbus",
         "state": "Mississippi"
       }
     },
     {
-      "coordinates": [
-        -84.9880449,
-        32.4610708
-      ],
+      "coordinates": [-84.9880449, 32.4610708],
       "location": {
         "address": "Columbus",
         "state": "Georgia"
       }
     },
     {
-      "coordinates": [
-        -73.9196794,
-        41.091121
-      ],
+      "coordinates": [-73.9196794, 41.091121],
       "location": {
         "address": "Nyack",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -69.6647263,
-        44.0025414
-      ],
+      "coordinates": [-69.6647263, 44.0025414],
       "location": {
         "address": "Wiscasset",
         "state": "Maine"
       }
     },
     {
-      "coordinates": [
-        -73.3088922,
-        41.5568282
-      ],
+      "coordinates": [-73.3088922, 41.5568282],
       "location": {
         "address": "Roxbury",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -81.096486,
-        41.284222
-      ],
+      "coordinates": [-81.096486, 41.284222],
       "location": {
         "address": "Garrettsville",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -117.873221,
-        33.7494951
-      ],
+      "coordinates": [-117.873221, 33.7494951],
       "location": {
         "address": "Santa Ana",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -123.2048168,
-        46.1036879
-      ],
+      "coordinates": [-123.2048168, 46.1036879],
       "location": {
         "address": "Clatskanie",
         "state": "Oregon"
       }
     },
     {
-      "coordinates": [
-        -123.430741,
-        48.118146
-      ],
+      "coordinates": [-123.430741, 48.118146],
       "location": {
         "address": "Port Angeles",
         "state": "Washington"
       }
     },
     {
-      "coordinates": [
-        -77.7416588,
-        38.6137328
-      ],
+      "coordinates": [-77.7416588, 38.6137328],
       "location": {
         "address": "Germantown",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -77.3464516,
-        38.953282
-      ],
+      "coordinates": [-77.3464516, 38.953282],
       "location": {
         "address": "Reston",
         "state": "Virginia"
       }
     },
     {
-      "coordinates": [
-        -71.0041229,
-        42.2205956
-      ],
+      "coordinates": [-71.0041229, 42.2205956],
       "location": {
         "address": "Braintree",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -82.0420769,
-        39.1099292
-      ],
+      "coordinates": [-82.0420769, 39.1099292],
       "location": {
         "address": "Meigs County",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -73.6284598,
-        41.0264862
-      ],
+      "coordinates": [-73.6284598, 41.0264862],
       "location": {
         "address": "Greenwich",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -92.0101928,
-        44.6351571
-      ],
+      "coordinates": [-92.0101928, 44.6351571],
       "location": {
         "address": "Pepin County",
         "state": "Wisconsin"
       }
     },
     {
-      "coordinates": [
-        -92.5807231,
-        37.1067189
-      ],
+      "coordinates": [-92.5807231, 37.1067189],
       "location": {
         "address": "Mansfield",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -91.1020205,
-        40.8126922
-      ],
+      "coordinates": [-91.1020205, 40.8126922],
       "location": {
         "address": "Burlington",
         "state": "Iowa"
       }
     },
     {
-      "coordinates": [
-        -89.7437844,
-        43.4704014
-      ],
+      "coordinates": [-89.7437844, 43.4704014],
       "location": {
         "address": "Baraboo",
         "state": "Wisconsin"
       }
     },
     {
-      "coordinates": [
-        -111.834914,
-        41.7313063
-      ],
+      "coordinates": [-111.834914, 41.7313063],
       "location": {
         "address": "Logan",
         "state": "Utah"
       }
     },
     {
-      "coordinates": [
-        -75.0588646,
-        38.5379676
-      ],
+      "coordinates": [-75.0588646, 38.5379676],
       "location": {
         "address": "Bethany Beach",
         "state": "Delaware"
       }
     },
     {
-      "coordinates": [
-        -86.2541768,
-        41.8297694
-      ],
+      "coordinates": [-86.2541768, 41.8297694],
       "location": {
         "address": "Niles",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -72.6129917,
-        41.9156394
-      ],
+      "coordinates": [-72.6129917, 41.9156394],
       "location": {
         "address": "East Windsor",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -91.0201422,
-        38.8275491
-      ],
+      "coordinates": [-91.0201422, 38.8275491],
       "location": {
         "address": "Wright City",
         "state": "Missouri"
       }
     },
     {
-      "coordinates": [
-        -73.3123684,
-        42.282398
-      ],
+      "coordinates": [-73.3123684, 42.282398],
       "location": {
         "address": "Stockbridge",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -121.9746797,
-        37.226611
-      ],
+      "coordinates": [-121.9746797, 37.226611],
       "location": {
         "address": "Los Gatos",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -119.702667,
-        34.4221319
-      ],
+      "coordinates": [-119.702667, 34.4221319],
       "location": {
         "address": "Santa Barbara",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -70.9391625,
-        42.2212188
-      ],
+      "coordinates": [-70.9391625, 42.2212188],
       "location": {
         "address": "Weymouth",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -122.674194,
-        45.5202471
-      ],
+      "coordinates": [-122.674194, 45.5202471],
       "location": {
         "address": "Portland",
         "state": "Oregon"
       }
     },
     {
-      "coordinates": [
-        -96.7077751,
-        40.8088861
-      ],
+      "coordinates": [-96.7077751, 40.8088861],
       "location": {
         "address": "Lincoln",
         "state": "Nebraska"
       }
     },
     {
-      "coordinates": [
-        -85.1191168,
-        38.447983
-      ],
+      "coordinates": [-85.1191168, 38.447983],
       "location": {
         "address": "Henry County",
         "state": "Kentucky"
       }
     },
     {
-      "coordinates": [
-        -72.3761956,
-        41.2917652
-      ],
+      "coordinates": [-72.3761956, 41.2917652],
       "location": {
         "address": "Old Saybrook",
         "state": "Connecticut"
       }
     },
     {
-      "coordinates": [
-        -73.6973525,
-        40.8162117
-      ],
+      "coordinates": [-73.6973525, 40.8162117],
       "location": {
         "address": "Plandome Manor",
         "state": "New York"
       }
     },
     {
-      "coordinates": [
-        -121.493895,
-        38.5810606
-      ],
+      "coordinates": [-121.493895, 38.5810606],
       "location": {
         "address": "Sacramento",
         "state": "California"
       }
     },
     {
-      "coordinates": [
-        -72.3382504,
-        43.3727579
-      ],
+      "coordinates": [-72.3382504, 43.3727579],
       "location": {
         "address": "Claremont",
         "state": "New Hampshire"
       }
     },
     {
-      "coordinates": [
-        -122.2809623,
-        47.7567679
-      ],
+      "coordinates": [-122.2809623, 47.7567679],
       "location": {
         "address": "Lake Forest Park",
         "state": "Washington"
       }
     },
     {
-      "coordinates": [
-        -71.1956111,
-        42.5048167
-      ],
+      "coordinates": [-71.1956111, 42.5048167],
       "location": {
         "address": "Burlington",
         "state": "Massachusetts"
       }
     },
     {
-      "coordinates": [
-        -87.8318164,
-        42.3602273
-      ],
+      "coordinates": [-87.8318164, 42.3602273],
       "location": {
         "address": "Waukegan",
         "state": "Illinois"
       }
     },
     {
-      "coordinates": [
-        -83.8925234,
-        39.8045432
-      ],
+      "coordinates": [-83.8925234, 39.8045432],
       "location": {
         "address": "Yellow Springs",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -84.1916069,
-        39.7589478
-      ],
+      "coordinates": [-84.1916069, 39.7589478],
       "location": {
         "address": "Dayton",
         "state": "Ohio"
       }
     },
     {
-      "coordinates": [
-        -84.95533,
-        45.373343
-      ],
+      "coordinates": [-84.95533, 45.373343],
       "location": {
         "address": "Petoskey",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -86.234184,
-        44.633622
-      ],
+      "coordinates": [-86.234184, 44.633622],
       "location": {
         "address": "Frankfort",
         "state": "Michigan"
       }
     },
     {
-      "coordinates": [
-        -104.9447168,
-        34.7828401
-      ],
+      "coordinates": [-104.9447168, 34.7828401],
       "location": {
         "address": "Pastura",
         "state": "New Mexico"
       }
     },
     {
-      "coordinates": [
-        -92.6650144,
-        33.2115087
-      ],
+      "coordinates": [-92.6650144, 33.2115087],
       "location": {
         "address": "El Dorado",
         "state": "Arkansas"
       }
     },
     {
-      "coordinates": [
-        -91.4612228,
-        30.6151886
-      ],
+      "coordinates": [-91.4612228, 30.6151886],
       "location": {
         "address": "Oscar",
         "state": "Louisiana"
       }
     },
     {
-      "coordinates": [
-        -98.243981,
-        35.0725323
-      ],
+      "coordinates": [-98.243981, 35.0725323],
       "location": {
         "address": "Anadarko",
         "state": "Oklahoma"
       }
     },
     {
-      "coordinates": [
-        -87.9090751,
-        43.0386475
-      ],
+      "coordinates": [-87.9090751, 43.0386475],
       "location": {
         "address": "Milwaukee",
         "state": "Wisconsin"

@@ -16,6 +16,8 @@ const actionMap: Record<number, string> = {
 };
 
 export function GridworldRunner({}: Props) {
+  const [mounted, setMounted] = useState(false);
+
   const [algorithm, setAlgorithm] = useState<'td' | 'q' | 'sarsa'>('td');
 
   const [runType, setRunType] = useState<'runSequence' | 'runAll'>(
@@ -51,6 +53,8 @@ export function GridworldRunner({}: Props) {
   const environment = useMemo(() => new GridWorld(numStates, 5), [counter]);
 
   useEffect(() => {
+    setMounted(true);
+
     const runner = new Runner(environment, policy, true);
 
     const generator = runner.step();
@@ -76,6 +80,10 @@ export function GridworldRunner({}: Props) {
       isCurrent = false;
     };
   }, [policy, environment, counter, runType]);
+
+  if (!mounted) {
+    return <p>Loading page...</p>;
+  }
 
   let values: Array<string>;
 

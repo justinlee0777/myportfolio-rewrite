@@ -11,11 +11,15 @@ interface Props {
 }
 
 export function MarkdownWordProcessor({ initialContent }: Props) {
+  const [mounted, setMounted] = useState(false);
+
   const [articleContent, setArticleContent] = useState<string>(initialContent);
 
   const [htmlContent, setHtmlContent] = useState<string | null>(null);
 
   useEffect(() => {
+    setMounted(true);
+
     const updateHTMLContent = async () => {
       const content = await getMarkdown(articleContent, true);
 
@@ -34,6 +38,10 @@ export function MarkdownWordProcessor({ initialContent }: Props) {
       updateHTMLContent();
     }
   }, [articleContent, htmlContent, setHtmlContent]);
+
+  if (!mounted) {
+    return <p>Loading page...</p>;
+  }
 
   return (
     <Tabs defaultIndex={0}>
