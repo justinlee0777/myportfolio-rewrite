@@ -64,6 +64,11 @@ export default function Home() {
   const discussion: Array<Project> = useMemo(
     () => [
       {
+        header: `Orders of Magnitude`,
+        description: `We discuss orders of magnitude and their relevance in this modern data-heavy world.`,
+        url: '/orders-of-magnitude',
+      },
+      {
         header: 'Basic Reinforcement Learning',
         description: `We have some fun with touching on some simple reinforcement learning algorithms.`,
         url: '/basic-reinforcement-learning',

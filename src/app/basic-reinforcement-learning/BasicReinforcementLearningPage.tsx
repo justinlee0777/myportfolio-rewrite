@@ -6,18 +6,18 @@ import { useEffect, useRef, useState } from 'react';
 
 import { CodeExample } from '@/components/CodeExample';
 
-import { TDLearning } from './td-learning';
-import { QLearning } from './q-learning';
-import { SARSA } from './sarsa';
-import { GridWorld } from './gridworld';
-import { Runner } from './run-algorithm';
-import { GridworldRunner } from './GridworldRunner';
+import { TDLearning } from '../../components/GridworldRunner/td-learning';
+import { QLearning } from '../../components/GridworldRunner/q-learning';
+import { SARSA } from '../../components/GridworldRunner/sarsa';
+import { GridWorld } from '../../components/GridworldRunner/gridworld';
+import { Runner } from '../../components/GridworldRunner/run-algorithm';
+import { GridworldRunner } from '../../components/GridworldRunner/GridworldRunner';
 
 export default function BasicReinforcementLearningPage() {
   return (
     <div className="articlePage">
       <h1>Basic Reinforcement Learning</h1>
-      <time dateTime=""></time>
+      <time dateTime="2026-08-21">August 21, 2026</time>
 
       <p>
         "Reinforcement learning" is basically "learning" with a "reinforcement"
@@ -302,7 +302,7 @@ export default function BasicReinforcementLearningPage() {
 
       <p>Alright, time for fun stuff.</p>
 
-      <GridworldRunner />
+      <GridworldRunner allowedAlgorithms={new Set(['td', 'q', 'sarsa'])} />
 
       <p>This is a mesmerizing screensaver.</p>
 

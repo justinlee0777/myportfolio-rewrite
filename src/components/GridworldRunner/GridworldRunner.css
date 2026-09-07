@@ -1,0 +1,23 @@
+.gridworldRunner {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .cell {
+    align-items: center;
+    border: 1px solid var(--foreground);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100px;
+    position: relative;
+  }
+
+  .marker {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+}

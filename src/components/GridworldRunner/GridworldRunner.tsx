@@ -1,3 +1,5 @@
+import './GridworldRunner.css';
+
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 
 import { GridWorld } from './gridworld';
@@ -6,8 +8,6 @@ import { SARSA } from './sarsa';
 import { TDLearning } from './td-learning';
 import { Runner } from './run-algorithm';
 
-interface Props {}
-
 const actionMap: Record<number, string> = {
   0: 'Up',
   1: 'Down',
@@ -15,10 +15,26 @@ const actionMap: Record<number, string> = {
   3: 'Right',
 };
 
-export function GridworldRunner({}: Props) {
+export type Algorithm = 'td' | 'q' | 'sarsa';
+
+const AlgorithmMapping: {
+  [key in Algorithm]: string;
+} = {
+  td: 'TD Learning',
+  q: 'Q Learning',
+  sarsa: 'SARSA',
+};
+
+interface Props {
+  allowedAlgorithms: Set<Algorithm>;
+}
+
+export function GridworldRunner({ allowedAlgorithms }: Props) {
   const [mounted, setMounted] = useState(false);
 
-  const [algorithm, setAlgorithm] = useState<'td' | 'q' | 'sarsa'>('td');
+  const algorithms = [...allowedAlgorithms.values()];
+
+  const [algorithm, setAlgorithm] = useState<Algorithm>(algorithms[0]);
 
   const [runType, setRunType] = useState<'runSequence' | 'runAll'>(
     'runSequence',
@@ -105,7 +121,7 @@ export function GridworldRunner({}: Props) {
   }
 
   return (
-    <div className="gridContainer">
+    <div className="gridworldRunner">
       <div className="grid">
         {Array(environment.numStates)
           .fill(undefined)
@@ -141,9 +157,11 @@ export function GridworldRunner({}: Props) {
           value={algorithm}
           onChange={(event) => setAlgorithm(event.target.value as any)}
         >
-          <option value="td">TD Learning</option>
-          <option value="q">Q Learning</option>
-          <option value="sarsa">SARSA</option>
+          {algorithms.map((algorithm) => (
+            <option key={algorithm} value={algorithm}>
+              {AlgorithmMapping[algorithm]}
+            </option>
+          ))}
         </select>
         <select
           value={runType}
