@@ -68,6 +68,8 @@ export class DQN {
     ]);
     dones = this.tf.tensor(dones, null, 'float32');
 
+    const targetQ = this.calculateTargetQ(rewards, nextStates, dones);
+
     const lossTensor = this.optimizer.minimize(
       () => {
         const qValues = this.tf.tidy(() => {
@@ -75,15 +77,6 @@ export class DQN {
           const actionMask = this.tf.oneHot(actions, this.actionDim);
 
           return qAll.mul(actionMask).sum(1);
-        });
-
-        const targetQ = this.tf.tidy(() => {
-          const nextQValues = this.targetNetwork.forward(nextStates);
-          const maxNextQ = nextQValues.max(1);
-
-          const notDones = this.tf.scalar(1.0).sub(dones);
-
-          return rewards.add(maxNextQ.mul(this.discountFactor).mul(notDones));
         });
 
         const loss = this.tf.losses.meanSquaredError(targetQ, qValues);
@@ -104,6 +97,17 @@ export class DQN {
     if (this.trainingStep % this.updateFrequency === 0) {
       this.targetNetwork.loadStateDict(this.qNetwork.model.layers);
     }
+  }
+
+  calculateTargetQ(rewards, nextStates, dones) {
+    return this.tf.tidy(() => {
+      const nextQValues = this.targetNetwork.forward(nextStates);
+      const maxNextQ = nextQValues.max(1);
+
+      const notDones = this.tf.scalar(1.0).sub(dones);
+
+      return rewards.add(maxNextQ.mul(this.discountFactor).mul(notDones));
+    });
   }
 
   getQ(state) {

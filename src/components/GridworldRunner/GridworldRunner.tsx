@@ -10,8 +10,9 @@ import { TDLearning } from './td-learning';
 import { Runner } from './runner';
 import { DQNRunner } from './dqn-runner';
 import { DQN } from './dqn';
+import { DoubleDQN } from './double-dqn';
 
-export type Algorithm = 'td' | 'q' | 'sarsa' | 'dqn';
+export type Algorithm = 'td' | 'q' | 'sarsa' | 'dqn' | 'double dqn';
 
 const AlgorithmMapping: {
   [key in Algorithm]: string;
@@ -20,6 +21,7 @@ const AlgorithmMapping: {
   q: 'Q Learning',
   sarsa: 'SARSA',
   dqn: 'DQN',
+  'double dqn': 'Double DQN',
 };
 
 interface Props {
@@ -78,6 +80,10 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
         if (tfInitialized) {
           return new DQN(tf, 2, 4);
         }
+      case 'double dqn':
+        if (tfInitialized) {
+          return new DoubleDQN(tf, 2, 4);
+        }
     }
   }, [algorithm, counter, tfInitialized]);
 
@@ -94,6 +100,7 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
       case 'sarsa':
         return new Runner(environment, policy, true);
       case 'dqn':
+      case 'double dqn':
         return new DQNRunner(environment, policy, true);
     }
   }, [environment, policy]);
