@@ -52,10 +52,6 @@ export class Runner {
       }
 
       this.policy.decayExploration();
-
-      console.log(
-        `[${this.training ? 'Training' : 'Testing'}] Episode ${i + 1} - Total Reward: ${totalReward} - Epsilon: ${this.policy.explorationRate}`,
-      );
     }
   }
 }

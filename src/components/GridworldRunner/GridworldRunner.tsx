@@ -1,21 +1,17 @@
 import './GridworldRunner.css';
 
+import * as tf from '@tensorflow/tfjs';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 
 import { GridWorld } from './gridworld';
 import { QLearning } from './q-learning';
 import { SARSA } from './sarsa';
 import { TDLearning } from './td-learning';
-import { Runner } from './run-algorithm';
+import { Runner } from './runner';
+import { DQNRunner } from './dqn-runner';
+import { DQN } from './dqn';
 
-const actionMap: Record<number, string> = {
-  0: 'Up',
-  1: 'Down',
-  2: 'Left',
-  3: 'Right',
-};
-
-export type Algorithm = 'td' | 'q' | 'sarsa';
+export type Algorithm = 'td' | 'q' | 'sarsa' | 'dqn';
 
 const AlgorithmMapping: {
   [key in Algorithm]: string;
@@ -23,6 +19,7 @@ const AlgorithmMapping: {
   td: 'TD Learning',
   q: 'Q Learning',
   sarsa: 'SARSA',
+  dqn: 'DQN',
 };
 
 interface Props {
@@ -31,6 +28,8 @@ interface Props {
 
 export function GridworldRunner({ allowedAlgorithms }: Props) {
   const [mounted, setMounted] = useState(false);
+
+  const [tfInitialized, setTFInitialized] = useState(false);
 
   const algorithms = [...allowedAlgorithms.values()];
 
@@ -54,6 +53,18 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
 
   const numStates = 6;
 
+  useEffect(() => {
+    if (!tfInitialized) {
+      async function initializeTF() {
+        await tf.ready();
+
+        setTFInitialized(true);
+      }
+
+      initializeTF();
+    }
+  }, [tfInitialized, setTFInitialized]);
+
   const policy = useMemo(() => {
     switch (algorithm) {
       default:
@@ -63,15 +74,36 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
         return new QLearning(numStates, 4);
       case 'sarsa':
         return new SARSA(numStates, 4);
+      case 'dqn':
+        if (tfInitialized) {
+          return new DQN(tf, 2, 4);
+        }
     }
-  }, [algorithm, counter]);
+  }, [algorithm, counter, tfInitialized]);
 
   const environment = useMemo(() => new GridWorld(numStates, 5), [counter]);
+
+  const runner = useMemo(() => {
+    if (!policy) {
+      return;
+    }
+
+    switch (algorithm) {
+      case 'td':
+      case 'q':
+      case 'sarsa':
+        return new Runner(environment, policy, true);
+      case 'dqn':
+        return new DQNRunner(environment, policy, true);
+    }
+  }, [environment, policy]);
 
   useEffect(() => {
     setMounted(true);
 
-    const runner = new Runner(environment, policy, true);
+    if (!runner) {
+      return;
+    }
 
     const generator = runner.step();
 
@@ -95,22 +127,38 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
       generator.return(undefined);
       isCurrent = false;
     };
-  }, [policy, environment, counter, runType]);
+  }, [runner, counter, runType]);
 
-  if (!mounted) {
+  if (!(mounted && policy)) {
     return <p>Loading page...</p>;
   }
 
-  let values: Array<string>;
+  let values: Array<ReactNode>;
 
   if ('V' in policy) {
     values = policy.V.map((value) => value.toFixed(3));
+  } else if ('Q' in policy) {
+    values = policy.Q.map((qValues) => (
+      <>
+        <div className="qValue up">{qValues[0].toFixed(3)}</div>
+        <div className="qValue down">{qValues[1].toFixed(3)}</div>
+        <div className="qValue left">{qValues[2].toFixed(3)}</div>
+        <div className="qValue right">{qValues[3].toFixed(3)}</div>
+      </>
+    ));
   } else {
-    values = policy.Q.map((qValues) =>
-      qValues
-        .map((value, action) => `${actionMap[action]}: ${value.toFixed(3)}`)
-        .join(', '),
-    );
+    values = Array.from({ length: environment.numStates }, (_, i) => {
+      const qValues = policy.getQ(environment.getPos(i));
+
+      return (
+        <>
+          <div className="qValue up">{qValues[0].toFixed(3)}</div>
+          <div className="qValue down">{qValues[1].toFixed(3)}</div>
+          <div className="qValue left">{qValues[2].toFixed(3)}</div>
+          <div className="qValue right">{qValues[3].toFixed(3)}</div>
+        </>
+      );
+    });
   }
 
   let state: number | undefined = undefined,
@@ -129,19 +177,21 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
             let content: ReactNode = '';
 
             if (i === environment.startingState) {
-              content = 'Start';
+              content = 'St';
             } else if (i === environment.goalPos) {
-              content = 'Goal';
+              content = 'G';
             } else if (environment.pits.includes(i)) {
-              content = 'Pit';
+              content = 'P';
             }
 
             return (
               <div className="cell" key={i}>
                 {state === i && <div className="marker">S</div>}
                 {nextState === i && <div className="marker">S'</div>}
-                <p>{content}</p>
-                <p>{values[i]}</p>
+                <p>
+                  <b>{content}</b>
+                </p>
+                <div>{values[i]}</div>
               </div>
             );
           })}

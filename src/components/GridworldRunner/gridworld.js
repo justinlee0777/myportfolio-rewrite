@@ -8,6 +8,8 @@ export class GridWorld {
 
   pits = [];
 
+  usedPositions = new Set();
+
   constructor(gridSize, numPits) {
     this.gridSize = gridSize;
     this.numStates = gridSize ** 2;
@@ -52,6 +54,8 @@ export class GridWorld {
     } else if (this.goalPos === nextState) {
       reward = 10;
       done = true;
+    } else if (state === nextState) {
+      reward = -0.1;
     } else {
       reward = -0.01;
     }
@@ -72,9 +76,17 @@ export class GridWorld {
 
   createRandomPosition() {
     const { gridSize } = this;
-    return this.getState(
+    const state = this.getState(
       Math.floor(Math.random() * gridSize),
       Math.floor(Math.random() * gridSize),
     );
+
+    if (this.usedPositions.has(state)) {
+      return this.createRandomPosition();
+    } else {
+      this.usedPositions.add(state);
+
+      return state;
+    }
   }
 }

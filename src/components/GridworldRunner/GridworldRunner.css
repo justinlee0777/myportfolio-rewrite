@@ -20,4 +20,33 @@
     right: 1em;
     top: 1em;
   }
+
+  .qValue {
+    font-size: 0.75em;
+    position: absolute;
+
+    &.up {
+      left: 50%;
+      top: 0.5em;
+      transform: translateX(-50%);
+    }
+
+    &.down {
+      bottom: 0.5em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.left {
+      left: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.right {
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }

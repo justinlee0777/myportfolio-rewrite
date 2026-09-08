@@ -34,7 +34,7 @@
     "src/app/observer-pattern/observer-examples.js",
     "src/app/knuth-on-trees/binary-traversal.js",
     "src/components/GridworldRunner/run-algorithm.js",
-    "src/app/dqn/utils.js"
+    "src/components/GridworldRunner/dqn-utils.js"
   ],
   "exclude": ["node_modules"]
 }
