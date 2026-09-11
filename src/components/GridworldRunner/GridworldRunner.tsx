@@ -11,8 +11,9 @@ import { Runner } from './runner';
 import { DQNRunner } from './dqn-runner';
 import { DQN } from './dqn';
 import { DoubleDQN } from './double-dqn';
+import { PrioritizedExperienceReplayDQN } from './per-dqn';
 
-export type Algorithm = 'td' | 'q' | 'sarsa' | 'dqn' | 'double dqn';
+export type Algorithm = 'td' | 'q' | 'sarsa' | 'dqn' | 'double dqn' | 'per dqn';
 
 const AlgorithmMapping: {
   [key in Algorithm]: string;
@@ -22,6 +23,7 @@ const AlgorithmMapping: {
   sarsa: 'SARSA',
   dqn: 'DQN',
   'double dqn': 'Double DQN',
+  'per dqn': 'Prioritized Experience Replay DQN',
 };
 
 interface Props {
@@ -84,6 +86,11 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
         if (tfInitialized) {
           return new DoubleDQN(tf, 2, 4);
         }
+      case 'per dqn': {
+        if (tfInitialized) {
+          return new PrioritizedExperienceReplayDQN(tf, 2, 4);
+        }
+      }
     }
   }, [algorithm, counter, tfInitialized]);
 
@@ -101,6 +108,7 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
         return new Runner(environment, policy, true);
       case 'dqn':
       case 'double dqn':
+      case 'per dqn':
         return new DQNRunner(environment, policy, true);
     }
   }, [environment, policy]);

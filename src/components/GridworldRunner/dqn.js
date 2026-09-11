@@ -59,44 +59,44 @@ export class DQN {
     let [states, actions, rewards, nextStates, dones] =
       this.replayBuffer.sample(this.batchSize);
 
-    states = this.tf.tensor2d(states, [states.length, this.stateDim]);
-    actions = this.tf.tensor(actions, null, 'int32');
-    rewards = this.tf.tensor(rewards, null, 'float32');
-    nextStates = this.tf.tensor2d(nextStates, [
-      nextStates.length,
-      this.stateDim,
-    ]);
-    dones = this.tf.tensor(dones, null, 'float32');
+    this.tf.tidy(() => {
+      states = this.tf.tensor2d(states, [states.length, this.stateDim]);
+      actions = this.tf.tensor(actions, null, 'int32');
+      rewards = this.tf.tensor(rewards, null, 'float32');
+      nextStates = this.tf.tensor2d(nextStates, [
+        nextStates.length,
+        this.stateDim,
+      ]);
+      dones = this.tf.tensor(dones, null, 'float32');
 
-    const targetQ = this.calculateTargetQ(rewards, nextStates, dones);
+      const targetQ = this.calculateTargetQ(rewards, nextStates, dones);
 
-    const lossTensor = this.optimizer.minimize(
-      () => {
-        const qValues = this.tf.tidy(() => {
+      const lossTensor = this.optimizer.minimize(
+        () => {
           const qAll = this.qNetwork.forward(states);
           const actionMask = this.tf.oneHot(actions, this.actionDim);
 
-          return qAll.mul(actionMask).sum(1);
-        });
+          const qValues = qAll.mul(actionMask).sum(1);
 
-        const loss = this.tf.losses.meanSquaredError(targetQ, qValues);
+          const loss = this.tf.losses.meanSquaredError(targetQ, qValues);
 
-        return loss;
-      },
-      true,
-      this.qNetwork.weights,
-    );
+          return loss;
+        },
+        true,
+        this.qNetwork.weights,
+      );
 
-    const lossValue = lossTensor.dataSync()[0];
-    lossTensor.dispose();
+      const lossValue = lossTensor.dataSync()[0];
+      lossTensor.dispose();
 
-    this.lossHistory.push(lossValue);
+      this.lossHistory.push(lossValue);
 
-    this.trainingStep++;
+      this.trainingStep++;
 
-    if (this.trainingStep % this.updateFrequency === 0) {
-      this.targetNetwork.loadStateDict(this.qNetwork.model.layers);
-    }
+      if (this.trainingStep % this.updateFrequency === 0) {
+        this.targetNetwork.loadStateDict(this.qNetwork.model.layers);
+      }
+    });
   }
 
   calculateTargetQ(rewards, nextStates, dones) {
