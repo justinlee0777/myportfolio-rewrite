@@ -10,7 +10,7 @@ import { TDLearning } from '../../components/GridworldRunner/td-learning';
 import { QLearning } from '../../components/GridworldRunner/q-learning';
 import { SARSA } from '../../components/GridworldRunner/sarsa';
 import { GridWorld } from '../../components/GridworldRunner/gridworld';
-import { Runner } from '../../components/GridworldRunner/run-algorithm';
+import { Runner } from '../../components/GridworldRunner/runner';
 import { GridworldRunner } from '../../components/GridworldRunner/GridworldRunner';
 
 export default function BasicReinforcementLearningPage() {
