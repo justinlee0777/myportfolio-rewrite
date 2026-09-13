@@ -6,7 +6,9 @@ export function DQNPage() {
   return (
     <div className="articlePage">
       <GridworldRunner
-        allowedAlgorithms={new Set(['dqn', 'double dqn', 'per dqn'])}
+        allowedAlgorithms={
+          new Set(['dqn', 'double dqn', 'per dqn', 'dueling dqn'])
+        }
       />
     </div>
   );

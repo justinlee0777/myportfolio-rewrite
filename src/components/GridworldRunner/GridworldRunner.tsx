@@ -12,8 +12,10 @@ import { DQNRunner } from './dqn-runner';
 import { DQN } from './dqn';
 import { DoubleDQN } from './double-dqn';
 import { PrioritizedExperienceReplayDQN } from './per-dqn';
+import { DuelingDQN } from './dueling-dqn';
 
-export type Algorithm = 'td' | 'q' | 'sarsa' | 'dqn' | 'double dqn' | 'per dqn';
+export type Algorithm =
+  'td' | 'q' | 'sarsa' | 'dqn' | 'double dqn' | 'per dqn' | 'dueling dqn';
 
 const AlgorithmMapping: {
   [key in Algorithm]: string;
@@ -24,6 +26,7 @@ const AlgorithmMapping: {
   dqn: 'DQN',
   'double dqn': 'Double DQN',
   'per dqn': 'Prioritized Experience Replay DQN',
+  'dueling dqn': 'Dueling DQN',
 };
 
 interface Props {
@@ -78,17 +81,24 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
         return new QLearning(numStates, 4);
       case 'sarsa':
         return new SARSA(numStates, 4);
-      case 'dqn':
+      case 'dqn': {
         if (tfInitialized) {
           return new DQN(tf, 2, 4);
         }
-      case 'double dqn':
+      }
+      case 'double dqn': {
         if (tfInitialized) {
           return new DoubleDQN(tf, 2, 4);
         }
+      }
       case 'per dqn': {
         if (tfInitialized) {
           return new PrioritizedExperienceReplayDQN(tf, 2, 4);
+        }
+      }
+      case 'dueling dqn': {
+        if (tfInitialized) {
+          return new DuelingDQN(tf, 2, 4);
         }
       }
     }
@@ -109,6 +119,7 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
       case 'dqn':
       case 'double dqn':
       case 'per dqn':
+      case 'dueling dqn':
         return new DQNRunner(environment, policy, true);
     }
   }, [environment, policy]);

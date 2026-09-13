@@ -35,6 +35,60 @@ export class DQNNetwork {
   }
 }
 
+export class DuelingDQNNetwork extends DQNNetwork {
+  constructor(tf, stateDim = 3, actionDim = 4, hiddenSize = 64) {
+    super(tf, stateDim, actionDim, hiddenSize);
+    const input = tf.input({
+      shape: [stateDim],
+    });
+
+    const hidden1 = tf.layers
+      .dense({
+        units: hiddenSize,
+        activation: 'relu',
+      })
+      .apply(input);
+
+    const hidden2 = tf.layers
+      .dense({
+        units: hiddenSize,
+        activation: 'relu',
+      })
+      .apply(hidden1);
+
+    // Value stream: V(s)
+    const value = tf.layers
+      .dense({
+        units: 1,
+      })
+      .apply(hidden2);
+
+    // Advantage stream: A(s, a)
+    const advantage = tf.layers
+      .dense({
+        units: actionDim,
+      })
+      .apply(hidden2);
+
+    // Center the advantages
+    const centeredAdvantage = tf.layers
+      .lambda({
+        function: (x) => {
+          return x.sub(x.mean(1, true));
+        },
+      })
+      .apply(advantage);
+
+    // Q(s,a) = V(s) + A(s,a) - mean(A)
+    const output = tf.layers.add().apply([value, centeredAdvantage]);
+
+    this.model = tf.model({
+      inputs: input,
+      outputs: output,
+    });
+  }
+}
+
 export class ReplayBuffer {
   buffer = [];
   capacity;
