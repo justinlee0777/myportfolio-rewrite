@@ -1,9 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import clamp from 'lodash-es/clamp';
 
 import { TransformedImage } from '@/components/TransformedImage';
+import {
+  getPixels,
+  Pixels,
+  HistogramType,
+  ImageHistogramData,
+  getHistogram,
+  PixelTransform,
+  transformPixels,
+} from '@/utils/images';
+import { ImageHistogram } from '@/components/ImageHistogram';
 
 enum TransformationMode {
   None = 'None',
@@ -17,6 +27,14 @@ interface LogarithmicTransformation {
 }
 
 export function ImageProcessingPage() {
+  const [imageUrl, setImageUrl] = useState('/image-processing/image.jpeg');
+  const [originalPixels, setOriginalPixels] = useState<Pixels | null>(null);
+  const [pixels, setPixels] = useState<Pixels | null>(null);
+
+  const [histograms, setHistograms] = useState<{
+    [type in HistogramType]?: ImageHistogramData;
+  }>({});
+
   const [transformation, setTransformation] = useState<TransformationMode>(
     TransformationMode.None,
   );
@@ -31,64 +49,105 @@ export function ImageProcessingPage() {
     c: 51,
   });
 
-  let transform: Parameters<typeof TransformedImage>[0]['transform'];
+  useEffect(() => {
+    async function loadPixels() {
+      setOriginalPixels(await getPixels(imageUrl));
+    }
 
-  switch (transformation) {
-    case TransformationMode.Intensity:
-      transform = ({ r, g, b, a }) => {
-        let value = clamp(
-          (r * luminanceRatios[0]) / 100 +
-            (g * luminanceRatios[1]) / 100 +
-            (b * luminanceRatios[2]) / 100,
-          0,
-          255,
-        );
+    loadPixels();
+  }, [imageUrl, setOriginalPixels]);
 
-        return {
-          r: value,
-          g: value,
-          b: value,
-          a,
+  const transform: PixelTransform | undefined = useMemo(() => {
+    switch (transformation) {
+      case TransformationMode.Intensity:
+        return ({ r, g, b, a }) => {
+          let value = clamp(
+            Math.floor(
+              (r * luminanceRatios[0]) / 100 +
+                (g * luminanceRatios[1]) / 100 +
+                (b * luminanceRatios[2]) / 100,
+            ),
+            0,
+            255,
+          );
+
+          return {
+            r: value,
+            g: value,
+            b: value,
+            a,
+          };
         };
-      };
-      break;
 
-    case TransformationMode.Quantization:
-      const step = Math.floor(255 / (quantK - 1));
+      case TransformationMode.Quantization:
+        const step = Math.floor(255 / (quantK - 1));
 
-      const quantize = (value: number) => Math.floor(value / step) * step;
+        const quantize = (value: number) => Math.floor(value / step) * step;
 
-      transform = ({ r, g, b, a }) => {
-        return {
-          r: quantize(r),
-          g: quantize(g),
-          b: quantize(b),
-          a,
+        return ({ r, g, b, a }) => {
+          return {
+            r: quantize(r),
+            g: quantize(g),
+            b: quantize(b),
+            a,
+          };
         };
-      };
-      break;
 
-    case TransformationMode.Logarithmic:
-      const logQuantize = (value: number) =>
-        clamp(logTransform.c * Math.floor(Math.log(value + 1)), 0, 255);
+      case TransformationMode.Logarithmic:
+        const logQuantize = (value: number) =>
+          clamp(Math.floor(logTransform.c * Math.log(value + 1)), 0, 255);
 
-      transform = ({ r, g, b, a }) => {
-        return {
-          r: logQuantize(r),
-          g: logQuantize(g),
-          b: logQuantize(b),
-          a,
+        return ({ r, g, b, a }) => {
+          return {
+            r: logQuantize(r),
+            g: logQuantize(g),
+            b: logQuantize(b),
+            a,
+          };
         };
-      };
-      break;
+    }
+  }, [transformation, luminanceRatios, quantK, logTransform]);
+
+  useEffect(() => {
+    if (originalPixels) {
+      let finalPixels = structuredClone(originalPixels);
+
+      if (transform) {
+        finalPixels = transformPixels(finalPixels, transform);
+      }
+
+      let histogramTypes: Array<HistogramType>;
+
+      switch (transformation) {
+        case TransformationMode.None:
+        case TransformationMode.Logarithmic:
+        case TransformationMode.Quantization:
+          histogramTypes = ['Red', 'Green', 'Blue'];
+          break;
+        case TransformationMode.Intensity:
+          histogramTypes = ['Gray'];
+          break;
+      }
+
+      setPixels(finalPixels);
+      setHistograms(
+        histogramTypes.reduce((acc, type) => {
+          return {
+            ...acc,
+            [type]: getHistogram(finalPixels, type),
+          };
+        }, {}),
+      );
+    }
+  }, [originalPixels, transform, setHistograms]);
+
+  if (!pixels) {
+    return <>Processing image...</>;
   }
 
   return (
     <div className="imageContainer">
-      <TransformedImage
-        imageUrl="/image-processing/image.jpeg"
-        transform={transform}
-      />
+      <TransformedImage pixels={pixels} />
 
       <label htmlFor="imageTransformation">Transformation</label>
 
@@ -219,6 +278,15 @@ export function ImageProcessingPage() {
           </div>
         </>
       )}
+
+      {Object.entries(histograms).map(([type, histogram]) => {
+        return (
+          <Fragment key={type}>
+            <h3>{type} Histogram</h3>
+            <ImageHistogram data={histogram} />
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.imageHistogram {
+  align-items: flex-end;
+  border-color: var(--foreground);
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  width: 80vw;
+}
+
+.imageHistogramFrequency {
+  background-color: var(--foreground);
+  flex: none;
+  width: 0.5em;
+}
