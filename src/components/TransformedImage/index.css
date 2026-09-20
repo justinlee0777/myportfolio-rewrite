@@ -1,0 +1,23 @@
+.transformedImageContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-height: 75vh;
+  max-width: 75vw;
+  overflow: auto;
+}
+
+.transformedImage {
+  cursor: zoom-in;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+
+  &.zoomed {
+    cursor: zoom-out;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    width: auto;
+  }
+}

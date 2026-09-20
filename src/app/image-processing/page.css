@@ -1,0 +1,46 @@
+.articlePage {
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 800px;
+  padding: 1em;
+}
+
+.imageContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.intensityOptions {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  .inputContainer {
+    position: relative;
+
+    &::after {
+      color: var(--background);
+      content: '%';
+      display: inline;
+      font-size: 0.8em;
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  input {
+    padding-right: 2em;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

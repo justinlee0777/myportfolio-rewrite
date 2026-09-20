@@ -137,9 +137,7 @@ export default function Home() {
   return (
     <>
       <div className="projects">
-        <h1>
-          I'm Justin Lee. Deque University says I need an H1 here. This is that.
-        </h1>
+        <h1>Computer science concepts, visualized</h1>
         <div className="column discussion">
           <h2>Discussion</h2>
           {discussion.map(renderProject)}
