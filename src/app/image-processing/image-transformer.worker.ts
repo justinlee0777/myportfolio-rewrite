@@ -1,34 +1,48 @@
 'use client';
 
 import clamp from 'lodash-es/clamp';
-import chunk from 'lodash-es/chunk';
 
 import {
+  getCumulativeHistogram,
   getHistogram,
+  type ImageHistogramData,
   type HistogramType,
   type RGBAValue,
 } from '@/utils/images';
 
 import type {
-  IntensityRatios,
+  IntensityTransform,
   LogarithmicTransformation,
   QuantK,
   TransformationMode,
-  WorkerPayload,
 } from './ImageProcessingPage';
 
+export type Histograms = {
+  [type in HistogramType]?: ImageHistogramData;
+};
+
 export interface Payload {
-  data: ImageDataArray;
+  data: ArrayBuffer;
   width: number;
   transformation: TransformationMode;
 
-  intensityRatios: IntensityRatios;
+  intensityTransform: IntensityTransform;
   quantK: QuantK;
   logTransform: LogarithmicTransformation;
+
+  grayHistogram?: ArrayBufferLike;
 }
 
 export interface PixelTransform {
   (value: RGBAValue, x: number, y: number, image: ImageDataArray): RGBAValue;
+}
+
+export interface WorkerPayload {
+  histograms: Histograms;
+  imageData: ImageDataArray;
+
+  data: ArrayBuffer;
+  grayHistogram?: ArrayBufferLike;
 }
 
 self.onmessage = async (event: MessageEvent<Payload>) => {
@@ -43,9 +57,9 @@ self.onmessage = async (event: MessageEvent<Payload>) => {
       transform = ({ r, g, b, a }) => {
         let value = clamp(
           Math.floor(
-            (r * data.intensityRatios[0]) / 100 +
-              (g * data.intensityRatios[1]) / 100 +
-              (b * data.intensityRatios[2]) / 100,
+            (r * data.intensityTransform.ratios[0]) / 100 +
+              (g * data.intensityTransform.ratios[1]) / 100 +
+              (b * data.intensityTransform.ratios[2]) / 100,
           ),
           0,
           255,
@@ -58,6 +72,34 @@ self.onmessage = async (event: MessageEvent<Payload>) => {
           a,
         };
       };
+
+      if (data.intensityTransform.equalize) {
+        const intensityHistogram = getCumulativeHistogram(
+          new Uint32Array(data.grayHistogram!),
+        );
+
+        const totalPixels = intensityHistogram.at(-1)!;
+
+        const np = totalPixels / 256;
+
+        const jTransform = transform;
+
+        transform = (...args) => {
+          const j = jTransform(...args);
+
+          const value = Math.max(
+            0,
+            Math.round(intensityHistogram[j.r] / np) - 1,
+          );
+
+          return {
+            r: value,
+            g: value,
+            b: value,
+            a: j.a,
+          };
+        };
+      }
       break;
     case 'Quantization':
       const step = Math.floor(255 / (data.quantK - 1));
@@ -88,7 +130,7 @@ self.onmessage = async (event: MessageEvent<Payload>) => {
       break;
   }
 
-  const imageData = data.data;
+  const imageData = new Uint8ClampedArray(data.data);
 
   const transformedData: ImageDataArray = new Uint8ClampedArray(
     imageData.length,
@@ -139,7 +181,13 @@ self.onmessage = async (event: MessageEvent<Payload>) => {
   const message: WorkerPayload = {
     histograms,
     imageData: transformedData,
+    data: data.data,
+    grayHistogram: data.grayHistogram,
   };
 
-  self.postMessage(message);
+  self.postMessage(message, {
+    transfer: [event.data.data, event.data.grayHistogram].filter(
+      Boolean,
+    ) as Array<ArrayBufferLike>,
+  });
 };

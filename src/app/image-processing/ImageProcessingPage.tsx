@@ -4,15 +4,10 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import clamp from 'lodash-es/clamp';
 
 import { TransformedImage } from '@/components/TransformedImage';
-import {
-  getPixels,
-  Pixels,
-  HistogramType,
-  ImageHistogramData,
-} from '@/utils/images';
+import { getPixels, Pixels } from '@/utils/images';
 import { ImageHistogram } from '@/components/ImageHistogram';
 
-import type { Payload } from './image-transformer.worker';
+import type { Payload, WorkerPayload } from './image-transformer.worker';
 
 export enum TransformationMode {
   None = 'None',
@@ -21,19 +16,15 @@ export enum TransformationMode {
   Logarithmic = 'Logarithmic',
 }
 
-export type IntensityRatios = [number, number, number];
+export interface IntensityTransform {
+  ratios: [number, number, number];
+  equalize: boolean;
+}
 
 export type QuantK = number;
 
 export interface LogarithmicTransformation {
   c: number;
-}
-
-export interface WorkerPayload {
-  histograms: {
-    [type in HistogramType]?: ImageHistogramData;
-  };
-  imageData: ImageDataArray;
 }
 
 export function ImageProcessingPage() {
@@ -49,9 +40,11 @@ export function ImageProcessingPage() {
     TransformationMode.None,
   );
 
-  const [luminanceRatios, setLuminanceRatios] = useState<IntensityRatios>([
-    29.9, 58.7, 11.4,
-  ]);
+  const [intensityTransform, setIntensityTransform] =
+    useState<IntensityTransform>({
+      ratios: [29.9, 58.7, 11.4],
+      equalize: false,
+    });
 
   const [quantK, setQuantK] = useState<QuantK>(255);
 
@@ -73,36 +66,47 @@ export function ImageProcessingPage() {
     );
 
     workerRef.current.onmessage = (event: MessageEvent<WorkerPayload>) => {
+      setOriginalPixels((current) => {
+        current!.data = new Uint8ClampedArray(event.data.data);
+
+        return current;
+      });
+
       setPixels(event.data.imageData);
       setHistograms(event.data.histograms);
     };
 
-    // 3. Clean up and terminate the worker when the component unmounts
     return () => {
       workerRef.current?.terminate();
     };
-  }, [setPixels, setHistograms]);
+  }, [setOriginalPixels, setPixels, setHistograms]);
 
   useEffect(() => {
     const worker = workerRef.current;
 
     if (worker && originalPixels) {
       const event: Payload = {
-        data: originalPixels.data,
+        data: originalPixels.data.buffer,
         width: originalPixels.width,
         transformation,
-        intensityRatios: luminanceRatios,
+        intensityTransform,
         quantK,
         logTransform,
+        grayHistogram: histograms.Gray?.buffer,
       };
 
-      worker.postMessage(event);
+      worker.postMessage(
+        event,
+        [originalPixels.data.buffer, histograms.Gray?.buffer].filter(
+          Boolean,
+        ) as Array<ArrayBufferLike>,
+      );
     }
   }, [
     workerRef,
     originalPixels,
     transformation,
-    luminanceRatios,
+    intensityTransform,
     quantK,
     logTransform,
   ]);
@@ -137,6 +141,20 @@ export function ImageProcessingPage() {
 
       {transformation === TransformationMode.Intensity && (
         <div className="intensityOptions">
+          <div>
+            <input
+              type="checkbox"
+              checked={intensityTransform.equalize}
+              onChange={() => {
+                setIntensityTransform({
+                  ...intensityTransform,
+                  equalize: !intensityTransform.equalize,
+                });
+              }}
+            />
+            <label>Equalize</label>
+          </div>
+
           <label htmlFor="intensityRed">R</label>
 
           <div className="inputContainer">
@@ -145,15 +163,18 @@ export function ImageProcessingPage() {
               type="number"
               min={0}
               max={100}
-              value={luminanceRatios[0]}
+              value={intensityTransform.ratios[0]}
               onChange={(event) => {
                 const value = Number(event.target.value);
                 if (!isNaN(value)) {
-                  setLuminanceRatios([
-                    value,
-                    luminanceRatios[1],
-                    luminanceRatios[2],
-                  ]);
+                  setIntensityTransform({
+                    ...intensityTransform,
+                    ratios: [
+                      value,
+                      intensityTransform.ratios[1],
+                      intensityTransform.ratios[2],
+                    ],
+                  });
                 }
               }}
             />
@@ -167,15 +188,18 @@ export function ImageProcessingPage() {
               type="number"
               min={0}
               max={100}
-              value={luminanceRatios[1]}
+              value={intensityTransform.ratios[1]}
               onChange={(event) => {
                 const value = Number(event.target.value);
                 if (!isNaN(value)) {
-                  setLuminanceRatios([
-                    luminanceRatios[0],
-                    value,
-                    luminanceRatios[2],
-                  ]);
+                  setIntensityTransform({
+                    ...intensityTransform,
+                    ratios: [
+                      intensityTransform.ratios[0],
+                      value,
+                      intensityTransform.ratios[2],
+                    ],
+                  });
                 }
               }}
             />
@@ -189,15 +213,18 @@ export function ImageProcessingPage() {
               type="number"
               min={0}
               max={100}
-              value={luminanceRatios[2]}
+              value={intensityTransform.ratios[2]}
               onChange={(event) => {
                 const value = Number(event.target.value);
                 if (!isNaN(value)) {
-                  setLuminanceRatios([
-                    luminanceRatios[0],
-                    luminanceRatios[1],
-                    value,
-                  ]);
+                  setIntensityTransform({
+                    ...intensityTransform,
+                    ratios: [
+                      intensityTransform.ratios[0],
+                      intensityTransform.ratios[1],
+                      value,
+                    ],
+                  });
                 }
               }}
             />

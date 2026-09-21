@@ -1,16 +1,32 @@
+.imageHistogramContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 .imageHistogram {
   align-items: flex-end;
   border-color: var(--foreground);
   border-style: solid;
-  border-width: 0 0 1px 1px;
+  border-width: 0 0 0 1px;
   display: flex;
   flex-direction: row;
+  height: 60vh;
   overflow-x: auto;
+  padding-bottom: 1.5em;
   width: 80vw;
 }
 
 .imageHistogramFrequency {
   background-color: var(--foreground);
+  box-sizing: border-box;
   flex: none;
-  width: 0.5em;
+  position: relative;
+  width: 1em;
+
+  &:hover {
+    border-color: var(--background);
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+  }
 }

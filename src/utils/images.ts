@@ -70,7 +70,7 @@ export async function getPixels(imageUrl: string): Promise<Pixels> {
   });
 }
 
-export type ImageHistogramData = Array<number>;
+export type ImageHistogramData = Uint32Array;
 
 export type HistogramType = 'Red' | 'Green' | 'Blue' | 'Gray';
 
@@ -78,7 +78,9 @@ export function getHistogram(
   imageData: ImageDataArray,
   type: HistogramType,
 ): ImageHistogramData {
-  const data: ImageHistogramData = Array.from({ length: 256 }).map(() => 0);
+  const data: ImageHistogramData = Uint32Array.from({ length: 256 }).map(
+    () => 0,
+  );
 
   for (const [r, g, b] of chunk(imageData, 4)) {
     switch (type) {
@@ -96,4 +98,12 @@ export function getHistogram(
   }
 
   return data;
+}
+
+export function getCumulativeHistogram(
+  data: ImageHistogramData,
+): ImageHistogramData {
+  let sum = 0;
+
+  return data.map((value) => (sum += value));
 }
