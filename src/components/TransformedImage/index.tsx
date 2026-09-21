@@ -5,13 +5,13 @@ import './index.css';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
-import type { Pixels, RGBAValue } from '@/utils/images';
-
 interface Props {
-  pixels: Pixels;
+  data: ImageDataArray;
+  width: number;
+  height: number;
 }
 
-export function TransformedImage({ pixels }: Props) {
+export function TransformedImage({ data, height, width }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [zoomed, setZoomed] = useState(false);
@@ -20,31 +20,20 @@ export function TransformedImage({ pixels }: Props) {
     const canvasElement = canvasRef.current;
 
     if (canvasElement) {
-      canvasElement.height = pixels.length;
-      canvasElement.width = pixels[0].length;
+      canvasElement.height = height;
+      canvasElement.width = width;
 
       const context = canvasElement.getContext('2d')!;
 
-      const imageDataArray = [];
-
-      for (let i = 0; i < pixels.length; i++) {
-        for (let j = 0; j < pixels[i].length; j++) {
-          let pixel = pixels[i][j];
-
-          const { r, g, b, a } = pixel;
-          imageDataArray.push(r, g, b, a);
-        }
-      }
-
       const imageData = new ImageData(
-        new Uint8ClampedArray(imageDataArray),
+        data,
         canvasElement.width,
         canvasElement.height,
       );
 
       context.putImageData(imageData, 0, 0);
     }
-  }, [pixels, canvasRef.current]);
+  }, [data, height, width, canvasRef.current]);
 
   return (
     <div

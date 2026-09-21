@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import clamp from 'lodash-es/clamp';
 
 import { TransformedImage } from '@/components/TransformedImage';
@@ -9,41 +9,51 @@ import {
   Pixels,
   HistogramType,
   ImageHistogramData,
-  getHistogram,
-  PixelTransform,
-  transformPixels,
 } from '@/utils/images';
 import { ImageHistogram } from '@/components/ImageHistogram';
 
-enum TransformationMode {
+import type { Payload } from './image-transformer.worker';
+
+export enum TransformationMode {
   None = 'None',
   Intensity = 'Intensity',
   Quantization = 'Quantization',
   Logarithmic = 'Logarithmic',
 }
 
-interface LogarithmicTransformation {
+export type IntensityRatios = [number, number, number];
+
+export type QuantK = number;
+
+export interface LogarithmicTransformation {
   c: number;
 }
 
+export interface WorkerPayload {
+  histograms: {
+    [type in HistogramType]?: ImageHistogramData;
+  };
+  imageData: ImageDataArray;
+}
+
 export function ImageProcessingPage() {
+  const workerRef = useRef<Worker | null>(null);
+
   const [imageUrl, setImageUrl] = useState('/image-processing/image.jpeg');
   const [originalPixels, setOriginalPixels] = useState<Pixels | null>(null);
-  const [pixels, setPixels] = useState<Pixels | null>(null);
+  const [pixels, setPixels] = useState<ImageDataArray | null>(null);
 
-  const [histograms, setHistograms] = useState<{
-    [type in HistogramType]?: ImageHistogramData;
-  }>({});
+  const [histograms, setHistograms] = useState<WorkerPayload['histograms']>({});
 
   const [transformation, setTransformation] = useState<TransformationMode>(
     TransformationMode.None,
   );
 
-  const [luminanceRatios, setLuminanceRatios] = useState<
-    [number, number, number]
-  >([29.9, 58.7, 11.4]);
+  const [luminanceRatios, setLuminanceRatios] = useState<IntensityRatios>([
+    29.9, 58.7, 11.4,
+  ]);
 
-  const [quantK, setQuantK] = useState(255);
+  const [quantK, setQuantK] = useState<QuantK>(255);
 
   const [logTransform, setLogTransform] = useState<LogarithmicTransformation>({
     c: 51,
@@ -57,97 +67,57 @@ export function ImageProcessingPage() {
     loadPixels();
   }, [imageUrl, setOriginalPixels]);
 
-  const transform: PixelTransform | undefined = useMemo(() => {
-    switch (transformation) {
-      case TransformationMode.Intensity:
-        return ({ r, g, b, a }) => {
-          let value = clamp(
-            Math.floor(
-              (r * luminanceRatios[0]) / 100 +
-                (g * luminanceRatios[1]) / 100 +
-                (b * luminanceRatios[2]) / 100,
-            ),
-            0,
-            255,
-          );
+  useEffect(() => {
+    workerRef.current = new Worker(
+      new URL('./image-transformer.worker.ts', import.meta.url),
+    );
 
-          return {
-            r: value,
-            g: value,
-            b: value,
-            a,
-          };
-        };
+    workerRef.current.onmessage = (event: MessageEvent<WorkerPayload>) => {
+      setPixels(event.data.imageData);
+      setHistograms(event.data.histograms);
+    };
 
-      case TransformationMode.Quantization:
-        const step = Math.floor(255 / (quantK - 1));
-
-        const quantize = (value: number) => Math.floor(value / step) * step;
-
-        return ({ r, g, b, a }) => {
-          return {
-            r: quantize(r),
-            g: quantize(g),
-            b: quantize(b),
-            a,
-          };
-        };
-
-      case TransformationMode.Logarithmic:
-        const logQuantize = (value: number) =>
-          clamp(Math.floor(logTransform.c * Math.log(value + 1)), 0, 255);
-
-        return ({ r, g, b, a }) => {
-          return {
-            r: logQuantize(r),
-            g: logQuantize(g),
-            b: logQuantize(b),
-            a,
-          };
-        };
-    }
-  }, [transformation, luminanceRatios, quantK, logTransform]);
+    // 3. Clean up and terminate the worker when the component unmounts
+    return () => {
+      workerRef.current?.terminate();
+    };
+  }, [setPixels, setHistograms]);
 
   useEffect(() => {
-    if (originalPixels) {
-      let finalPixels = structuredClone(originalPixels);
+    const worker = workerRef.current;
 
-      if (transform) {
-        finalPixels = transformPixels(finalPixels, transform);
-      }
+    if (worker && originalPixels) {
+      const event: Payload = {
+        data: originalPixels.data,
+        width: originalPixels.width,
+        transformation,
+        intensityRatios: luminanceRatios,
+        quantK,
+        logTransform,
+      };
 
-      let histogramTypes: Array<HistogramType>;
-
-      switch (transformation) {
-        case TransformationMode.None:
-        case TransformationMode.Logarithmic:
-        case TransformationMode.Quantization:
-          histogramTypes = ['Red', 'Green', 'Blue'];
-          break;
-        case TransformationMode.Intensity:
-          histogramTypes = ['Gray'];
-          break;
-      }
-
-      setPixels(finalPixels);
-      setHistograms(
-        histogramTypes.reduce((acc, type) => {
-          return {
-            ...acc,
-            [type]: getHistogram(finalPixels, type),
-          };
-        }, {}),
-      );
+      worker.postMessage(event);
     }
-  }, [originalPixels, transform, setHistograms]);
+  }, [
+    workerRef,
+    originalPixels,
+    transformation,
+    luminanceRatios,
+    quantK,
+    logTransform,
+  ]);
 
-  if (!pixels) {
+  if (!(originalPixels && pixels)) {
     return <>Processing image...</>;
   }
 
   return (
     <div className="imageContainer">
-      <TransformedImage pixels={pixels} />
+      <TransformedImage
+        data={pixels}
+        height={originalPixels.height}
+        width={originalPixels.width}
+      />
 
       <label htmlFor="imageTransformation">Transformation</label>
 

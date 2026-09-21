@@ -8,15 +8,34 @@ export interface RGBAValue {
   a: number;
 }
 
-export type Pixels = Array<Array<RGBAValue>>;
+export class Pixels {
+  constructor(
+    public data: ImageDataArray,
+    public width: number,
+    public height: number,
+  ) {}
 
-export interface PixelTransform {
-  (
-    value: RGBAValue,
-    x: number,
-    y: number,
-    image: Array<Array<RGBAValue>>,
-  ): RGBAValue;
+  *[Symbol.iterator]() {
+    const chunkedData = chunk(this.data, 4);
+
+    for (let i = 0; i < chunkedData.length; i++) {
+      const [r, g, b, a] = chunkedData[i];
+
+      const x = i % this.width,
+        y = Math.floor(i / this.width);
+
+      const rgbaValue: RGBAValue = {
+        r,
+        g,
+        b,
+        a,
+      };
+
+      const value: [RGBAValue, number, number] = [rgbaValue, x, y];
+
+      yield value;
+    }
+  }
 }
 
 export async function getPixels(imageUrl: string): Promise<Pixels> {
@@ -40,29 +59,9 @@ export async function getPixels(imageUrl: string): Promise<Pixels> {
         canvasElement.width,
         canvasElement.height,
       );
-      const pixels = imageData.data;
+      const pixels = new Pixels(imageData.data, img.width, img.height);
 
-      const chunkedPixels = chunk(pixels, 4);
-
-      const matrix: Pixels = Array.from({
-        length: canvasElement.height,
-      }).map(() => Array.from({ length: canvasElement.width }));
-
-      for (let i = 0; i < chunkedPixels.length; i++) {
-        const [r, g, b, a] = chunkedPixels[i];
-
-        const x = i % canvasElement.width,
-          y = Math.floor(i / canvasElement.width);
-
-        matrix[y][x] = {
-          r,
-          b,
-          g,
-          a,
-        };
-      }
-
-      resolve(matrix);
+      resolve(pixels);
     };
 
     img.onerror = () => {
@@ -71,49 +70,28 @@ export async function getPixels(imageUrl: string): Promise<Pixels> {
   });
 }
 
-export function transformPixels(
-  pixels: Pixels,
-  transform: PixelTransform,
-): Pixels {
-  const transformedPixels: Pixels = Array.from({ length: pixels.length }).map(
-    (_, i) => Array.from({ length: pixels[i].length }),
-  );
-
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let pixel = pixels[i][j];
-
-      transformedPixels[i][j] = transform(pixel, j, i, pixels);
-    }
-  }
-
-  return transformedPixels;
-}
-
 export type ImageHistogramData = Array<number>;
 
 export type HistogramType = 'Red' | 'Green' | 'Blue' | 'Gray';
 
 export function getHistogram(
-  pixels: Pixels,
+  imageData: ImageDataArray,
   type: HistogramType,
 ): ImageHistogramData {
   const data: ImageHistogramData = Array.from({ length: 256 }).map(() => 0);
 
-  for (const row of pixels) {
-    for (const pixel of row) {
-      switch (type) {
-        case 'Red':
-        case 'Gray': // For Intensity images, R = G = B
-          data[pixel.r]++;
-          break;
-        case 'Green':
-          data[pixel.g]++;
-          break;
-        case 'Blue':
-          data[pixel.b]++;
-          break;
-      }
+  for (const [r, g, b] of chunk(imageData, 4)) {
+    switch (type) {
+      case 'Red':
+      case 'Gray': // For Intensity images, R = G = B
+        data[r]++;
+        break;
+      case 'Green':
+        data[g]++;
+        break;
+      case 'Blue':
+        data[b]++;
+        break;
     }
   }
 
