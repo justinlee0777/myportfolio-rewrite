@@ -1,13 +1,14 @@
 'use client';
 
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import clamp from 'lodash-es/clamp';
+import debounce from 'lodash-es/debounce';
 
 import { TransformedImage } from '@/components/TransformedImage';
 import { getPixels, Pixels } from '@/utils/images';
 import { ImageHistogram } from '@/components/ImageHistogram';
 
-import type { Payload, WorkerPayload } from './image-transformer.worker';
+import type { MessagePayload, WorkerPayload } from './image-transformer.worker';
 
 export enum TransformationMode {
   None = 'None',
@@ -26,6 +27,9 @@ export type QuantK = number;
 export interface LogarithmicTransformation {
   c: number;
 }
+
+const MAX_SIZE_MB = 15;
+const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 
 export function ImageProcessingPage() {
   const workerRef = useRef<Worker | null>(null);
@@ -52,13 +56,26 @@ export function ImageProcessingPage() {
     c: 51,
   });
 
-  useEffect(() => {
-    async function loadPixels() {
-      setOriginalPixels(await getPixels(imageUrl));
-    }
+  const loadPixels = useCallback(
+    async (url: string) => {
+      const originalPixels = await getPixels(url);
+      setOriginalPixels(originalPixels);
 
-    loadPixels();
-  }, [imageUrl, setOriginalPixels]);
+      setPixels(null);
+
+      const event: MessagePayload = {
+        data: originalPixels.data.buffer,
+        width: originalPixels.width,
+      };
+
+      workerRef.current!.postMessage(event, [originalPixels.data.buffer]);
+    },
+    [workerRef, setOriginalPixels],
+  );
+
+  useEffect(() => {
+    loadPixels(imageUrl);
+  }, [imageUrl, loadPixels]);
 
   useEffect(() => {
     workerRef.current = new Worker(
@@ -66,12 +83,6 @@ export function ImageProcessingPage() {
     );
 
     workerRef.current.onmessage = (event: MessageEvent<WorkerPayload>) => {
-      setOriginalPixels((current) => {
-        current!.data = new Uint8ClampedArray(event.data.data);
-
-        return current;
-      });
-
       setPixels(event.data.imageData);
       setHistograms(event.data.histograms);
     };
@@ -79,37 +90,22 @@ export function ImageProcessingPage() {
     return () => {
       workerRef.current?.terminate();
     };
-  }, [setOriginalPixels, setPixels, setHistograms]);
+  }, [setPixels, setHistograms]);
 
   useEffect(() => {
     const worker = workerRef.current;
 
-    if (worker && originalPixels) {
-      const event: Payload = {
-        data: originalPixels.data.buffer,
-        width: originalPixels.width,
+    if (worker) {
+      const event: MessagePayload = {
         transformation,
         intensityTransform,
         quantK,
         logTransform,
-        grayHistogram: histograms.Gray?.buffer,
       };
 
-      worker.postMessage(
-        event,
-        [originalPixels.data.buffer, histograms.Gray?.buffer].filter(
-          Boolean,
-        ) as Array<ArrayBufferLike>,
-      );
+      worker.postMessage(event);
     }
-  }, [
-    workerRef,
-    originalPixels,
-    transformation,
-    intensityTransform,
-    quantK,
-    logTransform,
-  ]);
+  }, [workerRef, transformation, intensityTransform, quantK, logTransform]);
 
   if (!(originalPixels && pixels)) {
     return <>Processing image...</>;
@@ -117,6 +113,30 @@ export function ImageProcessingPage() {
 
   return (
     <div className="imageContainer">
+      <input
+        id="imageUpload"
+        type="file"
+        onChange={async (event) => {
+          const file = event.target.files?.[0];
+
+          if (file) {
+            if (file.size > MAX_SIZE_BYTES) {
+              alert(
+                `File is too large. Please select an image under ${MAX_SIZE_MB}MB.`,
+              );
+            } else {
+              const blobUrl = URL.createObjectURL(file);
+
+              await loadPixels(blobUrl);
+
+              URL.revokeObjectURL(blobUrl);
+            }
+
+            event.target.value = '';
+          }
+        }}
+      />
+
       <TransformedImage
         data={pixels}
         height={originalPixels.height}
@@ -128,9 +148,11 @@ export function ImageProcessingPage() {
       <select
         id="imageTransformation"
         value={transformation}
-        onChange={(event) =>
-          setTransformation(event.target.value as TransformationMode)
-        }
+        onChange={(event) => {
+          const transformation = event.target.value as TransformationMode;
+
+          setTransformation(transformation);
+        }}
       >
         {Object.values(TransformationMode).map((value) => (
           <option key={value} value={value}>
@@ -143,16 +165,18 @@ export function ImageProcessingPage() {
         <div className="intensityOptions">
           <div>
             <input
+              id="intensityEqualize"
               type="checkbox"
               checked={intensityTransform.equalize}
               onChange={() => {
-                setIntensityTransform({
+                const newTransform = {
                   ...intensityTransform,
                   equalize: !intensityTransform.equalize,
-                });
+                };
+                setIntensityTransform(newTransform);
               }}
             />
-            <label>Equalize</label>
+            <label htmlFor="intensityEqualize">Equalize</label>
           </div>
 
           <label htmlFor="intensityRed">R</label>

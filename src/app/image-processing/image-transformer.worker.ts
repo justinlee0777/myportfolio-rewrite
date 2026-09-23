@@ -21,17 +21,20 @@ export type Histograms = {
   [type in HistogramType]?: ImageHistogramData;
 };
 
-export interface Payload {
+interface ImageDataPayload {
   data: ArrayBuffer;
   width: number;
+}
+
+interface ProcessImagePayload {
   transformation: TransformationMode;
 
   intensityTransform: IntensityTransform;
   quantK: QuantK;
   logTransform: LogarithmicTransformation;
-
-  grayHistogram?: ArrayBufferLike;
 }
+
+export type MessagePayload = ImageDataPayload | ProcessImagePayload;
 
 export interface PixelTransform {
   (value: RGBAValue, x: number, y: number, image: ImageDataArray): RGBAValue;
@@ -40,49 +43,127 @@ export interface PixelTransform {
 export interface WorkerPayload {
   histograms: Histograms;
   imageData: ImageDataArray;
-
-  data: ArrayBuffer;
-  grayHistogram?: ArrayBufferLike;
 }
 
-self.onmessage = async (event: MessageEvent<Payload>) => {
-  const { data } = event;
+let imageData:
+  | {
+      data: ImageDataArray;
+      width: number;
+    }
+  | undefined;
 
-  const { transformation } = data;
+let mostRecentProcessMessage: ProcessImagePayload | undefined;
 
-  let transform: PixelTransform | undefined;
+async function handleMessage(payload: MessagePayload) {
+  if ('data' in payload) {
+    if (imageData) {
+      imageData.data.buffer.transfer(0);
+    }
+    imageData = {
+      data: new Uint8ClampedArray(payload.data),
+      width: payload.width,
+    };
 
-  switch (transformation) {
-    case 'Intensity':
-      transform = ({ r, g, b, a }) => {
-        let value = clamp(
-          Math.floor(
-            (r * data.intensityTransform.ratios[0]) / 100 +
-              (g * data.intensityTransform.ratios[1]) / 100 +
-              (b * data.intensityTransform.ratios[2]) / 100,
-          ),
-          0,
-          255,
-        );
+    if (mostRecentProcessMessage) {
+      handleMessage(mostRecentProcessMessage);
+    }
+  } else {
+    mostRecentProcessMessage = payload;
+    if (imageData) {
+      const { transformation } = payload;
 
-        return {
-          r: value,
-          g: value,
-          b: value,
-          a,
-        };
-      };
+      let transform: PixelTransform | undefined;
 
-      if (data.intensityTransform.equalize) {
-        const intensityHistogram = getCumulativeHistogram(
-          new Uint32Array(data.grayHistogram!),
-        );
+      switch (transformation) {
+        case 'Intensity':
+          transform = ({ r, g, b, a }) => {
+            let value = clamp(
+              Math.floor(
+                (r * payload.intensityTransform.ratios[0]) / 100 +
+                  (g * payload.intensityTransform.ratios[1]) / 100 +
+                  (b * payload.intensityTransform.ratios[2]) / 100,
+              ),
+              0,
+              255,
+            );
+
+            return {
+              r: value,
+              g: value,
+              b: value,
+              a,
+            };
+          };
+          break;
+        case 'Quantization':
+          const step = Math.floor(255 / (payload.quantK - 1));
+
+          const quantize = (value: number) => Math.floor(value / step) * step;
+
+          transform = ({ r, g, b, a }) => {
+            return {
+              r: quantize(r),
+              g: quantize(g),
+              b: quantize(b),
+              a,
+            };
+          };
+          break;
+        case 'Logarithmic':
+          const logQuantize = (value: number) =>
+            clamp(
+              Math.floor(payload.logTransform.c * Math.log(value + 1)),
+              0,
+              255,
+            );
+
+          transform = ({ r, g, b, a }) => {
+            return {
+              r: logQuantize(r),
+              g: logQuantize(g),
+              b: logQuantize(b),
+              a,
+            };
+          };
+          break;
+      }
+
+      let transformedData = transformImage(transform);
+
+      let histogramTypes: Array<HistogramType>;
+
+      switch (transformation) {
+        case 'None':
+        case 'Logarithmic':
+        case 'Quantization':
+          histogramTypes = ['Red', 'Green', 'Blue'];
+          break;
+        case 'Intensity':
+          histogramTypes = ['Gray'];
+          break;
+      }
+
+      const histograms: WorkerPayload['histograms'] = {};
+
+      await Promise.all(
+        histogramTypes!.map(async (type) => {
+          const data = await getHistogram(transformedData, type);
+
+          histograms[type] = data;
+        }),
+      );
+
+      if (
+        transformation === 'Intensity' &&
+        payload.intensityTransform.equalize
+      ) {
+        const intensityHistogram = getCumulativeHistogram(histograms.Gray!);
 
         const totalPixels = intensityHistogram.at(-1)!;
 
         const np = totalPixels / 256;
 
-        const jTransform = transform;
+        const jTransform = transform!;
 
         transform = (...args) => {
           const j = jTransform(...args);
@@ -99,54 +180,43 @@ self.onmessage = async (event: MessageEvent<Payload>) => {
             a: j.a,
           };
         };
+
+        transformedData = transformImage(transform);
       }
-      break;
-    case 'Quantization':
-      const step = Math.floor(255 / (data.quantK - 1));
 
-      const quantize = (value: number) => Math.floor(value / step) * step;
-
-      transform = ({ r, g, b, a }) => {
-        return {
-          r: quantize(r),
-          g: quantize(g),
-          b: quantize(b),
-          a,
-        };
+      const message: WorkerPayload = {
+        histograms,
+        imageData: transformedData,
       };
-      break;
-    case 'Logarithmic':
-      const logQuantize = (value: number) =>
-        clamp(Math.floor(data.logTransform.c * Math.log(value + 1)), 0, 255);
 
-      transform = ({ r, g, b, a }) => {
-        return {
-          r: logQuantize(r),
-          g: logQuantize(g),
-          b: logQuantize(b),
-          a,
-        };
-      };
-      break;
+      self.postMessage(message);
+    }
+  }
+}
+
+self.onmessage = (event: MessageEvent<MessagePayload>) =>
+  handleMessage(event.data);
+
+function transformImage(transform?: PixelTransform) {
+  if (!imageData) {
+    throw new Error('');
   }
 
-  const imageData = new Uint8ClampedArray(data.data);
-
   const transformedData: ImageDataArray = new Uint8ClampedArray(
-    imageData.length,
+    imageData.data.length,
   );
 
-  for (let i = 0; i < imageData.length; i += 4) {
-    const x = i % data.width,
-      y = Math.floor(i / data.width);
+  for (let i = 0; i < imageData.data.length; i += 4) {
+    const x = i % imageData.width,
+      y = Math.floor(i / imageData.width);
 
-    let r = imageData[i],
-      g = imageData[i + 1],
-      b = imageData[i + 2],
-      a = imageData[i + 3];
+    let r = imageData.data[i],
+      g = imageData.data[i + 1],
+      b = imageData.data[i + 2],
+      a = imageData.data[i + 3];
 
     if (transform) {
-      ({ r, g, b, a } = transform({ r, g, b, a }, x, y, imageData));
+      ({ r, g, b, a } = transform({ r, g, b, a }, x, y, imageData.data));
     }
 
     transformedData[i] = r;
@@ -155,39 +225,5 @@ self.onmessage = async (event: MessageEvent<Payload>) => {
     transformedData[i + 3] = a;
   }
 
-  let histogramTypes: Array<HistogramType>;
-
-  switch (transformation) {
-    case 'None':
-    case 'Logarithmic':
-    case 'Quantization':
-      histogramTypes = ['Red', 'Green', 'Blue'];
-      break;
-    case 'Intensity':
-      histogramTypes = ['Gray'];
-      break;
-  }
-
-  const histograms: WorkerPayload['histograms'] = {};
-
-  await Promise.all(
-    histogramTypes!.map(async (type) => {
-      const data = await getHistogram(transformedData, type);
-
-      histograms[type] = data;
-    }),
-  );
-
-  const message: WorkerPayload = {
-    histograms,
-    imageData: transformedData,
-    data: data.data,
-    grayHistogram: data.grayHistogram,
-  };
-
-  self.postMessage(message, {
-    transfer: [event.data.data, event.data.grayHistogram].filter(
-      Boolean,
-    ) as Array<ArrayBufferLike>,
-  });
-};
+  return transformedData;
+}
