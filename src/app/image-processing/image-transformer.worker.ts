@@ -76,55 +76,13 @@ async function handleMessage(payload: MessagePayload) {
 
       switch (transformation) {
         case 'Intensity':
-          transform = ({ r, g, b, a }) => {
-            let value = clamp(
-              Math.floor(
-                (r * payload.intensityTransform.ratios[0]) / 100 +
-                  (g * payload.intensityTransform.ratios[1]) / 100 +
-                  (b * payload.intensityTransform.ratios[2]) / 100,
-              ),
-              0,
-              255,
-            );
-
-            return {
-              r: value,
-              g: value,
-              b: value,
-              a,
-            };
-          };
+          transform = createIntensityImageFn(payload.intensityTransform);
           break;
         case 'Quantization':
-          const step = Math.floor(255 / (payload.quantK - 1));
-
-          const quantize = (value: number) => Math.floor(value / step) * step;
-
-          transform = ({ r, g, b, a }) => {
-            return {
-              r: quantize(r),
-              g: quantize(g),
-              b: quantize(b),
-              a,
-            };
-          };
+          transform = createQuantImageFn(payload.quantK);
           break;
         case 'Logarithmic':
-          const logQuantize = (value: number) =>
-            clamp(
-              Math.floor(payload.logTransform.c * Math.log(value + 1)),
-              0,
-              255,
-            );
-
-          transform = ({ r, g, b, a }) => {
-            return {
-              r: logQuantize(r),
-              g: logQuantize(g),
-              b: logQuantize(b),
-              a,
-            };
-          };
+          transform = createLogImage(payload.logTransform);
           break;
       }
 
@@ -157,31 +115,9 @@ async function handleMessage(payload: MessagePayload) {
         transformation === 'Intensity' &&
         payload.intensityTransform.equalize
       ) {
-        const intensityHistogram = getCumulativeHistogram(histograms.Gray!);
+        transform = createHistogramEqualizationFn(histograms.Gray!);
 
-        const totalPixels = intensityHistogram.at(-1)!;
-
-        const np = totalPixels / 256;
-
-        const jTransform = transform!;
-
-        transform = (...args) => {
-          const j = jTransform(...args);
-
-          const value = Math.max(
-            0,
-            Math.round(intensityHistogram[j.r] / np) - 1,
-          );
-
-          return {
-            r: value,
-            g: value,
-            b: value,
-            a: j.a,
-          };
-        };
-
-        transformedData = transformImage(transform);
+        transformedData = transformImage(transform, transformedData);
       }
 
       const message: WorkerPayload = {
@@ -197,26 +133,28 @@ async function handleMessage(payload: MessagePayload) {
 self.onmessage = (event: MessageEvent<MessagePayload>) =>
   handleMessage(event.data);
 
-function transformImage(transform?: PixelTransform) {
+function transformImage(transform?: PixelTransform, data?: ImageDataArray) {
   if (!imageData) {
-    throw new Error('');
+    throw new Error('No imageData to transform.');
   }
 
-  const transformedData: ImageDataArray = new Uint8ClampedArray(
-    imageData.data.length,
-  );
+  if (!data) {
+    data = imageData.data;
+  }
 
-  for (let i = 0; i < imageData.data.length; i += 4) {
+  const transformedData: ImageDataArray = new Uint8ClampedArray(data.length);
+
+  for (let i = 0; i < data.length; i += 4) {
     const x = i % imageData.width,
       y = Math.floor(i / imageData.width);
 
-    let r = imageData.data[i],
-      g = imageData.data[i + 1],
-      b = imageData.data[i + 2],
-      a = imageData.data[i + 3];
+    let r = data[i],
+      g = data[i + 1],
+      b = data[i + 2],
+      a = data[i + 3];
 
     if (transform) {
-      ({ r, g, b, a } = transform({ r, g, b, a }, x, y, imageData.data));
+      ({ r, g, b, a } = transform({ r, g, b, a }, x, y, data));
     }
 
     transformedData[i] = r;
@@ -226,4 +164,79 @@ function transformImage(transform?: PixelTransform) {
   }
 
   return transformedData;
+}
+
+function createIntensityImageFn(
+  intensityTransform: IntensityTransform,
+): PixelTransform {
+  return ({ r, g, b, a }) => {
+    let value = clamp(
+      Math.floor(
+        (r * intensityTransform.ratios[0]) / 100 +
+          (g * intensityTransform.ratios[1]) / 100 +
+          (b * intensityTransform.ratios[2]) / 100,
+      ),
+      0,
+      255,
+    );
+
+    return {
+      r: value,
+      g: value,
+      b: value,
+      a,
+    };
+  };
+}
+
+function createQuantImageFn(quantK: number): PixelTransform {
+  const step = Math.floor(255 / (quantK - 1));
+
+  const quantize = (value: number) => Math.floor(value / step) * step;
+
+  return ({ r, g, b, a }) => {
+    return {
+      r: quantize(r),
+      g: quantize(g),
+      b: quantize(b),
+      a,
+    };
+  };
+}
+
+function createLogImage(
+  logTransform: LogarithmicTransformation,
+): PixelTransform {
+  const logQuantize = (value: number) =>
+    clamp(Math.floor(logTransform.c * Math.log(value + 1)), 0, 255);
+
+  return ({ r, g, b, a }) => {
+    return {
+      r: logQuantize(r),
+      g: logQuantize(g),
+      b: logQuantize(b),
+      a,
+    };
+  };
+}
+
+function createHistogramEqualizationFn(
+  grayHistogram: ImageHistogramData,
+): PixelTransform {
+  const intensityHistogram = getCumulativeHistogram(grayHistogram);
+
+  const totalPixels = intensityHistogram.at(-1)!;
+
+  const np = totalPixels / 256;
+
+  return ({ r, a }) => {
+    const value = Math.max(0, Math.round(intensityHistogram[r] / np) - 1);
+
+    return {
+      r: value,
+      g: value,
+      b: value,
+      a,
+    };
+  };
 }

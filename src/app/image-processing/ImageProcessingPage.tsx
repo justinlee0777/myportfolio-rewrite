@@ -116,6 +116,7 @@ export function ImageProcessingPage() {
       <input
         id="imageUpload"
         type="file"
+        accept="image/*"
         onChange={async (event) => {
           const file = event.target.files?.[0];
 
