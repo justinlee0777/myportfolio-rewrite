@@ -2,13 +2,92 @@
 
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import clamp from 'lodash-es/clamp';
-import debounce from 'lodash-es/debounce';
 
 import { TransformedImage } from '@/components/TransformedImage';
 import { getPixels, Pixels } from '@/utils/images';
 import { ImageHistogram } from '@/components/ImageHistogram';
 
 import type { MessagePayload, WorkerPayload } from './image-transformer.worker';
+
+export function ImageProcessingPage() {
+  return (
+    <div className="articlePage">
+      <h1>Image Processing</h1>
+      <time dateTime="2026-09-24">September 24, 2026</time>
+      <p>
+        I'm learning image processing. The web is furnished with almost every
+        rendering tool and trick, so I thought it'd be fun to apply it in the
+        frontend.
+      </p>
+      <p>
+        The below application takes an image and allows the following
+        transformations:
+      </p>
+      <ul>
+        <li>
+          Creation of a greyscale / intensity / brightness image (this has a
+          million terms)
+        </li>
+        <li>
+          A histogram equalization of the above intensity image (not applicable
+          to the color images because ... would take too long)
+        </li>
+        <li>
+          Quantization (reducing the range of values each pixel can take ex. [0,
+          255] for k = 2, [0, 85, 170, 255] for k = 4)
+        </li>
+        <li>
+          Logarithmic (logarithming the pixel value and multiplying by a
+          constant)
+        </li>
+      </ul>
+      <p>
+        I'll probably add more transformations in a separate article; I just
+        wanted to cap this off for now, as this can literally go on forever.
+      </p>
+      <p>
+        The program transforms the image and also generates histograms for RGB
+        values for the image (or the brightness values for intensity images).
+      </p>
+      <p>
+        The histograms were to be used for thresholding and power laws ... next
+        time.
+      </p>
+      <p>
+        The code makes use of HTML's canvas element, which can take in image
+        URLs and represent them as RGBA values in a flat array.
+      </p>
+      <p>The transformations output RGBA values in the same data format.</p>
+      <p>
+        The histograms really strained the processing time, so a Web Worker was
+        set up to offput the computation onto another thread.
+      </p>
+      <p>
+        Anything else? Ah, the Worker makes use of a nifty API to directly
+        transfer the image bytes to the Worker so as to reduce computation time.
+      </p>
+      <p>
+        As image transformations require more data and images get bigger, I am
+        sure I will need to figure out more performant mechanisms.
+      </p>
+      <p>
+        (I can't really separate the histogram ... I could spin up multiple
+        workers and do parallel work ... or I could make use of look-up tables
+        which is a known image processing technique... Another option is to
+        cancel Worker work in the case of rapid changes.)
+      </p>
+      <p>
+        I also didn't figure out a way to represent the metrics of the
+        histograms well; hard to figure out where to put the labels and how to
+        ensure the text isn't too small. I could use tooltips, but I didn't want
+        to implement a tooltip mechanism or install one.
+      </p>
+      <p>Well, stuff to think about.</p>
+
+      <ImageControlPanel />
+    </div>
+  );
+}
 
 export enum TransformationMode {
   None = 'None',
@@ -31,7 +110,7 @@ export interface LogarithmicTransformation {
 const MAX_SIZE_MB = 15;
 const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 
-export function ImageProcessingPage() {
+export function ImageControlPanel() {
   const workerRef = useRef<Worker | null>(null);
 
   const [imageUrl, setImageUrl] = useState('/image-processing/image.jpeg');
@@ -305,7 +384,7 @@ export function ImageProcessingPage() {
         return (
           <Fragment key={type}>
             <h3>{type} Histogram</h3>
-            <ImageHistogram data={histogram} />
+            <ImageHistogram id={`histogram-${type}`} data={histogram} />
           </Fragment>
         );
       })}

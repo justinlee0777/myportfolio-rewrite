@@ -64,6 +64,11 @@ export default function Home() {
   const discussion: Array<Project> = useMemo(
     () => [
       {
+        header: 'Image Processing',
+        description: `We have some fun implementing some image processing concepts for the web.`,
+        url: '/image-processing',
+      },
+      {
         header: `Orders of Magnitude`,
         description: `We discuss orders of magnitude and their relevance in this modern data-heavy world.`,
         url: '/orders-of-magnitude',

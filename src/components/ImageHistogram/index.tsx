@@ -9,12 +9,13 @@ import {
 } from '@/utils/images';
 
 interface Props {
+  id: string;
   data: ImageHistogramData;
 
   className?: string;
 }
 
-export function ImageHistogram({ data, className }: Props) {
+export function ImageHistogram({ id, data, className }: Props) {
   const [cumulative, setCumulative] = useState(false);
 
   if (cumulative) {
@@ -23,17 +24,20 @@ export function ImageHistogram({ data, className }: Props) {
 
   const greatestCount = Math.max(...data);
 
+  const cumulativeId = `${id}-cumulative`;
+
   return (
-    <div className="imageHistogramContainer">
+    <div id={id} className="imageHistogramContainer">
       <div>
         <input
+          id={cumulativeId}
           type="checkbox"
           checked={cumulative}
           onChange={() => {
             setCumulative((current) => !current);
           }}
         />
-        <label>Cumulative?</label>
+        <label htmlFor={cumulativeId}>Cumulative?</label>
       </div>
 
       <div className={clsx('imageHistogram', className)}>
