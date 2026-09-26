@@ -38,6 +38,7 @@ export function TransformedImage({ data, height, width }: Props) {
   return (
     <div
       className={clsx('transformedImageContainer')}
+      tabIndex={0}
       onClick={() => setZoomed((current) => !current)}
     >
       <canvas

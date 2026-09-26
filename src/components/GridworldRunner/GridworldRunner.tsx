@@ -229,7 +229,9 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
         >
           Reset
         </button>
+        <label htmlFor="rlAgorithm">Algorithim</label>
         <select
+          id="rlAgorithm"
           value={algorithm}
           onChange={(event) => setAlgorithm(event.target.value as any)}
         >
@@ -239,7 +241,9 @@ export function GridworldRunner({ allowedAlgorithms }: Props) {
             </option>
           ))}
         </select>
+        <label htmlFor="runAlgorithm">Run mode</label>
         <select
+          id="runAlgorithm"
           value={runType}
           onChange={(event) => setRunType(event.target.value as any)}
         >

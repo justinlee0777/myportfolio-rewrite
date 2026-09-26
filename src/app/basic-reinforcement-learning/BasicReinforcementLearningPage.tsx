@@ -2,8 +2,6 @@
 
 import './page.css';
 
-import { useEffect, useRef, useState } from 'react';
-
 import { CodeExample } from '@/components/CodeExample';
 
 import { TDLearning } from '../../components/GridworldRunner/td-learning';

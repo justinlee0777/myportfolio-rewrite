@@ -44,7 +44,9 @@ export default async function RootLayout({
           />
           <Settings classes={{ button: 'settingsPrompt' }} />
         </nav>
-        <main className="content">{children}</main>
+        <main className="content" tabIndex={0}>
+          {children}
+        </main>
         <footer>
           <small>
             <a href="mailto:leej40@outlook.com">Email.</a> Or{' '}
